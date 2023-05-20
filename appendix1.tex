@@ -1,0 +1,46 @@
+
+
+\section{Appendix The Random Walk}
+
+\subsection{1-dimensional Random Walk}
+Consider $N$ total steps $n_1$ to the right and $n_2$ to the left.
+The net displacement to the right is $m = n_1 - n_2$. Since $N = n_1 + n_2$,
+we can write $n_1 = (m + N)/2$. Also notice that $\delta m = 2$, since
+$m = 2n_1 - N$ and the $m$'s are all separated by 2. 
+From the Central Limit Theorem, the 
+limiting probability is Gaussian with Probability 
+$$P_N(n_1) = {1\over \sigma_N\sqrt{2\pi}} 
+\exp\left[-{(n_1 - <n_1>)^2\over2\sigma_N^2}\right],$$
+where $\sigma_N^2 = Npq$. If $p = q = 1/2$, then $\sigma_N^2 = N/4$.
+In terms of $m$ the 1-dimensional random walk Probability for 
+$p = q = 1/2$, becomes
+$$P_N(m) = \sqrt{{2\over N\pi}} 
+\exp\left[-{m^2\over2N}\right].$$
+If each step is of length $l$ then the net displacement is given by
+$x = ml$ and since the $m$'s are separated by integral mulitples of $2$
+the number of $m$ values in a range of $\delta m = \delta x/2l$.
+and the normalized Probability Density in terms of $x$ is given by
+$$P_N(x) = {1\over\sqrt{2\pi Nl^2} } 
+\exp\left[-{x^2\over2Nl^2}\right].$$
+If there are $n$ steps taken uniformly per unit time, then $N = nt$ and
+$$P(x,t) = {1\over\sqrt{2\pi nl^2t} } 
+\exp\left[-{x^2\over2 nl^2t}\right].$$
+The Diffusion constant is normally introduced at this point with the 
+constraint that $D = {1\over2} nl^2$ and the Probability Density can then 
+be written in terms of the Diffusion Constant as 
+$$P(x,t) = {1\over\sqrt{4\pi Dt} } 
+\exp\left[-{x^2\over4 Dt}\right].$$
+
+
+\subsection{$N$-dimensional Random Walk}
+
+The extension of the 1-Dimensional Random Walk to $N$ dimensions
+proceeds along similar lines as the above with the resulting final 
+Probability Distribution given as 
+
+$$P(x,t) = \left[N\over 2\pi nl^2t \right]^{N\over2}  
+\exp\left[-{Nx^2\over2 nl^2t}\right],$$ or
+
+$$P(x,t) = \left[N\over 4\pi Dt] \right]^{N\over2}
+\exp\left[-{Nx^2\over 4Dt}\right].$$
+

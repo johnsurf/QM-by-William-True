@@ -1,0 +1,101 @@
+\section{The Dirac Delta Function}
+Consider the relation $\displaystyle y_i = \sum_j \, a_{ij} x_j$ rewritten as $\displaystyle y(i) = \sum_j a(i,j) x(j)$ which states that $y(i)$ is a linear combination of the $x(i)'s$.
+If thse indices were continuous, we would have an expression of the form
+$$f(x) = \int\, G(x,x') \, g(x') \, dx'.$$ One says that $f(x)$ is a linear functional of $g(x)$ and $G(x,x')$ is called the ``kernel'' which depends in general on both $x$ and $x'$. We see that it is linear
+because if $f_1 = \int\, G g_1\,dx$ and $f_2 = \int\, G g_2\,dx$, then $f_1 + f_2 = \int\, G(g_1 + g_2)\, dx$. A good example of this is our Fourier transform (in one dimension)
+$$\psi(x) = {1\over \sqrt{2\pi}}\int\, e^{ikx}i, \phi(k)\, dk.$$ Here $\psi(x)$ is a linear functional of $\phi(k)$ with a kernel of $\displaystyle {1\over\sqrt{2\pi}}e^{-ikx}$. \\
+On the other hand, we could have considered $\displaystyle y(i) = \sum_j\, a(i,j) x(j)$ as a linear transformation. Similarly, 
+$$f(x) = \int\, G(x,x') g(x')\,dx$$ could be considered as a linear transformation where $g(x)$ are vectors with a set of continuous indices and $G(x,x')$ being the matrix for the transformation.\\
+In the discrete indices case, the ``identinty'' transformation is given by $a(i,j) = \delta_{ij}$. But in the continuous indices case, there is no function of $x$ and $x'$ which does a similar thing. However, 
+this doesn't bother physicists who define a function called the ``Dirac delta function'', $\delta(x-x')$, which replaces $G(x,x')$ such that $$f(x) = \int \, \delta(x-x') f(x')\, dx'.$$ Some of the more common forms 
+of representation for the Dirac delta function are:
+\begin{eqnarray*}
+1.\ \delta(x) &=& \lim_{\epsilon\rightarrow 0} {\epsilon\over \pi (\epsilon^2 + x^2)}\\
+2.\ \delta(x) &=& \lim_{\epsilon\rightarrow 0} {1\over {dg\over dx} } {1\over \epsilon(b-a)}
+\end{eqnarray*}where $g(x)$ is any smooth monotonic function in $(a,b)$ with $g(a) = -\infty$ and $g(b) = +\infty$. 
+\begin{eqnarray*}
+3.\ \delta(x) &=& \lim_{N\rightarrow \infty} {\sin(Nx)\over \pi x}\\
+4.\ \delta(x) &=& {1\over 2\pi} \int_{-\infty}^{+\infty} \, e^{\pm i\mu x}\, du\\
+5.\ \delta(x) &=& \lim_{\epsilon\rightarrow 0} {e^{-x^2/\epsilon}\over \sqrt{\pi\epsilon}}\\
+6.\ \delta(x) &=& \lim_{\epsilon\rightarrow 0} {\theta(x+\epsilon) - \theta(x-\epsilon)\over 2\epsilon} \rightarrow {d\theta(x)\over dx}\\
+\end{eqnarray*}where 
+\begin{eqnarray*}
+\theta(x) &=& 0 \mbox{ for } x<0\\
+\theta(x) &=& 1 \mbox{ for } x > 0.
+\end{eqnarray*}
+Let us look at the firs one, i.e., 
+$\delta(x-x') = \lim_{\epsilon\rightarrow 0} D(x-x',\epsilon)$, where $\displaystyle D(x,\epsilon) = {\epsilon\over \pi (\epsilon^2 + x^2)}.$
+$D(x,\epsilon)$ for three values of $\epsilon$ are shown in the Figure at the right. We see that as $\epsilon$ becomes smaller, $D$ becomes more peaked around $x=0$ and is 
+``practically'' zero elsewhere. Now $\displaystyle \int_{-\infty}^{+\infty} \, D(x,\epsilon)\, dx = 1$ and is independent of $\epsilon$. \\
+Now if $f(x)$ is continuous around $x\approx x'$, then for small $ \epsilon$ (sharply peaked around 0), we have
+$$ \int_{-\infty}^{+\infty}\, f(x') D(x-x')\,dx' \approx f(x) \int\, D(x-x',\epsilon)\, dx' = f(x).$$
+The above is not a proof. However, if $f(x)$ is bounded everywhere, one can show that $$lim_{\epsilon\rightarrow 0}\int_{-\infty}^{+\infty}\, f(x) D(x,\epsilon)\, dx = f(0).$$
+This is just what we want the $\delta$ function to do and if it does it, the exact form of $(D(x,\epsilon)$ is not important.\\
+We will assume that a $\delta$ function exists such that 
+$$\int_{-\infty}^{+\infty}\, f(x') \delta(x-x')\, dx' = f(x).$$
+Furthermore, we should observer that the $\delta$ function will only have meaning when it appears under the integral sign.\\
+Later on in this section, we will make a brief digression into Riemann-Stieltjes integrals where we shall see that integrals like the above can be handled with 
+more mathematical rigor. \\
+Extension into 3 dimensions is ``straight forward''. 
+$$\delta(\vec{r} - \vec{r'}) = \delta(x-x')\delta(y-y')\delta(z-z')$$ so that 
+$$\int\, f(\vec{r'}) \delta(\vec{r} - \vec{r'}) d\vec{r'} = \int\, f(x',y',z') \delta(x-x')\delta(y-y')\delta(z-z')\, dx'dy'dz' = f(x,y,z) = f(\vec{r}).$$
+From our work with Fourier transforms
+\begin{eqnarray*}
+\delta(\vec{r}-\vec{r'}) &=& {1\over (2\pi)^3}   \int_{-\infty}^{+\infty}\, e^{\pm i \vec{k}\cdot(\vec{r}-\vec{r'}) }\, d\vec{k}\\
+\delta(\vec{p}-\vec{p'}) &=& {1\over (2\pi)^3} \int_{-\infty}^{+\infty}\, e^{\pm i \vec{r}\cdot(\vec{p}-\vec{p'}) }\, d\vec{r}.
+\end{eqnarray*}
+In spherical coordinates $(r.\theta, \phi)$,
+$$\delta(\vec{r}-\vec{r'}) = {\delta(r - r')\over r^2} \sum_{l,m}\, Y_{lm}^*(\theta.\phi)Y_{lm}(\theta'.\phi'),$$ where the $Y_{lm}(\theta,\phi)$'s are the spherical harmonics.\\
+Example: Let us use the 3rd representation above and show that 
+\begin{eqnarray*}
+\int_A^B\, f(x)\delta(x)\, dx &=& f(0) \mbox{ if } A \le 0 \le B\\
+                                          &=& 0 \mbox{ otherwise.}
+\end{eqnarray*} We have 
+$$\int_A^B\, f(x) \lim_{N\rightarrow \infty} {\sin(Nx)\over \pi x}\, dx.$$ We not for $x$ not near zero and $N$ large, the $\sin(Nx)$ oscillates rapidly. Consequently we wouldn't expect a large contribution to the integral
+from these regions as long as $f(x)$ is a ``smooth'' and ``reasonably well behaved'' function.\\
+As $\displaystyle \lim_{x\rightarrow0} {\sin(Nx)\over x} = N$, we will have around $x=0$ just $\displaystyle \int_{x\approx0} \, N f(x)\, dx$. Thus our ``main'' contributions should come around
+$x\approx0$ and it shouldn't be too surprising to get just $f(0)$.\\
+Let us show this in detal. We let 
+$$I = {1\over\pi}\lim_{N\rightarrow\infty} \int_A^B\, f(x) {\sin(Nx)\over x}\,dx.$$
+Integrate by parts with $u=f(x)$ and $\displaystyle dv = {\sin(Nx)\over x}\,dx$.
+$$I = {1\over\pi} \lim_{N\rightarrow\infty} \left\{\left[ f(x) \int_A^x\, {\sin(Ny)\over y} \, dy \right]_A^B  - \int_A^B f'(x)\,dx \int_A^x\, {\sin(Ny)\over y} \,dy \right\}.$$
+WIth $z = Ny$, 
+$$I = {1\over\pi}\lim_{N\rightarrow\infty} \left\{ \left[ f(x) \int_{NA}^{Nx}\, {\sin(Ny)\over y}\,dy\right]_A^B - \int_A^B f'(x)\,dx \int_{NA}^{Nx}\, {\sin(Ny)\over y}\,dy \right\}.$$
+First, we look at the 1st term on the right hand side. For the lower limit, $Nx\rightarrow NA$ and the integral is zero. For the upper limit $Nx \rightarrow NB$. If $A$ and $B$ are both 
+$\left\{\begin{matrix}
+\mbox{positive} \\
+\mbox{negative} 
+\end{matrix}\right\}$, the integral is still zero as $\displaystyle \lim_{N=\infty} NA = \lim_{N \rightarrow \infty} NB = \{\pm \infty\}$.
+If $A$ is negative and $B$ us positive, 
+$$\lim_{N\rightarrow\infty}\int_{NA}^{NB}\, {\sin(z)\over z}\,dz = \int_{-\infty}^{+\infty} {\sin(z)\over z}\,dz = \pi.$$
+So the 1st term $= f(B)$ if $A<0$ and $B>0$ and is zero otherwise.\\
+Similar reasoning applies to the 2nd term. It will be zero unless $A$ is negative and $x$ is positive in the integral over $dy$. This means that in the integral over $dx$, we can ``neglect'' that
+part it where $x<0$. So we replace $\int_A^B\,dx$ by $\int_0^B\, dx$. With this, the 2nd term becomes 
+$$- {1\over\pi} \int_A^B f'(x)\,dx \left[ \lim_{N\rightarrow\infty} \int_{NA}^{Nx} \, {\sin(Ny)\over y} \,dy \right].$$
+The bracket gives $\pi$ for all $x>0$ and the second term becomes $-f(B) + f(0)$. So 
+\begin{eqnarray*}
+I = \int_A^B\, f(x)\delta(x)\, dx &=& f(0) \mbox{ if } A<0 \mbox{ and } B>0\\
+&=& 0 \mbox{ otherwise}
+\end{eqnarray*}
+End example.\\
+
+Some of the more ``useful'' relationships involving the $\delta$ function are: \hbox{(see Schiff pp 57)}
+\begin{eqnarray*}
+&1.~& \int\, \delta(x)\, dx  = 1\\
+&2.~& \int\, \delta(-x)\, dx = \delta(x) \\
+&\null&~~~~~~~~~i.e. \int_{-\infty}^{+\infty}\, f(x)\delta(x) \, dx = \int_{-\infty}^{+\infty}\, f(x)\delta(-x) \, dx = f(0)\\
+&3.~& \delta(ax) = {1\over a} \delta(x) \mbox{ for } a> 0\\
+&4.~& x\delta(x) = 0\\
+&\null&~~~~~~~~~ i.e. \int_{-\infty}^{+\infty}\, f(x) x \delta(x) \, dx = f(x) x \big|_{x=0} = 0 \\
+&5.~& \int\,\delta(x-x'')\delta(x''- x')\, dx'' = \delta(x-x')\\
+&6.~& f(x)\delta(x-x') = f(x')\delta(x-x')\\
+&7.~& \delta(x^2 - a^2) = {1\over2a} \left[\delta(x-a) + \delta(x+a)\right]\\
+&8.~& x\delta'(x) = x{d\over dx}\delta(x) = -\delta(x)\\
+&9.~& \delta^{(m)}(x) = (-1)^m \delta^{(m)}(-x)\\
+&10.& \int\, \delta^{(m)}(x-y) \delta^{(n)}(y-a)\, dy = \delta^{(m+n)}(x-a)\\
+&11.& x^{m+1}\delta^{(m)}(x) = 0\\
+&12.& \int\, f(x) \delta^{(m)}(x)\, dx = (-1)^m f^{(m)}(0)\\
+&\null&~~~~~~~~~~\mbox{ providing that } f^{(m)}(0) \mbox{ exists}.
+\end{eqnarray*}
+Now let us digress briefly and look at Riemann-Stieltjes Integrals.
+We shall see that the Dirac $\delta$ function can be formulated in a ``rigorous'' manner in this case. 

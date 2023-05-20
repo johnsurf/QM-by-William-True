@@ -1,0 +1,61 @@
+\section{Uncertainty Principle from Schwarz's Inequality}
+
+   Schwarz'z inequality says that fo two functions $f$ and $g$ 
+   \[ (f,f) (g,g) \ge |(f.g)|^2\] with equality if and only if $f=\lambda g$. \\
+   
+   Let us consider two Hermition operators $A$ and $B$ from which we construct two more Hermitian operators $]\alpha = A - \langle A\rangle  $ and $\beta - B - \langle B\rangle  $. Let $f = \alpha \psi$ and $g = \beta \psi$. Then
+   (\[ (f,f) = (\alpha \psi, \alpha \psi) = (\psi, \alpha^2 \psi) = \langle \alpha^2\rangle   = \langle A^2\rangle   - \langle A\rangle  ^2 = \Delta A^2\] and likewise \[(g,g) = \Delta B^2.\] Using these in Schwarz's inequality we have
+   $$ \Delta A^2 \Delta B^2 \ge | (\alpha \psi, \beta \psi)|^2 = |(\psi,\alpha\beta \psi)|^2 = {1\over 4}|(\psi,\{ \alpha, \beta\}\psi) + (\psi, \left[ \alpha,\beta\right]\psi)|^2$$  where we used 
+   $$\alpha\beta = {1\over2}(\alpha\beta + \beta\alpha) + {1\over2} (\alpha\beta - \beta\alpha).$$\\
+   For Hermitian operators $$(\psi,\beta \alpha \psi) = (\alpha^\dagger\beta^\dagger\psi, \psi) = (\alpha \beta \psi, \psi) = (\psi, \alpha \beta \psi )^*$$. Also because $\alpha$ and $\beta$ are Hermitian we also have the following 
+   properties 
+   \begin{eqnarray*}
+   (\beta\alpha)^\dagger &=& \alpha^\dagger\beta^\dagger = \alpha\beta\\
+   (\alpha\beta)^\dagger &=& \beta^\dagger\alpha^\dagger = \beta\alpha\\
+   \end{eqnarray*}From which we also have
+   \begin{eqnarray*}
+   \alpha\beta + \beta\alpha &=& ~(\alpha\beta + \beta\alpha)^\dagger \mbox{ Hermitian: All Real Eigenvalues}\\ 
+   \alpha\beta - \beta\alpha &=&   -(\alpha\beta - \beta\alpha)^\dagger \mbox{ Anti-Hermitian: All Imaginary Eigenvalues}
+   \end{eqnarray*}Therefore
+    \begin{eqnarray*}
+   (\psi,(\alpha\beta + \beta\alpha)\psi) &=& (\psi,(\alpha\beta + \beta\alpha)^\dagger\psi)  = 2\Re(\psi,\alpha\beta\psi)\\ 
+   (\psi,(\alpha\beta - \beta\alpha)\psi) &=& -(\psi,(\alpha\beta - \beta\alpha)^\dagger\psi)  = 2\Im(\psi,\alpha\beta\psi)
+   \end{eqnarray*} 
+    Therefore the above expression for $\Delta A^2\Delta b^2$ reduces to 
+   $$ \Delta A^2 \Delta B^2 \ge {1\over 4} |(\psi,\{ \alpha, \beta\}\psi)|^2 + {1\over4}|(\psi, \left[ \alpha,\beta\right]\psi)|^2.$$\\
+   We can always strengthen the inequality by dropping the 1st term on the right hand side. Then
+   $$\Delta A^2 \Delta B^2 \ge {1\over 4} |(\psi, \left[ \alpha,\beta\right]\psi)|^2.$$\\
+   Let us look at this last expression for the special case where $A=x$ and $B=p$.\\
+   Since $\left[\alpha,\beta\right] = \left[A,B\right] = \left[x,p_x\right] = i\hbar$ in this case we have
+   $$\Delta x\Delta p_x \ge \hbar/2$$ which is the well-known uncertainty principle. \\
+   In all cases of two Hermitian operators which commute, we have with $\left[A,B\right] = 0$ 
+   $$\Delta A^2 \Delta B^2 \ge {1\over4}| (\psi,\{\alpha,\beta\}\psi)|^2.$$
+   Can the equality sign ``hold'' and if so will $\Delta A\Delta B = 0$? For this to happen, we need $(\psi,\{\alpha,\beta\}\psi) = 0$ and $f = \lambda g$ or $\alpha \psi = \lambda \beta \psi$. This will be the case if
+   $\psi$ is  a simultaneous eigenfunction of both $A$ and $B$. For example, if $A\psi = a\psi$ and $B\psi =b\psi$, then we know that $\Delta A = \Delta B = 0$. Then $\alpha \psi = \lambda\beta\psi$ with
+   $\lambda = a/b$. Furthermore, it is quite easy to show that $(\psi,\{\alpha,\beta\}\psi) = 0$. \\
+   However, in general, $\psi$ need not be a simultaneous eigenfunction of $A$ and $B$ and $(\psi,\{\alpha,\beta\}\psi)$ will not in general be zero. In these cases, we will have the more general 
+   relationship $\Delta A\Delta B \rangle  0$ even though $A$  and $B$ commute. \\
+   Now let us return to the above one-dimensional case, $\Delta x \Delta p_x \ge \hbar/2$ and inquire what happens when the equality sign holds, i.e., when $\Delta x\Delta p_x = \hbar/2$.\\   
+   For this to happen, we need $f=\lambda g$ and $(\psi\{\alpha,\beta\}\psi) = 0$. The latter condition tells us 
+   \[ 0 = (\psi,(\alpha\beta + \beta\alpha)\psi) = (\psi,\alpha g) + (\psi,\beta f) = (\alpha\psi,g) + (\beta\psi,f) = (f,g) + (g,f).\]\\
+   Using $f=\lambda g$, we have
+   \[ (\lambda g,g) + (g,\lambda g) = (\lambda^* + \lambda) (g,g) = (\lambda^* + \lambda)\Delta p_x^2 = 0.\]
+   So for the non-trivial case where $\Delta p_x^2 \ne 0$, we see that $\lambda^* + \lambda = 0$ or that $\lambda$ is pure imaginary. \\
+   Let us now determine $\psi(x)$ for this case. Just to make the math easier, we study the special case where $\langle x\rangle   = \langle p\rangle   = 0$. Now $f = \lambda g$ becomes $\alpha \psi = \lambda \beta \psi$ or
+   $$x\psi = {\lambda \hbar\over i} {\partial \psi\over \partial x}.$$
+   Integrating gives ${\displaystyle \psi(x) = N \exp({ix^2\over 2\lambda \hbar})}$\\
+   We see that for $\psi(x)$ to be zero at $x=\pm \infty$, we need $\lambda$ to be a negative imaginary number. We already knew it was imaginary.\\
+   For convenience, we define $\lambda = \displaystyle {-i\over \nu^2 \hbar}$, where $\nu^2$ is a real positive number. Then $\displaystyle \psi = N\exp({-\nu^2 x^2\over 2})$. \\
+   Now  $$(\psi,\psi) = 1 = |N|^2 \int\, e^{-\nu x^2}\, dx = {N^2\sqrt{\pi}\over \nu}$$ and 
+   $$\Delta x^2 = (\psi, x^2\psi) = |N|^2 \int\, x^2 e^{\nu x^2}\, dx = {|N|^2 \sqrt{\pi}\over 2\nu^3}$$
+   allows us to solve for $\nu^2$ and $N$, i.e., 
+   $$\nu^2 = {`\over 2\Delta x^2},~~\hbox{and}~~N = {1\over (2\pi\Delta x^2)^{1/4} }.$$
+   So for $\Delta x \Delta p = \hbar/2$, we have 
+   $$\psi(x) = {1\over (2\pi\Delta x^2)^{1/4} }\exp^{-x^2 /4\Delta x^2}$$ which is a Gaussian shaped wave function centered around $x = 0$ (Because we took $\langle x\rangle = 0$). 
+   If $\langle x \rangle$ and $\langle p_x\rangle$ had non-zero values, we would have obtained (cf.Schiff pp 62)
+   $$\psi(x) = {1\over (2\pi\Delta x^2)^{1/4} }\exp ^{ {(x-\langle x\rangle)^2\over 4 \Delta x^2} + i {\langle p_x\rangle x\over \hbar} }.$$ \\
+   Powell \& Grassmann (pp 72) show that if we describe a particle by a Gaussian shaped wave packet then $\Delta x \Delta p_x = \hbar/2$ and we have the maximum information we can obtain about the particle. 
+   Furthermore, a Gaussian shaped wave function in the coordinate representation will have a Gaussian shaped wave function in the momentum represenation. \\
+   We also see that any other shaped wave function or wave packet will have $$\Delta x\Delta p_x > \hbar/2.$$
+   
+   

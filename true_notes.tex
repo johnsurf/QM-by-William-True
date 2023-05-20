@@ -1,0 +1,319 @@
+%   11/11/92 211121724  MEMBER NAME  REPORT1  (TEXFILES) M  TEX
+%format: latex    %hyphen: English
+%\documentstyle[11pt,leqno,epsfig]{note}
+%\documentstyle[11pt,epsfig]{note}
+%\documentstyle[11pt,epsfig,pstimes,psmath]{note}
+%\documentstyle[epsf]{article}
+%\documentstyle{article}
+%\usepackage{amsmath}
+\documentclass[epsf]{article}
+
+\font\twelverm=cmr12
+\font\tenbf=cmbx10
+\font\tenrm=cmr10
+\font\tenit=cmti10
+\font\elevenbf=cmbx10 scaled\magstep 1
+\font\elevenrm=cmr10 scaled\magstep 1
+\font\elevenit=cmti10 scaled\magstep 1
+\font\ninebf=cmbx9
+\font\ninerm=cmr9
+\font\nineit=cmti9
+\font\eightbf=cmbx8
+\font\eightrm=cmr8
+\font\eightit=cmti8
+\font\sevenrm=cmr7
+
+\usepackage{amsmath,amssymb,latexsym} 
+%\usepackage{amsmath,amssymb,latexsym,hyperref} 
+%\usepackage{easybmat}
+%\usepackage{multirow,bigdelim}
+
+%
+%  `pstimes.sty' sets \rm to be Times, and `psmath.sty' sets the math
+%  in Times as well.
+%
+\textwidth = 6.5truein
+\textheight = 8.5truein
+\oddsidemargin=0.2truein
+\evensidemargin=0.2truein
+\topmargin=0.50truein
+%\notename{UCD/IIRPA} \notenumber{92-24}
+\begin{document}
+\null
+%\hbox to \hsize{\hfill UCD/IIRPA~92-24}
+\begin{center}{{\tenbf TRUE'S NOTES ON QUANTUM MECHANICS}}
+		\vglue 1.0cm
+ 	       {\tenrm  WILLIAM \,\,TRUE\\}
+	        \baselineskip=13pt
+	       {\tenit Physics Department\\
+	            University of California, Davis\\}
+\baselineskip=12pt
+               {\tenit Davis, CA 95616, USA\\}
+\end{center}
+%
+%\newmathalphabet{\oldcal}
+%\addtoversion{times}{\oldcal}{cmsy}{m}{n}
+\newcommand{\unit}[1]{\mbox{\it #1}}
+\newcommand{\subs}[1]{\mbox{\scriptsize\it #1}}
+\def\Q2{$Q^2$}
+\def\Wftn{$\Psi(\vec{r},t)$}
+\def\IntPsiSq{|\Psi|^2 d\vec{r}}
+\def\sgp{$\sigma_{\gamma p}\:$}
+\mathchardef\Lcur="324C
+\def\crfive{\cr\noalign{\vskip 5pt}}
+\def\crten{\cr\noalign{\vskip 10pt}}
+\def\cofac{\hbox{cofactor}}
+\def\gij{g_{ij}}
+\def\gijinv{g^{ij}}
+\def\half{1\over2}
+\def\gab{g_{\alpha\beta}}
+\def\gabinv{g^{\alpha\beta}}
+\def\gmunu{g_{\mu\nu}}
+\def\gmunuinv{g^{\mu\nu}}
+\def\gmu{\gamma^\mu}
+\def\gmudag{\gamma^{\mu\dag}}
+\def\gnu{\gamma^\nu}
+\def\gmuc{\gamma_\mu}
+\def\gnuc{\gamma_\nu}
+\def\gzero{\gamma^0}
+\def\gone{\gamma^1}
+\def\gtwo{\gamma^2}
+\def\gthree{\gamma^3}
+\def\gfive{\gamma_5}
+\def\gfive{\gamma_5}
+\def\gzeroc{\gamma_0}
+\def\gonec{\gamma_1}
+\def\gtwoc{\gamma_2}
+\def\gthreec{\gamma_3}
+\def\qsq{{Q^2\over4E_1^2}}
+\def\qr2{{Q^2\over2}}
+\def\q2{{Q^2}}
+\def\hy{\hat{y}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\braket}[2]{\langle #1|#2\rangle}
+\newcommand{\expect}[1]{\langle #1\rangle}
+
+%\maketitle
+
+%some definitions
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\textwidth}{17cm}
+%\setlength{\topmargin}{-3cm}
+%\setlength{\textheight}{25cm}
+%\setlength{\unitlength}{1mm}
+%\hsize=6.0 true in
+%\vsize=8.40 true in
+%\pagestyle{plain}
+\parindent = 0.cm
+\vglue 0.3cm
+\rightskip=3pc
+\leftskip=3pc
+\twelverm
+\noindent
+
+\baselineskip 16pt
+
+\underline{Some Quantum Mechanics Texts}
+
+\begin{description}
+\item[] Schiff  --- Quantum Mechanics (3rd. Edition) ---Text
+\item[] Messiah --- Quantum Mechanics (Vol. I and II) 
+\item[] Davydov --- Quantum Mechanics 
+\item[] Baym    --- Lectures on Quantum Mechanics
+\item[] Dirac   --- Quantum Mechanics (4th Edition)
+\item[] Bohm    --- Quantum Theory
+\item[] Merzbacher --- Quantum Mechanics
+\item[] Trigg   --- Quantum Mechanics
+\item[] Gottfried --- Quantum Mechanics (Vol. I)
+\item[] Kursunoglu --- Modern Quantum Theory
+\item[] Landau and Lithschitz --- Quantum Mechanics 
+\item[] Bethe and Jackiw --- Intermediate Quantum Mechanics
+\item[] Jordan --- Linear Operators for Quantum Mechanics
+\item[] Jauch --- Foundations of Quantum Mechanics
+\item[] Pauling and Wilson --- Introduction to Quantum Mechanics
+\item[] Powell and Crasemann -- Quantum Mechanics
+\item[] Fano --- Mathematical Methods of Quantum Mechanics
+\end{description}
+
+There are also quite a few quantum mechanics books at the undergraduate
+level.
+
+\newpage
+
+\underline{Index to 215A Notes}
+
+\tableofcontents
+
+\begin{description}
+\item[I.] \underline{Introduction and Review}
+\subitem $\Psi(\vec r, t)$ and $\Phi(\vec p, t)$ \hfill 3-I
+\subitem $\Psi(\vec r, t) \rightleftharpoons \Phi(\vec p, t)$ via Fourier Transforms \hfill 5-I
+\subitem The Hamiltonian and the Wave Equation \hfill 6-I
+\subitem Probability Density and Probability Current \hfill 8-I
+\subitem Scalar Products \hfill 9-I
+\subitem Eigenvalue Equations \hfill 12-I
+\subitem Schmidt Orthogonality Process \hfill 13-I
+
+\item[II.] \underline{The Uncertainty Principle from Schwartz's Inequality}
+\subitem Special case when $\Delta x \Delta p_x =\hbar/2$ \hfill 3-II
+
+\item[III.] \underline{The Dirac Delta Function}
+\subitem Common Representations of the $\delta$-function \hfill 2-III
+\subitem 3-dimensional $\delta$-functions \hfill 4-III
+\subitem Relations involving the $\delta$-function \hfill 7-III
+\subitem Riemann-Stieltjes Integrals \hfill 9-III
+
+\item[IV.] \underline{Wave Packets}
+\subitem A Simple Wave Packet \hfill 2-IV
+\subitem The Relation $\Delta x \Delta k \approx 1$ \hfill 4-IV
+\subitem General Wave Packets \& Group Velocity
+\subitem Spreading of Wave Packets
+
+\item[V.] \underline{The Mathematical Framework of Quantum Mechanics}
+\subitem Definition of a Field \hfill 3-V
+\subitem Definition of a Linear Vector Space \hfill 4-V
+\subitem Definition of a Unitary Space \hfill 6-V
+\subitem Definition of a Hilbert Space \hfill 7-V
+\subitem Linear Operators \hfill 9-V
+\subitem Dirac's Bra and Ket notation \hfill 11-V
+\subitem The Dual Space \hfill 13-V
+\subitem Hermitian Operators \hfill 20-V
+\subitem The Hermitian Conjugate of Expressions \hfill 22-V
+\subitem Eigenvalues and Eigenspectra \hfill 23-V
+\subitem Projection Operators \hfill 25-V
+\subitem Closure Relations \hfill 27-V
+\subitem Finite Matrices \hfill 29-V
+\subitem Infinite Matrices \hfill 33-V
+\subitem Matrix Representations of Quantum Mechanics \hfill 35-V
+\subitem Unitary Transformations \hfill 40-V
+\subitem Matrix Transformations \hfill 41-V
+\subitem Change of Represenations \hfill 44-V
+
+\item[VI.] \underline{The Physical Framework of Quantum Mechanics}
+\subitem The Postulates of Quantum Mechanics \hfill 2-VI
+\subitem The Schroedinger Picture \hfill 10-VI
+
+\item[VII.] \underline{The One Dimensional Harmonic Oscillator}
+\subitem The Harmonic Oscillator in the Schroedinger Picture \hfill 1-VII
+\subitem Hermite Polynomials\hfill 5-VII
+\subitem The Harmonic Oscillator to Bosons via Creation and Destruction Operators \hfill 10-VII
+ 
+\item[VIII.] \underline{Bound States of Some Central Potentials}
+\subitem The Orbital Angular Momentum Operators \hfill 2-VIII
+\subitem The Spherical Harmonics, $Y_{LM}$\hfill 3-VIII
+\subitem Bound States of a Square Well \hfill 7-VIII
+\subitem Spherical Bessel Functions \hfill 7-VIII
+\subitem Bound States of the Hydrogen Atom \hfill 10-VIII
+\subitem The Isotropic Harmonic Oscillator \hfill 13-VIII
+
+\item[IX.]\underline{Angular Momentum Concepts}
+\subitem Raising and Lowering Operators, $L_+$ and $L_-$\hfill 2-IX
+\subitem The Pauli Spin Matrices \hfill 7-IX
+\subitem The Eigenkets of spin-$\half$ Particles \hfill 8-IX
+\subitem Rotation of Scalar Fields \hfill 9-IX
+\subitem The Rotation Operator, $e^{-iL_z \,d\theta}$\hfill 10-IX
+\subitem The Generalized Rotation Operator, $e^{-iJ_z \,d\theta}$ \hfill 13-IX
+\subitem Addition of Angular Momentum\hfill 17-IX
+\subitem Clebsch-Gordan Coefficients \hfill 24-IX
+\subitem The Singlet and Triplet States \hfill 27-IX
+\subitem Symmetric and Antisymmetric States \hfill 28-IX
+\subitem The Slater Determinant \hfill 31-IX
+\subitem The $jj$ and $LS$ coupling Schemes\hfill 36-IX
+
+\end{description}
+\setcounter{section}{-1}
+
+\input true_0.tex
+\input true_1.tex
+\input true_2.tex
+\input true_3.tex
+
+\section{Groups and Transformations}
+
+{\bf Definition} The elements $x$ and $x^{-1}gx$, where $x$ and $g$ are
+elements of a group $G$, are called conjugate elements in $G$: in other 
+words, $x$ and $y$ are conjugate if and only if there exists an element 
+$g\in G$ such that $y = g^{-1}xg$.
+
+Theorem 6.4.1 The relation of conjugacy between elements of any group
+$G$ is an equivalence relation. 
+\begin{description}
+\item[\it Reflexive.] Since $x = e^{-1}xe$, x is conjugate to itself.
+\item[\it Symmetric.] If $y=g^{-1}xg$ we have $x=gyg^{-1} =
+(g^{-1})^{-1}y g^{-1}$.
+\item[\it Transitive.] If $y=g^{-1}xg$ and $z=h^{-1}yh$ we have
+$z=h^{-1}g^{-1}xgh=(gh)^{-1}x(gh).$
+\end{description}
+
+It follows that the relation divides the elements of G into mutually
+exclusive equivalence classes; these are called the {\it conjugacy classes}
+in G. 
+
+the following form
+  \begin{eqnarray*}
+   P_1 & = & (E_1,0,0,-E_1),      \\
+   P_2 & = & (E_2,E_2\sin\theta\cos\phi,E_2\sin\theta\sin\phi,
+               -E_2\cos\theta),   \\
+   P_3 & = & (E_3,0,0,\beta E_3),      \\
+   q   & = & (E_1 - E_2,-E_2\sin\theta\cos\phi,-E_2\sin\theta\sin\phi,
+                    E_2\cos\theta - E_1).
+  \end{eqnarray*}
+%\begin{figure*}[hb]
+%\epsfysize=6cm %%%% whatever vertical size you want in cm or inches
+%\centerline{\epsfbox{user$1:[smith.tex.eps]feyn.eps}}
+%\caption[fig1]{Definition of Kinematic Variables.}
+%\label{fig:feyn}
+%\end{figure*}
+  \begin{eqnarray*}
+    y\     & \approx & 1 - {E_2\over E_1} {(1+\cos\theta)\over2}, \\
+    \qsq \ & \approx & {E_2\over E_1}{(1-\cos\theta)\over2}, \\
+    x      & \approx & {Q^2\over sy}.
+  \end{eqnarray*}
+\[ \begin{array}{lll} 
+  {\cal M}^{++}=({\cal M}^{22} + {\cal M}^{11})/2, 
+& {\cal M}^{+0}=({\cal M}^{23} -i{\cal M}^{13})/\sqrt{2},
+& {\cal M}^{+-}=({\cal M}^{22} - {\cal M}^{11})/2, \\ [8pt]
+  {\cal M}^{0+}=({\cal M}^{32} +i{\cal M}^{31})/\sqrt{2}, 
+& {\cal M}^{00}= {\cal M}^{33}, 
+& {\cal M}^{0-}=({\cal M}^{32} -i{\cal M}^{31})/\sqrt{2}, \\ [8pt]
+  {\cal M}^{-+}=({\cal M}^{22} - {\cal M}^{11})/2, 
+& {\cal M}^{-0}=({\cal M}^{23} +i{\cal M}^{13})/\sqrt{2}, 
+& {\cal M}^{--}=({\cal M}^{22} + {\cal M}^{11})/2. \\ [8pt]
+\end{array} \] In the case where all the cross terms with $\epsilon^1$
+vanish we have the particular case that is satisfied by our system of 
+basis vectors
+\[ \begin{array}{lll} 
+  {\cal M}^{++}=({\cal M}^{22} + {\cal M}^{11})/2, 
+& {\cal M}^{+0}= {\cal M}^{23}/\sqrt{2},
+& {\cal M}^{+-}=({\cal M}^{22} - {\cal M}^{11})/2, \\ [8pt]
+  {\cal M}^{0+}= {\cal M}^{32}/\sqrt{2}, 
+& {\cal M}^{00}= {\cal M}^{33}, 
+& {\cal M}^{0-}= {\cal M}^{32}/\sqrt{2}, \\ [8pt]
+  {\cal M}^{-+}=({\cal M}^{22} - {\cal M}^{11})/2, 
+& {\cal M}^{-0}= {\cal M}^{23}/\sqrt{2}, 
+& {\cal M}^{--}=({\cal M}^{22} + {\cal M}^{11})/2. 
+\end{array} \]
+
+\input appendix1.tex
+\input appendix2.tex
+
+%\begin{thebibliography}{99}
+%\bibitem{BCDMS} J.J.Aubert et al., EMC Collaboration,
+% Nucl.Phys. B259(1985)189;\\
+% A.C.Benvenuti et al., BCDMS Collaboration, Phys.Lett.B223(1989)485
+%\bibitem{kaiserf}     F. Eisele, {\em First Results from the H1
+%Experiment at HERA}, and
+%                      F. Brasse, {\em The H1 Detector at HERA},
+%                      Invited talks, Proceedings of the
+%            26th International Conference on High Energy Physics,
+%                   Dallas (1992) and DESY preprint 92-140 (1992)
+%\bibitem{H1-249} I.\, Abt, J.R.\,Smith, {\em MC Upgrades to Study
+%Untagged Events}, H1 Internal Note H1-249, (1992).
+%H1-249 considered only the diagonal elements of the Photon Flux
+%for photons coupled to Spin-1/2 particles.
+%\end{thebibliography}
+ %
+ \end{document}
