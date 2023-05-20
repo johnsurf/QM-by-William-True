@@ -1,11 +1,11 @@
-\contentsline {section}{\numberline {0}215A - Introduction and Review}{4}{}%
+\contentsline {section}{\numberline {0}215A - Introduction and Review}{5}{}%
 \contentsline {section}{\numberline {1}Mathematical Framework of Quantum Mechanics}{9}{}%
-\contentsline {section}{\numberline {2}Uncertainty Principle from Schwarz's Inequality}{16}{}%
-\contentsline {section}{\numberline {3}The Dirac Delta Function}{19}{}%
-\contentsline {section}{\numberline {4}Groups and Transformations}{23}{}%
-\contentsline {section}{\numberline {5}Appendix The Random Walk}{24}{}%
-\contentsline {subsection}{\numberline {5.1}1-dimensional Random Walk}{24}{}%
-\contentsline {subsection}{\numberline {5.2}$N$-dimensional Random Walk}{25}{}%
-\contentsline {section}{\numberline {6}Entropy Change in Isothermal Expansion of an Ideal Gas}{25}{}%
-\contentsline {subsection}{\numberline {6.1}First Law of Thermodynamics}{25}{}%
-\contentsline {subsection}{\numberline {6.2}Isothermal Expansion of an Ideal Gas}{26}{}%
+\contentsline {section}{\numberline {2}Uncertainty Principle from Schwarz's Inequality}{17}{}%
+\contentsline {section}{\numberline {3}The Dirac Delta Function}{20}{}%
+\contentsline {section}{\numberline {4}Groups and Transformations}{24}{}%
+\contentsline {section}{\numberline {5}Appendix The Random Walk}{25}{}%
+\contentsline {subsection}{\numberline {5.1}1-dimensional Random Walk}{25}{}%
+\contentsline {subsection}{\numberline {5.2}$N$-dimensional Random Walk}{26}{}%
+\contentsline {section}{\numberline {6}Entropy Change in Isothermal Expansion of an Ideal Gas}{26}{}%
+\contentsline {subsection}{\numberline {6.1}First Law of Thermodynamics}{26}{}%
+\contentsline {subsection}{\numberline {6.2}Isothermal Expansion of an Ideal Gas}{27}{}%
