@@ -155,3 +155,48 @@ $\displaystyle \int_a^b\, \alpha\, df$.\\
 Note as we go along that everything we say also applies to the Riemann integral. However, these relationships are more powerful as we shall see shortly. In fact, 
 $f$ and $\alpha$ need not be continuous and/or differentiable for the above to hold.
 
+\begin{theorem}
+The Riemann Integral.\\
+If $f\in R(\alpha)$ on $[a,b]$ and $\alpha(x)$ has a continuous derivative on $[a,b]$, then $d\alpha(x)$ can be replaced by $\alpha'(x)\, dx$. Also, the Riemann integral,
+$\displaystyle \int_a^b\, f(x)\alpha'(x)\, dx$, exists.
+We could define $\displaystyle g(x) \equiv f(x)\alpha'(x)$ and then 
+$$\int_a^b\, f(x)\, d\alpha(x) = \int_a^b\, f(x)\alpha'(x)\, dx = \int_a^b\, g(x)\, dx$$ and the last expression looks more like the integrals we are accustomed to using. 
+\end{theorem}
+
+Back to our Riemann-Stieltjes integral. We note that if $\alpha(x)$ is a constant throughout $[a,b]$, then all $\alpha_k = 0$ and $\displaystyle \int_a^b \, f\, d\alpha$ exists and is zero.\\
+However, out next theorem will state that if $\alpha(x)$ is constant everywhere except for a jump discontinuity at one point, then $\displaystyle \int_a^b\, f\, d\alpha$ need not exist, but if it does, 
+it need not be zero.
+
+\begin{theorem}
+Given $a < c < b$ and $\alpha$ defined on $[a,b]$ by 
+$\left\{ \begin{matrix}
+\alpha(x) = \alpha(a) \mbox{ for } a\le x < c \\
+\alpha(x) = \alpha(a) \mbox{ for } c < x \le b
+\end{matrix}\right\}$
+Let $f(x)$ and $\alpha(x)$ be defined on $[a,b]$ such that at least one of them is continuous from the left at $c$ and at least one of them is continuous from the right at $c$. Then 
+$f\in R(\alpha)$ on $[a,b]$ and we have
+$$\int_a^b \, f\, d\alpha = f(c)\left[ \alpha(c^+) - \alpha(c^-)\right].$$
+\end{theorem}
+This theorem tells us that we can do integrals for functions $f$ and $\alpha$ like those shown at the right. This is something we couldn't do with Riemann integrals. \\
+We can have several ``combinations''.
+\begin{description}
+\item[] 1. $f(x)$ can be both continuous both from the right and from the left and $\alpha(x)$ discontinuous both from the right and the left.
+\item[] 2. $f(x)$ is continuous from the left and discontinuous from the right. Then $\alpha(x)$ must be continuous from the right and discontinuous from the left.
+\item[] 3. $f(x)$ is continuous from the right and discontinuous from the left. Then $\alpha(x)$ must be continuous from the left and discontinuous from the right.
+\item[] 4. If $\alpha(x)$ is continuous from both the right and the left, then $\alpha(c^+) - \alpha(c^-) = 0$ and the integral is zero irrespective of the $f(x)$ does.
+\item[] 5. One can show that if both $f$ and $\alpha$ are discontinuous from the right or from the left, then the integral does not exist.
+\end{description}
+Now let use use these results to ``formulate'' the Dirac $\delta$-function using Riemann-Stieltjes integrals. Let $\alpha(x)$ be the step function $\Theta(x-c)$ where
+$\left\{ \begin{matrix}
+\Theta(x) = 0 \mbox{ for }  0 < x\\
+\Theta(x) = `\mbox{ for }    x > 0
+\end{matrix}\right\}$
+Then for a continuous $f(x)$, we have 
+$$\int_a^b\, f(x)\, d\alpha(x) = \int_a^b\, f(x) \, d\Theta(x-c) = f(c).$$
+In this case, $d\alpha(x) = d\Theta(x-c)$ behaves just like $\delta(x-c)\, dx$.\\
+So if we would use Riemann-Stieltjes integrals with $\alpha(x)$ being the step function, we would never have
+to introduce the Dirac $\delta$-function. However, physicists don't do this. They use the Dirac $\delta$-function and Riemann integrals and usually don't run into troubles as 
+long as the functions $f(x)$ are ``well behaved'' and ``so forth''.//
+But if one should get into difficulties, he would have to ``back track'' and do a more rigorous treatment. \\
+Mathematicians don't stop here. They go further and talk about Lebesgue integrals where they can use functions which are not only discontinuous but which 
+may only be defined in certain regions and at certain points. Then one must become involved with Lesbesgue measure theory.
