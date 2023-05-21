@@ -6,9 +6,12 @@
 %\documentstyle[epsf]{article}
 %\documentstyle{article}
 %\usepackage{amsmath}
+
 \documentclass[epsf]{article}
+\usepackage{graphicx}
 
 \font\twelverm=cmr12
+\font\twelvebf=cmbx12
 \font\tenbf=cmbx10
 \font\tenrm=cmr10
 \font\tenit=cmti10
@@ -23,21 +26,50 @@
 \font\eightit=cmti8
 \font\sevenrm=cmr7
 
-\usepackage{amsmath,amssymb,latexsym} 
-%\usepackage{amsmath,amssymb,latexsym,hyperref} 
-%\usepackage{easybmat}
-%\usepackage{multirow,bigdelim}
+%\usepackage{amsmath,amssymb,latexsym} 
+%\usepackage{amsthm}
+\usepackage{amsmath,amssymb,latexsym,hyperref} 
+\usepackage{easybmat}
+\usepackage{multirow,bigdelim}
+
+\hypersetup{
+    bookmarks=true,          % show bookmarks bar?
+    unicode=false,             % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,           % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,      % window fit to page when opened
+    pdfstartview={FitH},     % fits the width of the page to the window
+    pdftitle={My title},         % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1, key2, key3}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,               % false: boxed links; true: colored links
+    linkcolor=black,                  % color of internal links (change box color with linkbordercolor)
+    citecolor=green,             % color of links to bibliography
+    filecolor=magenta,         % color of file links
+    urlcolor=cyan                % color of external links
+}
 
 %
 %  `pstimes.sty' sets \rm to be Times, and `psmath.sty' sets the math
 %  in Times as well.
 %
-\textwidth = 6.5truein
+%\textwidth = 7.0truein
+%\textheight = 8.5truein
+%\oddsidemargin=0.2truein
+%\evensidemargin=0.2truein
+%\topmargin=0.50truein
+
+\textwidth = 7.0truein
 \textheight = 8.5truein
-\oddsidemargin=0.2truein
-\evensidemargin=0.2truein
-\topmargin=0.50truein
+\oddsidemargin=-0.2truein
+\evensidemargin=-0.2truein
+\topmargin=0.0truein
 %\notename{UCD/IIRPA} \notenumber{92-24}
+
 \begin{document}
 \null
 %\hbox to \hsize{\hfill UCD/IIRPA~92-24}
@@ -91,10 +123,49 @@
 \def\hy{\hat{y}}
 \def\be{\begin{equation}}
 \def\ee{\end{equation}}
+
+\def\bearray{\begin{eqnarray*}}
+\def\eearray{\end{eqnarray*}}
+\def\Var{\hbox{Var}}
+
+\def\mslim{\qopname\relax m{l.i.m}}
+
 \newcommand{\bra}[1]{\langle #1|}
 \newcommand{\ket}[1]{|#1\rangle}
 \newcommand{\braket}[2]{\langle #1|#2\rangle}
 \newcommand{\expect}[1]{\langle #1\rangle}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\goes}{\rightarrow}
+\newcommand{\define}{\overset{\Delta}{=} }
+\newcommand{\ninfty}{n\rightarrow\infty}
+\newcommand{\Rwp}{$\overset{\hbox{R}_{wp1}}{\sim}$}
+\newcommand{\Rms}{$\overset{\hbox{R}_{ms}}{\sim}$}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.65em width0.4em depth0.20em\fi}
+      %\vrule height0.75em width0.5em depth0.25em\fi}
+      
+\newcommand\xqed[1]{%
+  \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+  \quad\hbox{#1}}
+\newcommand\demo{\xqed{$\triangle$}}      
+ 
 
 %\maketitle
 
@@ -108,10 +179,11 @@
 %\vsize=8.40 true in
 %\pagestyle{plain}
 \parindent = 0.cm
-\vglue 0.3cm
-\rightskip=3pc
-\leftskip=3pc
+%\vglue 0.3cm
+%\rightskip=3pc
+%\leftskip=3pc
 \twelverm
+\baselineskip=14pt
 \noindent
 
 \baselineskip 16pt
@@ -225,6 +297,7 @@ level.
 \subitem The $jj$ and $LS$ coupling Schemes\hfill 36-IX
 
 \end{description}
+
 \setcounter{section}{-1}
 
 \input true_0.tex
@@ -232,75 +305,10 @@ level.
 \input true_2.tex
 \input true_3.tex
 
-\section{Groups and Transformations}
-
-{\bf Definition} The elements $x$ and $x^{-1}gx$, where $x$ and $g$ are
-elements of a group $G$, are called conjugate elements in $G$: in other 
-words, $x$ and $y$ are conjugate if and only if there exists an element 
-$g\in G$ such that $y = g^{-1}xg$.
-
-Theorem 6.4.1 The relation of conjugacy between elements of any group
-$G$ is an equivalence relation. 
-\begin{description}
-\item[\it Reflexive.] Since $x = e^{-1}xe$, x is conjugate to itself.
-\item[\it Symmetric.] If $y=g^{-1}xg$ we have $x=gyg^{-1} =
-(g^{-1})^{-1}y g^{-1}$.
-\item[\it Transitive.] If $y=g^{-1}xg$ and $z=h^{-1}yh$ we have
-$z=h^{-1}g^{-1}xgh=(gh)^{-1}x(gh).$
-\end{description}
-
-It follows that the relation divides the elements of G into mutually
-exclusive equivalence classes; these are called the {\it conjugacy classes}
-in G. 
-
-the following form
-  \begin{eqnarray*}
-   P_1 & = & (E_1,0,0,-E_1),      \\
-   P_2 & = & (E_2,E_2\sin\theta\cos\phi,E_2\sin\theta\sin\phi,
-               -E_2\cos\theta),   \\
-   P_3 & = & (E_3,0,0,\beta E_3),      \\
-   q   & = & (E_1 - E_2,-E_2\sin\theta\cos\phi,-E_2\sin\theta\sin\phi,
-                    E_2\cos\theta - E_1).
-  \end{eqnarray*}
-%\begin{figure*}[hb]
-%\epsfysize=6cm %%%% whatever vertical size you want in cm or inches
-%\centerline{\epsfbox{user$1:[smith.tex.eps]feyn.eps}}
-%\caption[fig1]{Definition of Kinematic Variables.}
-%\label{fig:feyn}
-%\end{figure*}
-  \begin{eqnarray*}
-    y\     & \approx & 1 - {E_2\over E_1} {(1+\cos\theta)\over2}, \\
-    \qsq \ & \approx & {E_2\over E_1}{(1-\cos\theta)\over2}, \\
-    x      & \approx & {Q^2\over sy}.
-  \end{eqnarray*}
-\[ \begin{array}{lll} 
-  {\cal M}^{++}=({\cal M}^{22} + {\cal M}^{11})/2, 
-& {\cal M}^{+0}=({\cal M}^{23} -i{\cal M}^{13})/\sqrt{2},
-& {\cal M}^{+-}=({\cal M}^{22} - {\cal M}^{11})/2, \\ [8pt]
-  {\cal M}^{0+}=({\cal M}^{32} +i{\cal M}^{31})/\sqrt{2}, 
-& {\cal M}^{00}= {\cal M}^{33}, 
-& {\cal M}^{0-}=({\cal M}^{32} -i{\cal M}^{31})/\sqrt{2}, \\ [8pt]
-  {\cal M}^{-+}=({\cal M}^{22} - {\cal M}^{11})/2, 
-& {\cal M}^{-0}=({\cal M}^{23} +i{\cal M}^{13})/\sqrt{2}, 
-& {\cal M}^{--}=({\cal M}^{22} + {\cal M}^{11})/2. \\ [8pt]
-\end{array} \] In the case where all the cross terms with $\epsilon^1$
-vanish we have the particular case that is satisfied by our system of 
-basis vectors
-\[ \begin{array}{lll} 
-  {\cal M}^{++}=({\cal M}^{22} + {\cal M}^{11})/2, 
-& {\cal M}^{+0}= {\cal M}^{23}/\sqrt{2},
-& {\cal M}^{+-}=({\cal M}^{22} - {\cal M}^{11})/2, \\ [8pt]
-  {\cal M}^{0+}= {\cal M}^{32}/\sqrt{2}, 
-& {\cal M}^{00}= {\cal M}^{33}, 
-& {\cal M}^{0-}= {\cal M}^{32}/\sqrt{2}, \\ [8pt]
-  {\cal M}^{-+}=({\cal M}^{22} - {\cal M}^{11})/2, 
-& {\cal M}^{-0}= {\cal M}^{23}/\sqrt{2}, 
-& {\cal M}^{--}=({\cal M}^{22} + {\cal M}^{11})/2. 
-\end{array} \]
-
-\input appendix1.tex
-\input appendix2.tex
-
+%\input{Groups.tex}
+%\input{Polarization.tex}
+%\input appendix1.tex
+%\input appendix2.tex
 %\begin{thebibliography}{99}
 %\bibitem{BCDMS} J.J.Aubert et al., EMC Collaboration,
 % Nucl.Phys. B259(1985)189;\\

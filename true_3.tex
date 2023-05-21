@@ -6,7 +6,7 @@ because if $f_1 = \int\, G g_1\,dx$ and $f_2 = \int\, G g_2\,dx$, then $f_1 + f_
 $$\psi(x) = {1\over \sqrt{2\pi}}\int\, e^{ikx}i, \phi(k)\, dk.$$ Here $\psi(x)$ is a linear functional of $\phi(k)$ with a kernel of $\displaystyle {1\over\sqrt{2\pi}}e^{-ikx}$. \\
 On the other hand, we could have considered $\displaystyle y(i) = \sum_j\, a(i,j) x(j)$ as a linear transformation. Similarly, 
 $$f(x) = \int\, G(x,x') g(x')\,dx$$ could be considered as a linear transformation where $g(x)$ are vectors with a set of continuous indices and $G(x,x')$ being the matrix for the transformation.\\
-In the discrete indices case, the ``identinty'' transformation is given by $a(i,j) = \delta_{ij}$. But in the continuous indices case, there is no function of $x$ and $x'$ which does a similar thing. However, 
+In the discrete indices case, the ``identity'' transformation is given by $a(i,j) = \delta_{ij}$. But in the continuous indices case, there is no function of $x$ and $x'$ which does a similar thing. However, 
 this doesn't bother physicists who define a function called the ``Dirac delta function'', $\delta(x-x')$, which replaces $G(x,x')$ such that $$f(x) = \int \, \delta(x-x') f(x')\, dx'.$$ Some of the more common forms 
 of representation for the Dirac delta function are:
 \begin{eqnarray*}
@@ -79,6 +79,7 @@ I = \int_A^B\, f(x)\delta(x)\, dx &=& f(0) \mbox{ if } A<0 \mbox{ and } B>0\\
 \end{eqnarray*}
 End example.\\
 
+\subsection{Relations involving the $\delta$-Function}
 Some of the more ``useful'' relationships involving the $\delta$ function are: \hbox{(see Schiff pp 57)}
 \begin{eqnarray*}
 &1.~& \int\, \delta(x)\, dx  = 1\\
@@ -99,3 +100,58 @@ Some of the more ``useful'' relationships involving the $\delta$ function are: \
 \end{eqnarray*}
 Now let us digress briefly and look at Riemann-Stieltjes Integrals.
 We shall see that the Dirac $\delta$ function can be formulated in a ``rigorous'' manner in this case. 
+
+\subsection{Digression on Riemann-Steltjes Integrals}
+(cf. Chapter 9 of Mathematical Analysis by Apostol.)\\
+\underline{Riemann Integrals}\\
+Many physicists and scientist never see nor never use any integral besides the Riemann integral.\\
+For a simplified picture of this integral, let us divide the interval $[a,b]$ up into $n$ parts, let $t_k$ be a point between $x_{k-1}$ and $x_k$, and let $\Delta x_k = x_k - x_{k-1}$. Then we normally think of 
+the Riemann integral as 
+$$\int_a^b\, f(x)\, dx = \lim_{n\rightarrow\infty} \sum_{k=1}^n\, f(t_k) \Delta x_k$$ where we have assumed that the limit exists.\\
+Graphically, this integral represents the area under the curve $f(x)$. Note that $f(x)$ must be continuous but that it does not need to have a continuous first derivative for 
+the integral to exist. \\
+Let us now look at the Riemann-Stieltjes integral which will reduce to the Riemann integral in special cases. 
+\subsection{Riemann-Steltjes Integrals}
+First we make a few definitions and state some theorems without proof. I refer you to Apostol for details.\\
+We will be considering two functions, $f(x)$ and $g(x)$ where both may or may not be continuous or even differentiable functions. 
+
+\begin{definition} 
+$P$ is called a partition of the interval $[a,b]$ and consists of the finite set of points \\  $a=x_0<x_1<x_2<\hdots<x_{n-1}<x_n = b$.
+\end{definition}
+
+\begin{definition}
+The partition $P'$ of $[a,b]$ is ``finer'' than $P$ or a ``refinement'' of $P$ if $P$ is contained in $P'$. i.e., $P\subset P'$.
+\end{definition}
+
+\begin{definition}
+Let $P= \{ x_o, x_1, x_2, \hdots x_n\}$ be a partition of $[a,b]$, $\Delta \alpha_k \equiv \alpha(x_k) - \alpha(x_{k-1})$, and $t_k$ be a point in $[x_{k-1}, x_k]$. The sum
+$$S(P,f,\alpha) = \sum_{k=1}^n\, f(t_k) \Delta \alpha_k$$ is called a ``Riemann-Stieltjes Sum'' of $f$ with respect to $\alpha$ on $[a,b]$.
+\end{definition}
+Now we say that $f$ is Riemann integrable with respect to $\alpha$ on $[a,b]$, which we denote by `` $f\in R(\alpha)$ on $[a,b]$'', if there exists a number $A$ such that:\\
+For every $\epsilon>0$, there exists a partition $P_\epsilon$ of $[a,b]$ such that for every partition $P$ finer than $P_\epsilon$ and for every $t_k$ in $[x_{k-1}, x_k]$ we have
+$$\left| S(P,f,\alpha) - A\right| < \epsilon.$$
+When this is the case, we denote $A$ by the integral $ \displaystyle \int_a^b\, f(x)\, d\alpha(x)$ or simply bu $\displaystyle \int_a^b \, f\, d\alpha$.\\
+One can now show:\\
+If $f\in R(\alpha)$ and $g\in R(\alpha)$, then for arbitrary constants $c_1$ and $c_2$, we have 
+$$\int_a^b\, (c_1 f + c_2 g)\, d\alpha = c_1\int_a^b\, f\, d\alpha + c_2 \int_a^b\, g\, d\alpha.$$
+Similarly, if $f\in R(\alpha)$ and $f\in R(\beta)$, then 
+$$\int_a^b\, f\, d(c_1 f + c_2 g)  = c_1\int_a^b\, f\, d\alpha + c_2 \int_a^b\, f\, d\beta.$$ 
+So the integral is ``linear'' in both $f$ and $\alpha$.\\
+If $c \in [a,b]$ and $f\in R(\alpha)$, then 
+$$\int_a^b\, f\, d\alpha = \int_a^c\, f\, d\alpha + \int_c^b\, f\, d\alpha.$$
+
+\begin{definition}
+If $a<b$, we define $\displaystyle \int_b^a \, f\, d\alpha = - \int_a^b\, f\, d\alpha$ whenever $\displaystyle \int_a^b\, f\, d\alpha$ exists. Also we define
+$\displaystyle \int_a^b\, f\, d\alpha = 0$. 
+\end{definition}
+
+\begin{theorem}
+If $f\in R(alpha)$ on $[a,b]$, then $\alpha \in R(f)$ on $[a,b]$ and 
+$$\int_a^b \ f(x) \, d\alpha(x) + \int_a^b\, \alpha(x) \, df(x) = f(b)\alpha(b) - f(a)\alpha(a).$$
+\end{theorem}
+
+This ``formula'' or ``relationship'' is known as ``the formula for integration by parts'' and tells us that if $\displaystyle \int_a^b\, f\, d\alpha$ exists, then so does
+$\displaystyle \int_a^b\, \alpha\, df$.\\
+Note as we go along that everything we say also applies to the Riemann integral. However, these relationships are more powerful as we shall see shortly. In fact, 
+$f$ and $\alpha$ need not be continuous and/or differentiable for the above to hold.
+
