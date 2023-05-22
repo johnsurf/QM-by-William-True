@@ -7,7 +7,10 @@ $$\psi(x) = {1\over \sqrt{2\pi}}\int\, e^{ikx}i, \phi(k)\, dk.$$ Here $\psi(x)$ 
 On the other hand, we could have considered $\displaystyle y(i) = \sum_j\, a(i,j) x(j)$ as a linear transformation. Similarly, 
 $$f(x) = \int\, G(x,x') g(x')\,dx$$ could be considered as a linear transformation where $g(x)$ are vectors with a set of continuous indices and $G(x,x')$ being the matrix for the transformation.\\
 In the discrete indices case, the ``identity'' transformation is given by $a(i,j) = \delta_{ij}$. But in the continuous indices case, there is no function of $x$ and $x'$ which does a similar thing. However, 
-this doesn't bother physicists who define a function called the ``Dirac delta function'', $\delta(x-x')$, which replaces $G(x,x')$ such that $$f(x) = \int \, \delta(x-x') f(x')\, dx'.$$ Some of the more common forms 
+this doesn't bother physicists who define a function called the ``Dirac delta function'', $\delta(x-x')$, which replaces $G(x,x')$ such that $$f(x) = \int \, \delta(x-x') f(x')\, dx'.$$ 
+
+\subsection{Common Representations of the $\delta$-function}
+Some of the more common forms 
 of representation for the Dirac delta function are:
 \begin{eqnarray*}
 1.\ \delta(x) &=& \lim_{\epsilon\rightarrow 0} {\epsilon\over \pi (\epsilon^2 + x^2)}\\
@@ -36,6 +39,8 @@ $$\int_{-\infty}^{+\infty}\, f(x') \delta(x-x')\, dx' = f(x).$$
 Furthermore, we should observer that the $\delta$ function will only have meaning when it appears under the integral sign.\\
 Later on in this section, we will make a brief digression into Riemann-Stieltjes integrals where we shall see that integrals like the above can be handled with 
 more mathematical rigor. \\
+
+\subsection{3-dimensional $\delta$-functions}
 Extension into 3 dimensions is ``straight forward''. 
 $$\delta(\vec{r} - \vec{r'}) = \delta(x-x')\delta(y-y')\delta(z-z')$$ so that 
 $$\int\, f(\vec{r'}) \delta(\vec{r} - \vec{r'}) d\vec{r'} = \int\, f(x',y',z') \delta(x-x')\delta(y-y')\delta(z-z')\, dx'dy'dz' = f(x,y,z) = f(\vec{r}).$$

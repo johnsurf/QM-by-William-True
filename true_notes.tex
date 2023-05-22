@@ -130,6 +130,9 @@
 
 \def\mslim{\qopname\relax m{l.i.m}}
 
+\newcommand{\defeq}{\mathrel{\mathop:}=}
+\newcommand{\eqdef}{\mathrel{\mathop=}:}
+
 \newcommand{\bra}[1]{\langle #1|}
 \newcommand{\ket}[1]{|#1\rangle}
 \newcommand{\braket}[2]{\langle #1|#2\rangle}
@@ -180,11 +183,11 @@
 %\pagestyle{plain}
 
 \baselineskip=14pt
-%\parindent = 0.cm
+\parindent = 0.cm
 %\parindent = 15pt
-\setlength{\parindent}{24pt}
+%\setlength{\parindent}{24pt}
 \setlength{\parskip}{\baselineskip}
-%\noindent
+\noindent
 
 %\vglue 0.3cm
 %\rightskip=3pc
@@ -303,12 +306,13 @@ level.
 
 \end{description}
 
-\setcounter{section}{-1}
+%\setcounter{section}{-1}
 
-\input true_0.tex
 \input true_1.tex
 \input true_2.tex
 \input true_3.tex
+\input true_4.tex
+\input true_5.tex
 
 %\input{Groups.tex}
 %\input{Polarization.tex}

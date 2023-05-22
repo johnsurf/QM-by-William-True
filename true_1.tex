@@ -1,222 +1,125 @@
-\section{Mathematical Framework of Quantum Mechanics}
+\section{215A - Introduction and Review}
 
-Much of what I discuss here will be found in Chapter VII of Messiah. He prbably does the most
-complete and detailed treatment of the pertinent mathematics which relates to quantum 
-mechanics. He is, in fact, more detailed that I will be here and I urge you to read this
-Chapter.
+I will assume that you all have had at least one quarter or one semester of undergraduate quantum mechanics.
+This means that you have been introduced to the wave function $\Psi(\vec r,t)$ and the Schroedinger wave equations, 
+$H\Psi = i\hbar {\partial \Psi\over \partial t}$,which tells us how $\Psi$ develops in time. You should have solved the wave
+equation for the one-dimensional harmonic oscillator, the hydrogen atom, and particles incidents on square potential steps.
+You probably have also seen or been exposed to many other things.\\
 
-Most beginning graduate students, and most likely you are no exceptions, have worked with
-quantum mechanics in the ``coordinate represenation'' or the "Schr\"ofinger Picture'' as it is commonly called. But one could also work in the ``momentum representation'' where $\vec{p}$ is replaced by the operator $\vec p$ and $\vec x$ replaced by the operator 
-$-{\hbar\over i}\nabla_{\vec p}$. In fact, if you write down the differential equation to be 
-solved in the momentum representation for the harmonic oscillator, you will find that you have the same differential operator to solve as you did in the ``coordinate represenation.'' Of course, constant coefficients may be changed in the differential equation in the two representations. Then one can ask the question: -- Are there other representations which one could work in? The answer to this is ``Yes''! In fact, there are in infinite number of them. 
-In fact, one can solve the wave equation without ever going into a representation.--A little later, I will show this explicitly where I will solve the harmonic oscillator without going into \underline{any} representation. Often times in more complicated systems, it ``complicates things'' to be in a specific representation.
+During this course, we will cover some of the material which you have seen before. But it will be more in the way of a review.\\
 
-Now we will want to formulate Quantum Mechanics in a more abstract way so that it is independent of the representation. 
-We will then show that if we go into the coordintate representation, it will reduce to out ``familiar'' 
-Schr\"odinger picture.  Let us now define a field.\\
+The first part of the course will deal more with various mathematical aspects which relate to quantum mechanics. We will use these things to 
+formulate quantum mechanics in a more general, more powerful, and more useful way than the Schr\"odinger picture allows.\\
 
-\underline{Definition of a Field}
+There are relatively few systems which can be solved exactly. There are even fewer systems in the ``real'' world which can 
+be solved exactly. So we must resort to approximations in order to describe the physical systems. Much of this course will 
+be devoted to the study of various approsimations and to when and where they can be used. \\
 
-A set of scalars $\{\alpha,\beta,\gamma,...\}$ form a field, F, if the scalars have the following properties:\\
+Later on we will look at some relativistic quantum mechanics and the second quantization picture.\\ 
 
-A. To every pair, $\alpha$ and $\beta$, there corresponds a scalar in the field, $\alpha + \beta$, called the sum of $\alpha$ and $\beta$ in such a way that:
+I will not follow any textbook in detail, but much of what I say can be found in Schiff, Messiah, and Boym -- and in many other books as well.\\
 
-1. $\alpha + \beta = \beta + \alpha$ \quad\quad 		--- Communicative\\
-2. $\alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma $ 	--- Associative\\
-3. $\alpha + 0 = \alpha $					--- Null Scalar Exists\\
-4. $\alpha + (-\alpha) = 0$					--- Inverse Exists\\
+I hope the homework will ``fill in'' some of the gaps in my lectures and give you a better understanding of the methods and techniques used
+in quantum mechanics.
+ 
+\subsection{$\Psi(\vec{r},t)$  and $\Phi(\vec{p},t)$ }
+ \centerline{A Quick Review of Some Points}
+  
+ Usually in a beginning course, one works in the coordinate represenation. We shall see shortly that quantum mechanics can be formulated more
+ generally in a more useful and powerful way by using an abstract vector space known as Hilbert Space. Then our system will be described by a 
+ vector in Hilbert Space. As our system evolves in time, this vector will mover around in ``our'' Hilbert Space. \\
+ 
+ In the coordinate represenation, the state of a ``single'' particle system is described by a wave function, $\Psi(\vec{r},t)$, with $|\Psi|^2 d\vec{r}$ being
+ the probability that at time $t$, the particle will be found in the volume $d\vec{r} = dx\,dy\,dz$ at $\vec{r}$. $\Psi(\vec{r},t)$ is a complex function
+ and must be if $\Psi(\vec{r},0)$ along with the wave equation is to determine $\Psi(\vec{r},t)$ at some later time -- including the boundary conditions, 
+ of course, (cf. Merzbacher pp. 14-18).\\
 
-and B. To every pair, $\alpha$ and $\beta$, there corresponds a scalar, $\alpha\beta$, in such a way that 
+We will generally only consider non-relativistic cases for the first part of the course fo that we do not have to concern ourselves about creation
+and annihilation of particles and other relativistic effects.\\
 
-1. $\alpha\beta = \beta\alpha$					--- Communicative\\
-2. $\alpha(\beta\gamma) = (\alpha\beta)\gamma$			--- Associative\\
-3. $\alpha I = \alpha$ 						--- A unique unit scalar exists\\
-4. $\alpha \alpha^{-1} = I \rm ~ for \alpha \ne 0$		--- An inverse exists\\
+A restriction on \Wftn\ is that is must be ``square integrable'', i.e., $\IntPsiSq$ is a finite real number (It belongs to a Hilbert space). Often, one normalizes
+$\Psi$ such that $\IntPsiSq = 1$, although it is not necessary and, in some cases, not desirable. For example, the plane wave
+$$\Psi = N e^{i(k\cdot r - \omega t)}$$ is not square integrable and couldn't be used as a wave function to describe a moving particle. However, this
+plane wave can and oftern is used to describe a steady flux of particles. 
 
-and C. 
+\subsection{ $\Psi(\vec r, t) \rightleftharpoons \Phi(\vec p, t)$ via Fourier Transforms}
+Instead of working in the coordinate representation. we could also work in the momentum
+representation.\\
 
-$\alpha(\beta + \gamma) = \alpha\beta + \alpha\gamma$		--- Multiplication is distributive with respect to 
-addition.\\
+In this case, the wave function is $\Phi(\vec{p},t)$ where $|\Phi|^2\, d\vec{p}$ is the probability of finding the particle with momentum $\vec{p}$ in the volume
+$d\vec{p}$ at time $t$. \\
 
-Some examples of a field under regular addition and multiplication:
+$\Psi$ and $\Phi$ are connected to each other and are Fourier transforms of each other. That is, 
 
-1. The set of all real rational numbers, $\{Q\}$.\\
-2. The set of all real numbers, $\{R\}$. \\
-3. The set of all complex numbers, $\{C\}$. \\
+ \begin{eqnarray*}
+  \Phi(\vec{p},t) &=& {1\over (2\pi\hbar)^{3/2}} \int_0^\infty \, \Psi(\vec{r},t)e^{-i\vec{p}\cdot\vec{r}/\hbar}\, d\vec{r} \\ 
+  \hbox{and~~~~~~~~~~~~~~~\hfill} &\null&\\
+  \Psi(\vec{r},t) &=& {1\over (2\pi\hbar)^{3/2}} \int_0^\infty \, \Phi(\vec{p},t)e^{-i\vec{p}\cdot\vec{r}/\hbar}\, d\vec{p} 
+ \end{eqnarray*}Usually, one uses $\vec{p} = \hbar\vec{k}$ and ``defines'' a $\Phi(\vec{k},t)$ instead of $\Phi(\vec{r},t)$ such that 
+  
+ \begin{eqnarray*}
+  \Phi(\vec{k},t) &=& {1\over (2\pi)^{3/2}} \int_0^\infty \, \Psi(\vec{r},t)e^{-i\vec{p}\cdot\vec{r}}\, d\vec{r} \\ 
+  \hbox{and~~~~~~~~~~~~~~~~~~\hfill} &\null&\\
+  \Psi(\vec{r},t) &=& {1\over (2\pi)^{3/2}} \int_0^\infty \, \Phi(\vec{k},t)e^{-i\vec{k}\cdot\vec{r}}\, d\vec{p} 
+ \end{eqnarray*}Remember that neither $\Psi$ nor $\Phi$ can be measurable but only the magnitude of the amplitudes.\\
+ 
+ How is $|\Psi|^2$ related to the measurement of a particle since a measurement places a particle at a definit point in space? What one does is to 
+ ``prepare'' a large number of identical systems and measure the position of the particle for each system. The measurements will yield a ``distribution'' of
+ positions and this distribution will approach $|\Psi|^2$ as the number of measurements become very large. Similar remarks can be made concerning
+ the distribution of $|\Phi|^2$. \\
+ 
+ \subsection{The Hamiltonian and the Wave Equation}
+ The Schr\"odinger wave equation tells us how $\Psi(\vec{r},t$ develops in time. Classically, one has for an isolated system of particles that 
+ $$H(q_1,...q_N,p_1,...p_N,t) = E.$$ The wave equation is given by $$H\Psi = i\hbar{\partial \Psi\over \partial t}$$ where in $H$ all the $p_i$'s are to be
+ replaced by ${\hbar\over i}{\partial\over \partial q_i}$.\\
+ 
+ Now one must be careful in following the above prescription. First, $H$ must be written in terms of Cartesian coordinates and their corresponding conjugate
+ momenta. For example, if $H$ was written in terms of spherical polar coordinates and one replaced $p_r$ by ${\hbar\over i}{\partial \over \partial r}$, $p_\theta$ by 
+ ${\hbar\over i}{\partial \over \partial\theta}$, and $p_\phi$ by ${\hbar\over i}{\partial\over \partial \phi}$, one would not obtain the correct wave equation.\\
+ 
+ Secondly, one must properly symmeterize the combinations of $q_i$ and $p_i$. For example, $pq$ and $qp$ are the same classically but not quantum mechanically.
+ i.e., $pq\Psi = {\hbar\over i} {\partial\over q} (q\Psi) \ne qp \Psi = q {\hbar\over i} {\partial\over q} \Psi$. In this case, $pq$ must be replaced by the symmetrized expression
+ ${1\over2}(pq + qp)$. To the best of my knowledge, all classical Hamiltonians are such that they can be readily ``symmetrized'' in the above manner. \\
+ 
+ We will also encounter systems which have observables which have no classical analogue, e.g., intrinsic spin. In order to write down
+ the Hamiltonian operators, one will have to introduce the operators associated with these ``new'' observables in a consistent manner. We will discuss
+ this point shortly and only mention here that it is sufficient to give the commutation properties of these new operators with all the other operators
+ of the system.\\
 
-We now define a linear vector space.\\
+ \subsection{Probability Density and Probability Current}
+ We define the ``probability density'' $P$ as $P = |\Psi(\vec{r},t)|^2 = \Psi^*(\vec{r},t) \Psi(\vec{r},t)$. Its time rate of change is 
+ $${\partial P\over \partial t} = \Psi^*{\partial \Psi\over \partial t} + \big( {\partial \Psi^*\over \partial t} \big)\Psi$$and using 
+ $H\Psi = i\hbar {\partial \Psi\over \partial t}$,  we have with $H = {p^2\over 2m} + V(\vec{r})$
+ $${\partial P\over \partial t} = -{\hbar\over2m i} \hbox{div}\big\{\Psi^*\nabla \Psi - \Psi \nabla\Psi^* \big\}.$$This can be written as
+ $$\hbox{div}\vec{S} + {\partial P\over \partial t} = 0$$by defining the ``probability current'' $\vec{S}$ as
+ $$\vec{S} = -{\hbar\over2m i} \big(\Psi^*\nabla \Psi - \Psi \nabla\Psi^* \big).$$$\vec{S}$ describes the ``flow'' of probability density $P=|\Psi|^2$ just as
+ $\rho \vec{v}$ describes the density flow in the hydrodynamic case by the equation
+ $$\hbox{div}(\rho\vec{v}) + {\partial \rho\over \partial t} = 0.$$\\
+  Knowing $\Psi$ and $\Phi$ we can now write down expressions which tell us what the mean values of measurements for functions like
+ $F(\vec{r})$ and $G(\vec{p})$ will be. That is 
+ \begin{eqnarray*}
+  \langle F(\vec{r})\rangle  &=& \int  \, |\Psi|^2\, F(\vec{r})\,d\vec{r} \\ 
+  \hbox{and~~~~~~~~~~~~~~~~~~\hfill} &\null&\\
+  \langle G(\vec{p})\rangle  &=& \int  \, |\Phi|^2\, G(\vec{p})\,d\vec{p}.
+ \end{eqnarray*}\\
+ 
+ Since $\Psi$ and $\Phi$ are Fourier transforms of each other which we assume to vanish at infinity, we can always evaluate $F(\vec{r}$ in the momentum representation and/or $G(\vec{p})$ in the coordinate representation. In particular. one can show quite easily that 
+  \begin{eqnarray*}
+  \langle \vec{p}\rangle  &=& \int  \, |\Psi^*(\vec{r},t)\, \left( {\hbar\over i} \nabla_r\right) \Psi(\vec{r},t)\,d\vec{r}\\
+  \hbox{and~~~~~~~~~~~~~~~~~~\hfill} &\null&\\
+  \langle \vec{r}\rangle  &=& \int  \, |\Phi(\vec{p},t)\, \left( {\hbar\over i} \nabla_p\right) \Phi(\vec{p},t)\,d\vec{p}. 
+ \end{eqnarray*}\\
 
-\underline{Definition of a Linear Vector Space}
+Now all the $\Psi$'s describing a system will form a Hilbert space which we know is a linear space. For example, if $\Psi_1$ and $\Psi_2$ belong to this space, then does $$\lambda_1\Psi_1 + \lambda_2\Psi_2$$ belong to this space where $\lambda_1$ and $\lambda_2$ are arbitrary complex numbers. 
 
-Consider the scalars, $\alpha$, $\beta$, $\gamma$,..., of the field F. Also consider a set of elements. $\ket{x}$, $
-\ket{y}$, $\ket{z}$,... called vectors. This set of vectors form a \underline{linear} \underline{vector} \underline{space},
-V, when they satisfy: \\
-
-A.) To every pair, $\ket{x}$ and $\ket{y}$, there corresponds a vector $\ket{x} + \ket{y}$ in V 
-called the sum of $\ket{x}$
-and $\ket{y}$ in such a way that:\\
-
-1. $\ket{x} + \ket{y} = \ket{y} + \ket{x}$ 		--- Communicative\\
-2. $\ket{x} + (\ket{y} + \ket{z}) = (\ket{x} + \ket{y}) + \ket{z}$ --- Associative\\
-3. $0 = \ket{0}$ and $0 + \ket{x} = \ket{x} + 0 = \ket{x}$	--- A null vector exists\\
-4. $\ket{x} + (-\ket{x}) = 0$			--- an inverse exitst.\\
-
-B.) To every pair $\alpha$ and $\beta$ in F and $\ket{x}$ in V, there corresponds a vector $\alpha\ket{x}$ in V, 
-called the product of $\alpha$ and $\ket{x}$, such that:\\
-
-1. $\alpha(\beta\ket{x}) = (\alpha\beta)\ket{x}$ --- Associative\\
-2. $I\ket{x} = \ket{x}$\\ 
-
-C.) 1. $\alpha(\ket{x} + \ket{y}) = \alpha\ket{x} +\alpha\ket{y} $ --- Multiplication by a scalar 
-is distributive with respect to vector addition\\
-
-2. $(\alpha + \beta)\ket{x} = \alpha\ket{x} + \beta\ket{y}$ --- Multiplication by a vector is distributive with 
-respect to scalar addition. \\
-
-We continue on with more mathematical definitions and theorems (which I won't always prove).\\
-
-\underline{Definition of Span}
-
-The set of vectors, $\{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ are said to Span, or Generate, the space V if any vector,
-$\ket{x} \in V$ is expressible as a linear combination of them, i.e., if $\ket{x} = \lambda_1\ket{x_1} + 
-\lambda_2\ket{x_2} +...+ \lambda_n\ket{x_n}$ for some scalars $\lambda_1, \lambda_2,...,\lambda_n \in F$, which are
-not necessarily unique.\\
-
-\underline{Definition of Linearly Independent}
-
-In the abstract vector space V the finite set of vectors $\{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ is said to be 
-linearly dependent if scalars $\lambda_1, \lambda_2,...,\lambda_n \in F$ exist, not all zero, such that
-$\ket{x} = \lambda_1\ket{x_1} + \lambda_2\ket{x_2} +...+ \lambda_n\ket{x_n} = \ket{0}$. If no such scalars exist, 
-i.e., if $\ket{x} = \lambda_1\ket{x_1} + \lambda_2\ket{x_2} +...+ \lambda_n\ket{x_n} = \ket{0} \Rightarrow 
-\lambda_i = 0 \forall i = 1, ..., n$ then the set is linearly independent.\\
-
-\underline{Definition of a Basis}\\
-
-The set $S = \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ is a basis of V if (i) they are linearly 
-independent and (ii) they span V. If V possesses a (finite) basis it is said to be finite dimensional, 
-if not then it is infinite dimensional.
-
-\newtheorem{thma}{Theorem}
-\hskip 0.5truein
-\hbox{\vbox{
-\begin{thma} If $S= \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ span V then they form a basis\\
-             if and only if any vector $\ket{x}$ in V is uniquely expressible as a linear \\
-             combination of the elements of S.
-\end{thma}}}
-
-\hskip 0.5truein
-\hbox{\vbox{
-\begin{thma} If $S= \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ span V then there \\
-             is a subset of these which is a basis of V.
-\end{thma}}}
-
-\hskip 0.5truein
-\hbox{\vbox{
-\begin{thma} If $S= \{\ket{x_1},\ket{x_2},...,\ket{x_p}\}$ are linearly independent \\
-             and V is finite dimensional then there exists a base containing \\
-            $\{\ket{x_1},\ket{x_2},...,\ket{x_p}\}.$ 
-\end{thma}}}
-
-\hskip 0.5truein
-\hbox{\vbox{
-\begin{thma} If $\{\ket{x_1},\ket{x_2},...,\ket{x_p}\}$ is a linearly independent set\\
-             and $\{\ket{y_1},\ket{y_2},...,\ket{y_m}\}$ spans V, then $p \le m$,
-\end{thma}}}
-
-
-\hskip 0.5truein
-\hbox{\vbox{
-\begin{thma} The number of elements in any basis of a finite-dimensional \\
-             vector space is the same as in any other basis.
-\end{thma}}}
-
-The proof of this case can go as follows:\\
-Consider two sets of vectors, $S_1 = \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ and 
-$S_2 = \{\ket{y_1},\ket{y_2},...,\ket{y_m}\}$ where $S_1$ spans the space but all the elements
-in $S_1$ \underline{may or may not} be linearly independent, and all the elements in $S_2$ are
-linearly independent but $S_2$ \underline{may of may not} span the space. 
-
-If $S_2$ does not span the space, we can find an element in $S_1$, callit $\ket{x_1'}$, which is linearly independent
-of the $\ket{y_i}$'s. If $S_2' = \{\ket{y_1},\ket{y_2},...,\ket{y_m},\ket{x'}\}$ does not span the space, we can 
-find another linearly independent vector $\ket{x_2'}$ from $S_1$ and add it to $S_2'$ and so on and so forth until
-$S_2^p = \{\ket{y_1},\ket{y_2},...,\ket{y_m},\ket{x'},...,\ket{x_p'}\}$ spans the space and forms a basis. Clearly
-$p < n$ and $m \le n$. Reversing the rols of $S_2$ and $S_2$, we would find $m \ge n$ and so $m = n$ when $S_1$ and
-$S_2$ are both bases.\\
-
-\underline{Definition of Dimensions}\\
-The dimension of a finite dimensional vector space is the number of elements in a basis.\\
-
-\hskip 0.5truein
-\hbox{\vbox{
-\begin{thma} Every $n+1$ vectors in an n-dimensional \\
-             vector space is are linearly dependent.
-\end{thma}}}
-
-\underline{Definition of Isomorphism}
-Two vector spaces $U$ and $V$ over the same field F are said to be isomorphic to each other if there is a one-to-one
-correspondence between the vectors $\ket{x} \in U$ and the vector $\ket{y} \in V$, say $\ket{y} = T(\ket{x})$, such
-that $$T(\alpha_1\ket{x_1} + \alpha_2\ket{x_2}) = \alpha_1T(\ket{x_1}) + \alpha_2T(\ket{x_2}).$$
-
-That is, all linear relationships are preserved. 
-
-\hskip 0.5truein
-\hbox{\vbox{
-\begin{thma} Any finite dimensional vector space V is isomorphic to the space of \\
-             n-dimensional co-ordinate vectors, the co-ordinates being members of \\
-             the scalar field $F$ and $n$ being the dimension of V. 
-\end{thma}}}
-
-\underline{Definition of Unitary Space}\\
-
-A ``Unitary Space'' is a linear vector space such that for any two vectors, $\ket{x}$ and $\ket{y}$, a unique scalar
--- called the ``inner product'' or ``scalar product'' and denoted $\braket{x}{y}$ exists and has the following
-4 properties:\\
-
-1. $\braket{x}{y} = \braket{y}{x}*$\\
-2. $\braket{x}{y + z} = \braket{x}{y} + \braket{x}{z}$\\
-3. $\braket{x}{\alpha y} = \alpha\braket{x}{y}$\\
-4. $\braket{x}{x} \ge 0$ where $\braket{x}{x} = 0\iff \ket{x} = 0.$\\
-
-This scalar product is essentially the same as the one we introduced in Section I except it ``applies'' to vectors
-instead of scalar functions. 
-
-When dealing with finite dimensional unitary spaces, one doesn't have too much trouble. However, for infinite
-dimensional unitary spaces which we often have to deal with in quantum mechanics, we can have ``infinities''
-appearing unless we place a further restrictions on this space. Consequently, we will only consider Unitary Spaces
-which are \underline{complete}.\\ 
-
-\underline{Definition of Hilbert Space}
-A complete Unitary Space is called a Hilbert Space. Equivalently, a complete
-linear vector space of finite of infinite dimension with scalar product is a Hilbert Space.
-
-By being complete, we mean that for a sequence of vectors, $\ket{x_n}$, a vector $\ket{x}$ exists such that
-$$\lim_{n\rightarrow \infty} \| x_n - x \| = 0.$$
-
-I realize that I am not being complete and perhaps rigourous here. But I don't want to take the time here 
-and refer you to mathmatical texts dealing with Linear Vector Spaces, Unitary Spaces, and Hilbert Spaces.\\
-
-\underline{Example of a Hilbert Space}
-
-Consider the set of all infinite sequencees, $\{[x_i],[x'_i],...\}$, wherer $[x_i]$ is an infinite sequence and 
-$\sum_i \|x_i\|^2$ is finite. This set of sequences form a Hilbert Space.\\
-
-\underline{2nd Example of a Hilbert Space}
-
-Consider the set of real variables, $q_1, q_2, ..., q_k$, defined over some regions and the set of all functions
-$f(q_1,q_2,...,q_k)$ such that
-$$ \int\int...\int |f(q_1,q_2,...,q_k)|^2 \, dq_1 dq_2...dq_k < \infty.$$
-This set of functions form a Hilbert Space where the scalar product for two of the functions, $f$ and $g$, is
-defined as $$\braket{f}{g} = \int\int...\int f*g \, dq_1 dq_2...dq_k.$$
-
-In fact, this is just the space of square-integrable functions which we use the the Schr\"odinger picture.\\
-
+\subsection{Scalar Products}
+In this space we define a ``scalar product'' as 
+$$\langle \phi,\psi\rangle  \equiv (\phi,\psi) \equiv \int \phi^*\psi\, d\tau$$ where by the last expression I am implying some specific representation, e.g., in the coordinate representation, $\phi$ and $\psi$ are functions of $\vec{r}$ and $d\tau = d\vec{r}$. The norm will be defined as $\sqrt{\langle \psi,\psi\rangle }$. If $\sqrt{\langle \psi,\psi\rangle } = 1$, the state is said to be normalized. \\
 If $\braket{\phi}{\psi} = 0$ with $\phi \ne 0$ and $\psi \ne 0$, the two states described by $\phi$ and $\psi$ are said to be orthonormal.\\
-
-Some further properties of out scalar product properties are by definition:
-
+Some further properties of out scalar product properties are by definition:\\
 1. $\braket{\phi}{\psi}^* = \braket{\psi}{\phi}$\\
 2. $\braket{\phi}{\lambda_1 \psi_1 + \lambda_2 \psi_2} = \lambda_1\braket{\phi}{\psi_1} + \lambda_2\braket{\phi}{\psi_2}$\\
-3. $\braket{\psi}{\psi} \ge 0$ and $\braket{\psi}{psi} = 0 \iff \psi = 0$\\
+3. $\braket{\psi}{\psi} \ge 0$ and $\braket{\psi}{\psi} = 0 \iff \psi = 0$\\
 4. Hermitian conjugate of an operator. \\
 In general, when an operator $A$ operates on a wave function, it changes it into another wave function, e.g., $A\psi = \psi'$.
 $A^\dagger$ will be defined as the ``Hermitian conjugate'' of the operator $A$ and has the property that 
