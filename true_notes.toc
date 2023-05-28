@@ -19,3 +19,4 @@
 \contentsline {subsection}{\numberline {4.4}A Wave Packet Striking a Potential Step}{26}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Spreading of the Wave Packets}{30}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Mathematical Framework of Quantum Mechanics}{32}{section.5}%
+\contentsline {subsection}{\numberline {5.1}\underline {Dirac's Bra and Ket Notation}}{38}{subsection.5.1}%
