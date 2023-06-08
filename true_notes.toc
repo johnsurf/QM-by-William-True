@@ -34,3 +34,4 @@
 \contentsline {subsection}{\numberline {5.13}\underline {Matrices and the Matrix Representation}}{52}{subsection.5.13}%
 \contentsline {subsection}{\numberline {5.14}\underline {Infinite Matrices}}{55}{subsection.5.14}%
 \contentsline {subsection}{\numberline {5.15}\underline {The Connection Between Matrices, Operators, and Vectors}}{56}{subsection.5.15}%
+\contentsline {subsection}{\numberline {5.16}\underline {Unitary Transformations}}{58}{subsection.5.16}%
