@@ -1,0 +1,886 @@
+\section{Mathematical Framework of Quantum Mechanics}
+
+Much of what I discuss here will be found in Chapter VII of Messiah. He prbably does the most
+complete and detailed treatment of the pertinent mathematics which relates to quantum 
+mechanics. He is, in fact, more detailed that I will be here and I urge you to read this
+Chapter.
+
+Most beginning graduate students, and most likely you are no exceptions, have worked with
+quantum mechanics in the ``coordinate represenation'' or the "Schr\"ofinger Picture'' as it is commonly called. But one could also work in the ``momentum representation'' where $\vec{p}$ is replaced by the operator $\vec p$ and $\vec x$ replaced by the operator 
+$-{\hbar\over i}\nabla_{\vec p}$. In fact, if you write down the differential equation to be 
+solved in the momentum representation for the harmonic oscillator, you will find that you have the same differential operator to solve as you did in the ``coordinate represenation.'' Of course, constant coefficients may be changed in the differential equation in the two representations. Then one can ask the question: -- Are there other representations which one could work in? The answer to this is ``Yes''! In fact, there are in infinite number of them. 
+In fact, one can solve the wave equation without ever going into a representation.--A little later, I will show this explicitly where I will solve the harmonic oscillator without going into \underline{any} representation. Often times in more complicated systems, it ``complicates things'' to be in a specific representation.
+
+Now we will want to formulate Quantum Mechanics in a more abstract way so that it is independent of the representation. 
+We will then show that if we go into the coordintate representation, it will reduce to out ``familiar'' 
+Schr\"odinger picture.  Let us now define a field.\\
+
+\subsection{\underline{Definition of a Field}}
+
+A set of scalars $\{\alpha,\beta,\gamma,...\}$ form a field, F, if the scalars have the following properties:\\
+
+A. To every pair, $\alpha$ and $\beta$, there corresponds a scalar in the field, $\alpha + \beta$, called the sum of $\alpha$ and $\beta$ in such a way that:
+
+1. $\alpha + \beta = \beta + \alpha$ \quad\quad 		--- Communicative\\
+2. $\alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma $ 	--- Associative\\
+3. $\alpha + 0 = \alpha $					--- Null Scalar Exists\\
+4. $\alpha + (-\alpha) = 0$					--- Inverse Exists\\
+
+and B. To every pair, $\alpha$ and $\beta$, there corresponds a scalar, $\alpha\beta$, in such a way that 
+
+1. $\alpha\beta = \beta\alpha$					--- Communicative\\
+2. $\alpha(\beta\gamma) = (\alpha\beta)\gamma$			--- Associative\\
+3. $\alpha I = \alpha$ 						--- A unique unit scalar exists\\
+4. $\alpha \alpha^{-1} = I \rm ~ for \alpha \ne 0$		--- An inverse exists\\
+
+and C. 
+
+$\alpha(\beta + \gamma) = \alpha\beta + \alpha\gamma$		--- Multiplication is distributive with respect to 
+addition.\\
+
+Some examples of a field under regular addition and multiplication:
+
+1. The set of all real rational numbers, $\{Q\}$.\\
+2. The set of all real numbers, $\{R\}$. \\
+3. The set of all complex numbers, $\{C\}$. \\
+
+We now define a linear vector space.\\
+
+\subsection{\underline{Definition of a Linear Vector Space}}
+
+Consider the scalars, $\alpha$, $\beta$, $\gamma$,..., of the field F. Also consider a set of elements. $\ket{x}$, $
+\ket{y}$, $\ket{z}$,... called vectors. This set of vectors form a \underline{linear} \underline{vector} \underline{space},
+V, when they satisfy: \\
+
+A.) To every pair, $\ket{x}$ and $\ket{y}$, there corresponds a vector $\ket{x} + \ket{y}$ in V 
+called the sum of $\ket{x}$
+and $\ket{y}$ in such a way that:\\
+
+1. $\ket{x} + \ket{y} = \ket{y} + \ket{x}$ 		--- Communicative\\
+2. $\ket{x} + (\ket{y} + \ket{z}) = (\ket{x} + \ket{y}) + \ket{z}$ --- Associative\\
+3. $0 = \ket{0}$ and $0 + \ket{x} = \ket{x} + 0 = \ket{x}$	--- A null vector exists\\
+4. $\ket{x} + (-\ket{x}) = 0$			--- an inverse exitst.\\
+
+B.) To every pair $\alpha$ and $\beta$ in F and $\ket{x}$ in V, there corresponds a vector $\alpha\ket{x}$ in V, 
+called the product of $\alpha$ and $\ket{x}$, such that:\\
+
+1. $\alpha(\beta\ket{x}) = (\alpha\beta)\ket{x}$ --- Associative\\
+2. $I\ket{x} = \ket{x}$\\ 
+
+C.) 1. $\alpha(\ket{x} + \ket{y}) = \alpha\ket{x} +\alpha\ket{y} $ --- Multiplication by a scalar 
+is distributive with respect to vector addition\\
+
+2. $(\alpha + \beta)\ket{x} = \alpha\ket{x} + \beta\ket{y}$ --- Multiplication by a vector is distributive with 
+respect to scalar addition. \\
+
+We continue on with more mathematical definitions and theorems (which I won't always prove).\\
+
+\underline{Definition of Span}
+
+The set of vectors, $\{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ are said to Span, or Generate, the space V if any vector,
+$\ket{x} \in V$ is expressible as a linear combination of them, i.e., if $\ket{x} = \lambda_1\ket{x_1} + 
+\lambda_2\ket{x_2} +...+ \lambda_n\ket{x_n}$ for some scalars $\lambda_1, \lambda_2,...,\lambda_n \in F$, which are
+not necessarily unique.\\
+
+\underline{Definition of Linearly Independent}
+
+In the abstract vector space V the finite set of vectors $\{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ is said to be 
+linearly dependent if scalars $\lambda_1, \lambda_2,...,\lambda_n \in F$ exist, not all zero, such that
+$\ket{x} = \lambda_1\ket{x_1} + \lambda_2\ket{x_2} +...+ \lambda_n\ket{x_n} = \ket{0}$. If no such scalars exist, 
+i.e., if $\ket{x} = \lambda_1\ket{x_1} + \lambda_2\ket{x_2} +...+ \lambda_n\ket{x_n} = \ket{0} \Rightarrow 
+\lambda_i = 0 \forall i = 1, ..., n$ then the set is linearly independent.\\
+
+\underline{Definition of a Basis}\\
+
+The set $S = \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ is a basis of V if (i) they are linearly 
+independent and (ii) they span V. If V possesses a (finite) basis it is said to be finite dimensional, 
+if not then it is infinite dimensional.
+
+\newtheorem{thma}{Theorem}
+\hskip 0.5truein
+\hbox{\vbox{
+\begin{thma} If $S= \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ span V then they form a basis\\
+             if and only if any vector $\ket{x}$ in V is uniquely expressible as a linear \\
+             combination of the elements of S.
+\end{thma}}}
+
+\hskip 0.5truein
+\hbox{\vbox{
+\begin{thma} If $S= \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ span V then there \\
+             is a subset of these which is a basis of V.
+\end{thma}}}
+
+\hskip 0.5truein
+\hbox{\vbox{
+\begin{thma} If $S= \{\ket{x_1},\ket{x_2},...,\ket{x_p}\}$ are linearly independent \\
+             and V is finite dimensional then there exists a base containing \\
+            $\{\ket{x_1},\ket{x_2},...,\ket{x_p}\}.$ 
+\end{thma}}}
+
+\hskip 0.5truein
+\hbox{\vbox{
+\begin{thma} If $\{\ket{x_1},\ket{x_2},...,\ket{x_p}\}$ is a linearly independent set\\
+             and $\{\ket{y_1},\ket{y_2},...,\ket{y_m}\}$ spans V, then $p \le m$,
+\end{thma}}}
+
+
+\hskip 0.5truein
+\hbox{\vbox{
+\begin{thma} The number of elements in any basis of a finite-dimensional \\
+             vector space is the same as in any other basis.
+\end{thma}}}
+
+The proof of this case can go as follows:\\
+Consider two sets of vectors, $S_1 = \{\ket{x_1},\ket{x_2},...,\ket{x_n}\}$ and 
+$S_2 = \{\ket{y_1},\ket{y_2},...,\ket{y_m}\}$ where $S_1$ spans the space but all the elements
+in $S_1$ \underline{may or may not} be linearly independent, and all the elements in $S_2$ are
+linearly independent but $S_2$ \underline{may of may not} span the space. 
+
+If $S_2$ does not span the space, we can find an element in $S_1$, callit $\ket{x_1'}$, which is linearly independent
+of the $\ket{y_i}$'s. If $S_2' = \{\ket{y_1},\ket{y_2},...,\ket{y_m},\ket{x'}\}$ does not span the space, we can 
+find another linearly independent vector $\ket{x_2'}$ from $S_1$ and add it to $S_2'$ and so on and so forth until
+$S_2^p = \{\ket{y_1},\ket{y_2},...,\ket{y_m},\ket{x'},...,\ket{x_p'}\}$ spans the space and forms a basis. Clearly
+$p < n$ and $m \le n$. Reversing the rols of $S_2$ and $S_2$, we would find $m \ge n$ and so $m = n$ when $S_1$ and
+$S_2$ are both bases.\\
+
+\underline{Definition of Dimensions}\\
+The dimension of a finite dimensional vector space is the number of elements in a basis.\\
+
+\hskip 0.5truein
+\hbox{\vbox{
+\begin{thma} Every $n+1$ vectors in an n-dimensional \\
+             vector space is are linearly dependent.
+\end{thma}}}
+
+\underline{Definition of Isomorphism}
+Two vector spaces $U$ and $V$ over the same field F are said to be isomorphic to each other if there is a one-to-one
+correspondence between the vectors $\ket{x} \in U$ and the vector $\ket{y} \in V$, say $\ket{y} = T(\ket{x})$, such
+that $$T(\alpha_1\ket{x_1} + \alpha_2\ket{x_2}) = \alpha_1T(\ket{x_1}) + \alpha_2T(\ket{x_2}).$$
+
+That is, all linear relationships are preserved. 
+
+\hskip 0.5truein
+\hbox{\vbox{
+\begin{thma} Any finite dimensional vector space V is isomorphic to the space of \\
+             n-dimensional co-ordinate vectors, the co-ordinates being members of \\
+             the scalar field $F$ and $n$ being the dimension of V. 
+\end{thma}}}
+
+\subsection{\underline{Definition of an Unitary Space}}
+
+A ``Unitary Space'' is a linear vector space such that for any two vectors, $\ket{x}$ and $\ket{y}$, a unique scalar
+-- called the ``inner product'' or ``scalar product'' and denoted $\braket{x}{y}$ exists and has the following
+4 properties:\\
+
+1. $\braket{x}{y} = \braket{y}{x}*$\\
+2. $\braket{x}{y + z} = \braket{x}{y} + \braket{x}{z}$\\
+3. $\braket{x}{\alpha y} = \alpha\braket{x}{y}$\\
+4. $\braket{x}{x} \ge 0$ where $\braket{x}{x} = 0\iff \ket{x} = 0.$\\
+
+This scalar product is essentially the same as the one we introduced in Section I except it ``applies'' to vectors
+instead of scalar functions. 
+
+When dealing with finite dimensional unitary spaces, one doesn't have too much trouble. However, for infinite
+dimensional unitary spaces which we often have to deal with in quantum mechanics, we can have ``infinities''
+appearing unless we place a further restrictions on this space. Consequently, we will only consider Unitary Spaces
+which are \underline{complete}.\\ 
+
+\subsection{\underline{Definition of a Hilbert Space}}
+A complete Unitary Space is called a Hilbert Space. Equivalently, a complete
+linear vector space of finite of infinite dimension with scalar product is a Hilbert Space.
+
+By being complete, we mean that for a sequence of vectors, $\ket{x_n}$, a vector $\ket{x}$ exists such that
+$$\lim_{n\rightarrow \infty} \| x_n - x \| = 0.$$
+
+I realize that I am not being complete and perhaps rigourous here. But I don't want to take the time here 
+and refer you to mathmatical texts dealing with Linear Vector Spaces, Unitary Spaces, and Hilbert Spaces.\\
+
+\underline{Example of a Hilbert Space}
+
+Consider the set of all infinite sequencees, $\{[x_i],[x'_i],...\}$, wherer $[x_i]$ is an infinite sequence and 
+$\sum_i \|x_i\|^2$ is finite. This set of sequences form a Hilbert Space.\\
+
+\underline{2nd Example of a Hilbert Space}
+
+Consider the set of real variables, $q_1, q_2, ..., q_k$, defined over some regions and the set of all functions
+$f(q_1,q_2,...,q_k)$ such that
+$$ \int\int...\int |f(q_1,q_2,...,q_k)|^2 \, dq_1 dq_2...dq_k < \infty.$$
+This set of functions form a Hilbert Space where the scalar product for two of the functions, $f$ and $g$, is
+defined as $$\braket{f}{g} = \int\int...\int f*g \, dq_1 dq_2...dq_k.$$
+
+In fact, this is just the space of square-integrable functions which we use the the Schr\"odinger picture.\\
+
+Where are we going? And why all this mathematics? We shall see in the next secton that one of our postulates of Quantum Mechanics will be:\\
+To every type of physical system, there will correspond an abstract Hilbert Space and each vector in this space will represent exactly one possible state of the sytem.\\
+
+\subsection{\underline{Linear Operators}}
+Let use consider the expression 
+$$\ket{x} = A\ket{y}.$$
+By this, we mean that an operator $A$ operators on the vector $\ket{y}$ and ``produces'' a new vector $\ket{x}$. A simple example wold be the operator which rotates a vector
+around some axis in 3-dimensional space. 
+
+We will not be interested in operators which take us outside our Hilbert spaces. We can and occasionally do run into operators which take use from one Hilbert Space to another. For example,
+Let $HS-1$ be the space of square integrable functions $f(x_3)$ and $HS_3$ be the space of square integrable functions $F(x_1, x_2, x_3)$. The linear operator $\displaystyle Q = \alpha\int\, dx_1, dx_2$ will give us
+$QF = f$ and we see that $Q$ takes us from $HS_3$ to $HS_1$.
+
+Usually we will only be interested and will deal with linear operators although we will occasionally run into antilinear operators. An operator $A$ is said to be ``linear'' if 
+$$A(\ket{x} + \ket{y}) = A\ket{x} + A\ket{y} \mbox{ and } A(\alpha\ket{x}) = \alpha A(\ket{x})$$ or
+$$A(\alpha\ket{x} + \beta\ket{y}) = \alpha(A\ket{x}) + \beta(A\ket{y}$$ where $\alpha$ and $\beta$ are arbitrary complex numbers.
+
+An operator $A$ is said to be ``anti-linear'' if $$A(\alpha\ket{x} + \beta\ket{y}) = \alpha^*(A\ket{x}) + \beta^*(A\ket{y}).$$
+
+Two operators $A$ and $B$ are said to be equal if $$A\ket{x} = B\ket{x} \mbox{ for all } \ket{x}.$$ also
+\bearray
+(A + B)\ket{x} &=& A\ket{x} + B\ket{x},\\
+(AB) \ket{x} &=& A(B\ket{x}), \mbox{ and}\\
+AB &\ne& BA\mbox{ in general.}
+\eearray
+
+\subsection{\underline{Dirac's Bra and Ket Notation 1}}
+In the foregoing, we were careful to designate our vectors by the symbols $\ket{x}, \ket{y},\hdots$ and our scalar products by $\braket{x}{ y}, \braket{x}{z}, \hdots$. Dirac calls these vectors $\ket{x}, \ket{y}, \ket{z}$ by the name
+of ``kets''. Furthermore, he defines $\bra{y}$ as a ``bra'' which is conjugate to the ket $\ket{y}$. Then $\braket{y}{x}$ becomes a ``bra-ket''. 
+
+Now to every ket $\ket{x}$ in our vector space, we will have a unique bra $\bra{x}$. Since the $\ket{x}$'s belong to a linear space, it is not hard to see that the bras $\bra{x}$ will also form a linear vector space. 
+The linear vector space of the $\bra{x}$'s is called the space dual to the linear space of the $\ket{x}$'s. 
+
+At this point one can or cannot use explicitly this concept of dual space. Both Messiah and Dirac 
+do and it does make things more ``clearer'' when one deals with anit-linear operators, etc. For this reason, I will digress and discuss this dual space which consists of all the linear functionals of the $\ket{x}$'s.
+
+Before we can do that let us note that the property of our scalar product $$\braket{x}{z} = \braket{z}{x}^*$$ requires that the bra conjugate to the ket $$\ket{x} = \alpha_1\ket{y_1} + \alpha_2\ket{y_2}$$ is
+$$\bra{x} = \alpha_1^*\bra{y_1} + \alpha_2^*\bra{y_2}.$$ that is, the relationship is anti-linear. That this must be the case is clear since from the above
+\bearray \braket{z}{x} &=& \alpha_1\braket{z}{y_1} + \alpha_2\braket{z}{y_2} \mbox{ and}\\ 
+\braket{x}{z} &=& \alpha_1^*\braket{y_1}{z} + \alpha_2^*\braket{y_2}{z}
+\eearray
+
+Now we digress and look at some of the aspects of our dual space. 
+
+\subsection{\underline{The Dual Space 1}}
+Consider (in obvious shorthand notation) the vector space $V$ with vectors $x_1, x_2, x_3,\hdots$
+
+\begin{definition}
+A linear functions on a vector space $V$ is a scalar-valued function $y(x)$ defined such that for every vectr $x=\alpha_1 x_1 + \alpha_2 x_2$ we have
+$$y(\alpha_1 x_1 + \alpha_2 x_2) = \alpha_1 y(x_1) + \alpha_2 y(x_2)$$ where $\alpha_1$ and $\alpha_2$ are scalars from the field $F$. 
+\end{definition}
+
+An example of a linear functional, consider
+$$y_1(x_1) = \int\, A_1(t) x_1(t)\, dt.$$
+In this case, we say $y_1$ is a linear functional of $x_1$ on $V$. Clearly we can have $y_1(x_i)$ where $i = 1,2,3,\hdots$. Now consider another linear functional $y_2(x_i)$ where 
+$$y_2(x_i) = \int \, A_2(t) x_i(t)\, dt.$$
+Then every $y(x) = \alpha_1 y_1(x) + \alpha_2 y_2(x)$ is also a linear functional if $y_1$ and $y_2$ are linear functionals. For our simple example, this last statement is obvious. Let us now show it in general.
+
+What we want to show is that if $y_1(x)$ and $y_2(x)$ are linear functionals, then so is $y(x) = \alpha_1 y_1(x) + \alpha_2 y_2(x)$. To do this consider $x = \beta_1 x_1 + \beta_2 x_2$. Then 
+$$y(x) = y(\beta_1 x_2 + \beta_2 x_2) = \alpha_1 y_1(\beta_1 x_1 + \beta_2 x_2) + \alpha_2 y_2(\beta_1 x_1 + \beta_2 x_2).$$ Since $y_1$ and $y_2$ are linear functionals, we have
+\bearray
+y(x) = y(\beta_1 x_1 + \beta_2 x_2) &=& \alpha_1\left[ \beta_1 y_1(x_1) + \beta_2 y_1(x_2)\right] + \alpha_2 \left[ \beta_1 y_2(x_1) + \beta_2 y_2(x_2)\right]\\
+                                                         &=& \beta_1\left[ \alpha_1 y_1(x_1) + \alpha_2 y_1(x_1)\right] + \beta_2 \left[ \alpha_1 y_2(x_2) + \alpha_2 y_2(x_2)\right]\\
+                                                         &=& \beta_1 y(x_1) + \beta_2 y(x_2)
+\eearray
+So we see that $y(x)$ is also a linear functional. Consequently, any linear combination of linear functionals is also a linear functional. 
+
+Let the set of all linear functionals of $V$ be denoted by $\tilde V$ where we will also include the linear functional $y(x) = 0$ in $\tilde V$. If you look at the properties of a linear space on page 4-V, you can readily convince yourself 
+that the set of all linear functionals $\tilde V$ forms a linear vector space. We call $\tilde V$ the ``dual space'' of $V$. 
+
+Now let us show that there is a one-to-one correspondence between $V$ and $\tilde V$ for an $n$-dimensional space.
+\begin{theorem}
+If $\{ x_1, x_2, \hdots x_n\}$ is a basis for the $n$-dimensional vector space $V$ and $\alpha_1, \alpha_2, \hdots, \alpha_n\}$ is any set of $n$ scalars, then there is one and only one linear functional $y$ on $V$ such that $y(x_i) = \alpha_i$, for $i=1,2\hdots, n$/
+\end{theorem}
+
+\begin{proof} Consider the vector $\displaystyle \sum_i \xi_i x_i$ where the $\xi_i$'s are unique for each $x$. Then $\displaystyle \sum_i\, \xi_i y(x_i) = \sum_i\, \xi_i \alpha_i$. Can we now find another linear functional, say $y'(x)$ where $y'$ is different from $y$ but were $y'(x_i) = \alpha_i$? If we can, we can write $\displaystyle y'(x) = \sum_i\, \xi'_i \alpha_i = \sum_i\, \xi'_i y'(x_i) = y'(\sum_i \, \xi'_i x_i)$ in which case $\displaystyle x = \sum_i \xi'_i x_i$. But since the $x_i$'s form a basis and we had $\displaystyle x= \sum_i\, xi_i x_i$ above, we see that we must have $\xi'_i = \xi_i$ and so $y(x) = y'(x)$\qed
+\end{proof}
+
+Now we want to show that $V$ and $\tilde V$ have the same dimensions. 
+To do this, we consider the basis $\{ x_1, x_2, \hdots, x_n \} $ in $V$ and the set 
+$y_1, y_2, \hdots, y_n$ in  $\tilde V$ such that $y_i(x_j) = \delta_{ij}$. 
+
+Note that in doing this, we have picked out from all the linear functionals $\tilde V$ that set on $n$ linear functionals where $y_i(x_j) = \delta_{ij}$ and we know that they are unique from our previous theorem. To show that these
+$n$ linear functionals form a basis, we need to  show that: 1) They are linearly independent, and 2) That they span $\tilde V$.
+
+1. Can we have $\displaystyle \sum_i\, \alpha_i y_i(x) = 0$ for any $x$? Suppose $x=x_j$. Then we need $\alpha_j = 0$. Likewise, for $j = 1,2,\hdots,n$. Thus all $\alpha_i$'s are zero and the $y_i$'s are linearly independent.
+
+2. Now we consider a linear functional $y$ in $\tilde V$ such that $y(x_i) = \alpha_i$ for $i = 1,2,\hdots, n$. Then for any $x$ such that $\displaystyle x = \sum_i \l, \xi_i x_i$, we have 
+$\displaystyle y(x) = \sum_i\, \xi y(x_i) = \sum_i \, \xi \alpha_i$. Since $y_i(x_j) = \delta_{ij}$, we see that $y_i(x) = \xi_i$. Substituting this for $\xi_i$ above, we have $\displaystyle y(x) \sum_i \, \alpha_i y_i(x)$. So all linear
+functionals $y$ in $\tilde V$ can be written as a linear combinations of the $y_i$'s. So the $y_i$'s span $\tilde V$ and form a basis.
+
+The space $\tilde{\tilde V}$ which is dual to $\tilde V$ is isomorphic to $V$. Shouldn't be too hard to prove. 
+
+\subsection{\underline{The Dual Space 2}}
+We consider the linear vector space $V$ with the elements $\ket{x}, \ket{y}, \ket{z}\hdots $ which we will assume is a Hilbert space. This is the only kind of space we are interested in in quantum mechanics. ``In'' or ``on'' this vector 
+space, $V$, we have a scalar product $\braket{x}{y}$ defined for any two vectors $\ket{x}$ and $\ket{y}$ in $V$. 
+
+There is another linear vector space $\tilde V$, which is called the vector space ``dual'' to $V$ or simply the ``dual space''. $\tilde V$ will have elements which consists of all the linear functionals (linear functionals) on $V$. We shall
+see that these is a one-to-one correspondence between the elements of $V$ and the elements of $\tilde V$. We shall also see that the dimensions of $V$ and $\tilde V$ are equal. 
+
+For simplicity in notation, I will use $x, y, z, \hdots$ for the vectors in $V$ instead of $\ket{x}, \ket{y}, \ket{z},\hdots$.
+
+\begin{definition}
+A linear functional on a vector space $V$ is a scalar-valued function $F(x)$ defined such that for every vector $x = \alpha_1 x_1 + \alpha_2 x_2$ in $V$, we have $$F(x) = \alpha_1 F(x_1) + \alpha_2 F(x_2)$$ with $\alpha_1$ and 
+$\alpha_2$ arbitrary complex numbers.
+\end{definition}
+
+First we show that all linear combinations of linear functionals are themselves linear functionals. That is, if $F_1(x)$ and $F_2(x)$ are linear functionals, then so is $F(x) = \beta_1 F_1(x) + \beta_2 F_2(x)$. To show this,
+use $x=\alpha_1 x_1 + \alpha_2 x_2.$ Then 
+
+$$F(x) = \beta_1 F_1(\alpha_1 x_1 + \alpha_2 x_2) + \beta_2 F_2(\alpha_1 x_1 + \alpha_2 x_2)$$ and as $F_1$ and $F_2$ are linear functionals,
+\bearray
+F(x) &=& \beta_1\{ \alpha_1 F_1(x_1) + \alpha_2 F_1(x_2)\} + \beta_2 \{ \alpha_1 F_2(x_1) + \alpha_2 F_2(x_2) \} \\
+       &=& \alpha_1\{ \beta_1 F_1(x_1) + \beta_2 F_2(x_1)\} + \alpha_2 \{ \beta_1 F_1(x_2) + \beta_2 F_2(x_2) \} \\
+       &=& \alpha_1 F(x_1) + \alpha_2 F(x_2)      
+\eearray
+which completes the proof that $F(x)$ is a linear functional. 
+
+Looking at the properties of a linear vector space on pp 4-V, you can readily convince yourself that the set of all linear functionals on $V$ ill form a linear vector space which we call the dual space, $\tilde V$.
+\begin{theorem}
+For each linear functional $F$ on $V$ there is a unique vector, $\psi_F$, in $V$ such that $F(x) = \braket{\psi_F}{x}$.
+\end{theorem}
+This theorem tells us that the value of the linear functional $F(x)$ is given by the scalar product $\braket{\psi_F}{x}$ where $\psi_F$ is unique. 
+
+To prove this, consider the orthonormal basis $\{ x_1, x_2, x_3, \hdots\} $ in $V$. If there is such a vector $\psi_F$, then it is unique and we know what it is. If $F(x_i) = \braket{\psi_F}{x_i}$ for every $x_i$, then we can write
+$$\psi_F = \sum_{i=1}^\infty\, \braket{x_i}{\psi_F} x_i = \sum_{i=1}^\infty\, F(x_i)^* x_i.$$
+If $\displaystyle \sum_i\, F(x_i)^* x_i$ converges to a vector $\psi_F$, we have for any vector $y$ that $\displaystyle y = \sum_{i=1}^\infty\, \braket{x_i}{y} \ket{x_i}$ and so 
+$$F(y) = \sum_{i=1}^\infty\, \braket{x_i}{y} F(x_i) = \braket{\psi_F}{y}.$$ 
+
+So $\psi_F$ does the job if $\displaystyle \sum_{i=1}^\infty\, F(x_i)^* x_j$ converges to $\psi_F$. One can show that if $F$ is continious and because it is linear, then this is indeed the case.
+
+\begin{theorem}
+$V$ and $\tilde V$ have the same dimensions.
+\end{theorem}
+\begin{proof}
+To prove this we consider the orthonormal basis $\{ x_1, x_2, x_3,\hdots,x_n\}$ in $V$ and the set of linear functionals $\{ y_1, y_2, \hdots, y_n\}$ in $\tilde V$ such that $\displaystyle y_i(x_j) \eqdef \braket{\psi_{y_i}}{x_j} = \delta_{ij}$ 
+So we have picked a special set of linear functionals from $\tilde V$. Our previous theorem tells us that the vectors $\psi_{{y_i}}$ in $V$ unique. To show that this set of linear functionals in $\tilde V$ form a basis, we have to show: 
+1) They are linearly independent; and 2) They span $\tilde V$.
+
+1. Can we have $\displaystyle \sum_i\, \alpha_i y_i(x) = 0$ for any $x$ and some $\alpha_i \ne 0$? Consider $x=x_j$. Then $\displaystyle \sum_i\, \alpha_i y_i(x_j) = \alpha_j = 0$. Therefore $\alpha_j = 0$. Similarly we can prove that all 
+$\alpha_i$'s $= 0$. For this set of $y_i$'s This the $y_i$'s are linearly independent. 
+
+2. Consider the above set $\{ x_1, x_2, \hdots  \}$ in $V$ and the above set $\{  y_1, y_2, \hdots \}$ in $V$. Also consider another linear functional $y$ in $\tilde V$ such that $y(v_i) = \alpha_i$ for all $x_i$'s. Then for any $x$ such that
+$\displaystyle x = \sum_i \, \xi_i x_i$, we have 
+$$y(x) = \sum_i\, \xi_i y(x_i) = \sum_i\, \xi_i \alpha_i.$$
+But since $y_i(x_j) = \delta_{ij}$, $y_i(x) = \xi_i$. Substituting this $y_i(x)$ for $\xi_i$, we have $\displaystyle y(x) = \sum_i\, \alpha_i y_i(x)$. This result tells us that we can express all linear functionals
+in $\tilde V$ as a linear combination of the $y_i$'s. So the $y_i$'s span $\tilde V$ and form a basis. As the number of $x_i$'s equals the number of $y_i$'s, $V$ and $\tilde V$ have the same dimensions \qed
+\end{proof}
+
+It shouldn't be too hard to show that the space $\tilde{\tilde V}$ dual to $\tilde V$ is isomorphic to the space $V$.
+
+\subsection{\underline{Dirac's Bra and Ket Notation 2}}
+Dirac calls the vectors $\ket{x}, \ket{y}, \ket{z}, \hdots$ in $V$ by the name of kets and the scalar product is $\braket{x}{y}$ for two vectors $\ket{x}$ and $\ket{y}$. 
+
+Instead of writing $F(x) = \braket{\psi_F}{x}$ as did previously, let us change notation and write $F_\psi(x) = \braket{\psi}{x}$, i.e., to every linear functional $F_\psi$ in $\tilde V$ we have a unique vector $\ket{\psi}$ in $V$. In fact, 
+lets go one step further and change notation again and let $\bra{\psi}$ be the vector in $\tilde V$ which denotes the vector $F_\psi$ in $\tilde V$. Going one step further, we combine the linear functional $\bra{\psi}$ in $|tilde V$ with the 
+vector $\ket{x}$ in $V$ and use the notation that $\braket{\psi}{x}$ denotes the linear functional $F_\psi(x)$. If we do this, we have no way of distinguishing the linear functional $\braket{\psi}{x}$ in $\tilde V$ from the scalar product
+$\braket{\psi}{x}$ in $V$. It really doesn't matter since they are equal. 
+
+But now we can use $\ket{x}, \ket{y},\hdots$ for vectors in $V$ and $\bra{x}, \bra{y},\hdots$ for vectors in $\tilde V$.
+
+Dirac calls the vectors $\bra{x}, \bra{y}, \hdots$ bras and $\braket{x}{y}$ is called a ``bra-ket''. 
+
+I prefer the above approach to that of Messia's e.g., on pp 247-249 Vol. I, he has 6 places where he either hypothesizes, on assumes, or postilates.
+
+The relationship between $\ket{x}$ and $\bra{x}$ must be anti-linear. If $\ket{x} = \alpha_1 \ket{x_1} + \alpha_2 \ket{x_2}$ then 
+\bearray
+\braket{z}{x} &=& \alpha_1 \braket{z}{x_1} + \alpha_2 \braket{z}{x_2} \mbox { while}\\
+\braket{x}{z} &=& \braket{z}{x}^* = \alpha_1^* \braket{x_1}{z} + \alpha_2^* \braket{x_2}{z} \mbox { so}\\
+\bra{x} &=& \alpha_1^* \bra{x_1} + \alpha_2^* \bra{x_2}
+\eearray
+giving the anti-linear relationship.
+
+We now explore additional relationships involving the bras, kets, linear operators, scalars and scalar products. 
+
+Consider the linear operators $A$ in $V$ which changes $\ket{y}$ into $\ket{x}$, i.e., $\ket{x} = A\ket{y}$. We should like to find the corresponding operators, $\overline{A}$ in $\tilde V$ which changes $\bra{y}$ into $\bra{x}$, i.e., 
+$\bra{x} = \bra{y}\overline{A}$. Instead of using $A$ and $\overline{A}$, let us write these expressions as $\ket{x} = (A\ket{y}$ and $\bra{x} = (\bra{y} A)$ respectively where the parenthesis indicate in which 
+space the $A$'s are acting. Now the $\overline{A}$ and $A$ need not be equal.  $\overline{A}$ may not even be defined in $V$. If it was, $\overline{A}\ket{y}$ need not give $\ket{x}$. However, if $A$ in $V$ on $\ket{y}$ produces $\ket{x}$,
+then we want the corresponding conjugate operator $A$ in $\tilde V$ on $\bra{y}$ to produce $\bra{x}$, i.e., if $\ket{x} = (A\ket{y})$, we want $\bra{x} = (\bra{y}A)$. One can easily show that if one of the $A$'s is a linear operator, then so is the other conjugate $A$. 
+
+Let us now show that $\bra{z} (A\ket{y} )$ is a linear functional on $\ket{y}$. 
+Using $\ket{y} = \alpha_1 \ket{y_1} + \alpha_2 \ket{y_2}$, 
+we have $\bra{z}(A\ket{y})$ is a linear functional of $\ket{y}$ and we define
+a bra (linear functional) $\bra{x}$ such that $\braket{x}{y} \eqdef \bra{z}(A\ket{y})$. 
+
+Is $\bra{x}$ unique? If not, we can find two $\bra{x}$'s, say $\bra{x_1}$ and $\bra{x_2}$, such that 
+$\braket{x_1}{y} = \braket{z}{(A\ket{y})}$ and $\braket{x_2}{y} = \braket{z}{(A\ket{y})}$.
+Subtracting gives
+$\braket{x_1}{y} - \braket{x_2}{y} = (\bra{x_1} - \bra{x_2})\ket{y} = 0$
+for all $\ket{y}$. This can only happen if $\bra{x_1} - \bra{x_2} = 0$ or $\bra{x_1} = \bra{x_2}$ and so $\bra{x}$ is unique.
+
+For a given linear operator $A$, each different bra $\bra{z}$ defines a different unique bra $\bra{x}$. 
+We will define the linear operator $A$ in $\tilde V$ as the one which when acting on 
+$\bra{z}$ will give $\bra{x}$, i.e, $\bra{x} = (\bra{z}A)$.
+With this definition, we have $$\braket{x}{y} = (\bra{z}A)\ket{y}) = \bra{z}(A\ket{y}).$$ 
+We see that we get the same scalar product independently of whether $A$ in $V$ operates 
+on $\ket{y}$ or whether $A$ in $\tilde V$ operates on $\bra{z}$.
+In this case, one usually drops the parenthesis and writes 
+$\xAy{z}{A}{y}$ for both 
+$(\bra{z}A)\ket{y}$ and $\bra{z}(A\ket{y})$.
+
+Dropping the parenthesis is okay for linear operators but will not be okay in general, e.g., for anti-linear operators, the parenthesis must be retained and it will make a difference whether $A$ operates to the left of to the right.
+
+$\ket{x} = A\ket{y}$ need not be unique. One could expect to find many $A$'s and/or $\ket{y}$'s which give the same $\ket{x}$, e.g, rotation of all vectors of the same length into a given direction.
+
+We now explore additional relationships involving the bras, kets, linear operators, and scalar products. $\ket{x} = A\ket{y}$ means that the linear operator $A$ operates on $\ket{y}$ and changes it into $\ket{x}$. Since $\ket{x}$ and $\ket{y}$
+have their conjugates in the dual space, we can ask for an operator associated with $A$ in the dual space, say $\overline{A}$ which will change $\bra{y}$ into $\bra{y}$. That is, $\bra{x} = \bra{y}\overline{A}$ where $\overline{A}$ operates
+``to the left'' on $\bra{y}$. Instead of using this notation, let us write $\ket{x} = (A\ket{y})$ and $\bra{x} = (\bra{y}A)$ where it is clear whether $A$ operates in the vector space $V$ or in the dual space $\tilde V$. One can easily show that if
+$A$ is a linear operator in $V$, then the ``associated'' $A$ in $\tilde V$ is also a linear operator. 
+
+Consider the linear operator $A$ and any bra $\bra{z}$. Let is show that  there is a unique bra $\bra{x} \eqdef (\bra{z}A)$ such that for all kets $\ket{y}$, we have $\braket{x}{y} = \bra{z}(A\ket{y}).$
+
+To show this, suppose that there are two bras $\bra{x_1}$ and $\bra{x_2}$. If so, we have $$\braket{x_1}{y} = \bra{z}(A\ket{y}) \mbox{ and } \braket{x_2}{y} = \bra{z}(A\ket{y}).$$
+
+Subtracting, we have $$\braket{x_1}{y} - \braket{x_2}{y} = (\bra{x_1} - \bra{x_2})\ket{y} = 0 \mbox{ for all } \ket{y}.$$ But this can be true $\iff \bra{x_1} - \bra{x_2} = 0$ or $\bra{x_1} = \bra{x_2}$. So by defining this unique bra $\bra{x}$
+as $(\bra{z}A)$, we have shown that 
+$$\braket{x}{y} = (\bra{z}A)\ket{y} = (\bra{z}(A\ket{y}),$$
+which tells us that our scalar produce is independent of whether $A$ operates to the right on $\ket{y}$ or to the left on $\bra{z}$. In this case, one usually ``drops'' the parenthesis and writes both
+$(\bra{z}A)\ket{y}$ and $\bra{z}(A\ket{y})$ as $\xAy{z}{A}{y}$. 
+
+Now this is fine for linear operators. For anti-linear operators, (e.g., the time reversal operator) where $A(\alpha\ket{x} = \alpha^*(A]ket{x})$, one is not able to drop the parenthesis as it will make a difference whenther $A$ operates to 
+the right or to the left. 
+RRAY
+Note that $\ket{x} = A\ket{y}$ need not be unique as one could expect to find many $\ket{y}$'s and/or many $A$'s which give the same $\ket{x}$. For example, rotation of all vectors of same length into a given direction.
+
+Another linear operator is $A = \ket{u}\bra{u}$. In this case,
+\bearray
+A\ket{x} &=& \ket{u}\braket{u}{x} \mbox{ and}\\
+A\ket{y} &=& \ket{u}\braket{u}{y}
+\eearray
+If $\braket{u}{x} = \braket{u}{y}$, the ``projection'' of $\ket{x}$ and $\ket{y}$ on $\ket{u}$ is the same. We see that $A\ket{x} = A\ket{y}$ and so $A$ acting on $\ket{x}$ and $\ket{y}$ produces the same vector.
+
+We note that $A\ket{x|$ going to $\ket{z}$, i.e, $A\ket{x} = \ket{z}$, may be unique while going from $\ket{z}$ back to $A\ket{x}$ may not be unique. Just above, we have a good example of this when 
+$A\ket{x} = A\ket{y} = \ket{u}\braket{u}{x} = \ket{u}\braket{u}{y}$ with $\braket{u}{x} = \braket{u}[y}$. However, if $\ket{x} = A\ket{y}$ and $B\ket{x} = \ket{y}$ for all $x$ and $y$, we ss that $AB=1$ and so $A$ and $B$ are ``inverses'' of each
+other. Usually we write $A^{-1}$ for $B$ or $B^{-1}$ for $A$. One can easily show that $(AB)^{-1} = B^{-1}A^{-1}$ -- reverse order as we would expect. 
+
+We can also approach inverses in a little different manner. Let $A$ have the two properties 
+
+1. If $[\ket{x_1} \ne \ket{x_2}$, then $A\ket{x_1} \ne A\ket{x_2}$ for all $\ket{x_1}$ and $\ket{x_2}$.
+
+2. To every vector $\ket{y}$ there corresponds at least one vector $\ket{x}$ such that $A\ket{x} = \ket{y}$.
+
+If $A$ has these two properties, $A$ is said to be ``invertible'' and one can find the inverse $A^{-1}$. In finite dimensional vector spaces, 1. implies 2., but
+this is not the case for infinite dimensional vector spaces. 
+
+This we see that while $\ket{u}\bra{u}$ is a linear operator, it does not possess an inverse. If $A$ does not possess and inverse, then $A$ has zero eigenvalues. If 
+$A\ket{x} = A\ket{y}$, then $A(\ket{x} - \ket{y}) = 0.$
+
+If we know how certain operators go with the kets, we can now state how they will go with the bras. For example 
+\[ \begin{array}{rlcrl}
+\mbox{If } (cA)\ket{x} &= C(A\ket{x}      &\mbox{ then} &\bra{x}(AC) &= (\bra{x}A)C \\
+   (\alpha A)\ket{x} &= \alpha(A\ket{x}   &\null               & \bra{x}(A\alpha) &= \alpha (\bra{x}A) \\
+   (A + B )\ket{x} &= A\ket{x} + B\ket{x}  &\null              & \bra{x}(A +B) &= \bra{x}A + \bra{x} B \\
+   A(B\ket{x}) &= P\ket{x}                        &\null             & (\bra{x}(A)B  &= \bra{x}P
+\end{array}\]
+
+\subsection{\underline{Hermitian Operators}}
+Consider the ket $\ket{\alpha}$ which is conjugate to the bra $\bra{\alpha} \eqdef \bra{\beta}A$. Now for every bra $\bra{\alpha}$ and every bra $\bra{\beta}$, we can find
+the corresponding kets $\ket{\alpha}$ and $\ket{\beta}$ respectively. With this in mind, we define the linear operator $A^\dagger$ such that if $\bra{\beta}A = \bra{\alpha}$, 
+then $A^\dagger\ket{\beta} = \ket{\alpha}$. We call $A^\dagger$ the ``Hermitian conjugate'' or ``Hermitian adjoint'' of $A$.
+
+With this definition of $A^\dagger$, we can show several useful things.
+
+1. First, let us show that this $A^\dagger$ is consistent with the $A^\dagger$ we introduced on page 10-I in connection with scalar products in the coordinate representation which was 
+$(\phi,A\psi) = (A^\dagger\phi, \psi) = (\psi,A^\dagger\phi)^*$. 
+
+Here, let $\ket{x} = A\ket{y}$ and then $\bra{x} = \bra{y}A^\dagger$. Using these in $\braket{z}{x} = \braket{x}{z}^*$, we have 
+$$\xAy{z}{A}{y} = \xAy{y}{A^\dagger}{z}^*$$ and it is consistent with our previous definitions. 
+
+2. $(A^\dagger)^\dagger = A$. 
+\begin{proof}
+Now $\xAy{x}{A}{y} = \xAy{y}{A^\dagger}{x}^*$ where $A$ and $A^\dagger$ can operate either to the right or to the left. As $\ket{x}$ is the conjugate of $\bra{x}$, then $A\ket{y}$ is the conjugate of $\bra{y}A^\dagger$. But from above, 
+we know that the conjugate of $\bra{y}A^\dagger$ is $(A^\dagger)^\dagger\ket{y}$. This we see that $(A^\dagger)^\dagger = A$.
+\end{proof}
+
+3. $(\alpha A)^\dagger = \alpha^* A^\dagger$
+\begin{proof}
+Using $(\alpha A)^\dagger$ for $A$ in case 2 above, we have
+\bearray
+\xAy{x}{(\alpha A)^\dagger}{y} &=& \xAy{y}{(\alpha A}{x}^* = \alpha^*\xAy{y}{A}{x}^* = \alpha^*\xAy{x}{A^\dagger}{y}\\
+&=& \xAy{x}{\alpha^* A^\dagger}{y} \qed
+\eearray\end{proof}
+
+\[
+\left.
+\begin{array}{lcr}
+4. (A+B)^\dagger &=  & A^\dagger + B^\dagger \\
+5. (AB)^\dagger   &=  & B^\dagger A^\dagger
+\end{array}
+\right\} \mbox{ Proofs easy. Relations reasonable}
+\]
+
+6. $(\ket{u}\bra{v})^\dagger = \ket{v}\bra{u}$
+\begin{proof}
+\bearray
+\xAy{x}{(\ket{u}\bra{v})^\dagger}{y} &=& \left( \xAy{y} { (\ket{u}\bra{v})}{x} \right)^* = \left( \braket{y}{u}\braket{v}{x} \right)^* \\
+&=& \braket{x}{v}\braket{u}{y} = \xAy{x}{ (\ket{v}\bra{u}}{y}.
+\eearray
+\end{proof}
+
+The above relationships allow us to give a general rule for taking the Hermitian conjugate of an expression  involving numbers, operators, bras and kets. One replaces $\alpha$ by $\alpha^*$, $A$ by $A^\dagger$, $\ket{x}$ by $\bra{x}$,
+$\bra{y}$ by $\ket{y}$  and writes all the factors in reverse order. 
+
+For example: $$\left( A\ket{x} \xAy{y}{\alpha B^\dagger C}{z}\right)^\dagger = \xAy{z}{C^\dagger B \alpha^*}{y}\bra{x}A^\dagger.$$
+
+If $A^\dagger = A$, $A$ is called a ``Hermitian operator''. If $A^\dagger = -A$, $A$ is called ``anti-Hermitian''or ``skew Hermitian''. 
+
+If $A^\dagger$ = $A^{-1}$ so that $AA^\dagger = 1$, $A$ is called an ``Unitary operator''.
+
+\subsection{\underline{Eigenvalues and Eigenspectra}}
+If we have $A\ket{u} = a\ket{u}$ where $a$ is a complex number, we say that $\ket{u}$ is an eigenket of the operator $A$ and $a$ is the eigenvalue. Similarly for $b\bra{u} = \bra{u} B$, we have $\bra{u}$ as the eigenbra
+of the operator $B$ and $b$ is the eigenvalue. 
+
+Several indpendent kets can have the same eigenvalue $a$. These kets form a subspace and the dimensions of this subspace is called the order of the degeneracy. Similar statements can be made about $b$ and the eigenbras. 
+
+In general, the eigenvalue problem $$A\ket{u} = a\ket{u}$$ and the eigenvalue problem $$\bra{u}A = a' \bra{u}$$ are quite different problems since the later one is equivalent to solving
+$$A^\dagger\ket{u} = a'^*\ket{u} a''\ket{u}$$ and $A$ and $A^\dagger$ are different operators. 
+
+However, for a Hermitian operator $A^\dagger = A$, we have
+
+1. The eigenspectra are identical
+
+2. All eigenvalues are real.
+
+3. Each bra conjugate to an eigenket is an eigenbra with the same eigenvalue.
+
+4. The eigenkets belonging to different eigenvalues are orthogonal.
+
+In general, the eigenkets of a Hermitian operator can be split up into those kets with discrete eigenvalues $$A\ket{n} = a_n \ket{n}$$ and those kets with continuous eigenvalues $$A\ket{\nu} = a(\nu)\ket{\nu}.$$
+
+If $r$ of the $\ket{n}$'s were degenerate (same $a_n$), we can use the ``Schmidt process'' to concoct $r$ orthonormal functions. If we labeled these functions by $\ket{n,r}$, we clearly have
+$$\bra{n,r}\ket{n',r'} = \delta_{nn'} \delta_{rr'}.$$
+
+Similarly in the continuous eigenvalue case, the degeneracy could be labeled by some discrete index (or indices), $r$, taking on a finite or infinite number of values, by an index , $\alpha$, (or indices) varying continuously, or by a 
+combination of these. In this case, we have
+$$\braket{\nu,\alpha,r}{\nu',\alpha',r'} = \delta(\nu-\nu')\delta(\alpha-\alpha')\delta_{rr'}$$ and clearly 
+$$\braket{n,r}{\nu,\alpha, s} = 0.$$
+
+If the eigenkets $\ket{n,r}$ and $\ket{\nu,\alpha,s}$ span our entire vector space, we say that they form a complete set and the Hermitian operator $A$ is called an ``observable''.\label{observable}
+
+In general, it is difficult to prove that we have a complete set and so it is often difficult to prove that a given operator is an observable, Usually physicists are guided by classical mechanics and ``good judgement''.
+
+\subsection{\underline{Projection Operators}}
+Let us split up our Hilbert Space, $HS$, into two subspaces ${\cal{L}}_s$ and ${\cal{L}}_a$ where ${\cal{L}}_s + {\cal{L}}_a = HS$. For example, we know that the bound states of the hydrogen atom can be described by the 
+eigenkets $\ket{n,J,m,\pi}$. We could specify ${\cal{L}}_s$ as the subspace covered by all those eigenkets with a given value of $J$. ${\cal{L}}_a$ would then consist of all the rest. 
+
+In general, any ket $\ket{u}$ can be written as a sum of two kets -- one in ${\cal{L}}_s$ and one in ${\cal{L}}_a$, i.e., $\ket{u} = \ket{u_s} + \ket{u_a}$, where clearly this ``breakup'' is unique. 
+
+Consider the linear operator $P_s$, called a ``projection'' operator which will project out the $\cal{L}_s$ part, i.e., $P_s\ket{u} = \ket{u_s}$. Clearly $P_s\ket{u_s} = \ket{u_s}$ and $P_s\ket{u_a} = 0$. 
+
+We first show that $P_s$ is a Hermitian operator by using $\braket{u_s}{u_a} = 0$ for any $\ket{u}$ and $\ket{v}$. 
+
+Now $\xAy{u}{P_s}{v} = \braket{u}{v_s} = \braket{u_s}{v_s} = \braket{u_s}{v}$.
+
+Thus $\bra{u}P_s = \bra{u_s}$ or $P_s^\dagger\ket{u} = \ket{u_2} = P_s\ket{u}$.
+
+Since $P_s^2 \ket{u} = P_s\ket{u}$, we have $P_s^2 = P_s$ and $P_s(P_s -1)\ket{u} = 0$. This latter is an eigenvalue equation which tells us that $P_s$ had the eigenvalue of $0$ or $1$. If it is $1$, $\ket{u} = \ket{u_s}$ and 
+if it is $0$, $\ket{u} = \ket{u_a}$. 
+
+Since $(1-P_s)\ket{u} = \ket{u_a}$, we see that $P_a = 1 - P_s$ or $P_a + P_s = 1$. 
+
+As a simple example, suppose that ${\cal{L}}_s$ consisted of a single ket, $\ket{s}$ -- one dimensional -- and let $\ket{u_s}$ be the projection of $\ket{u}$ on ${\cal{L}}_s$. 
+
+We have 
+\bearray
+P_s\ket{s}  &=& \ket{s} \\
+P_s\ket{u}  &=& \ket{u_s} \\
+(1-P_s)\ket{u}  &=& \ket{u_a} \\
+\braket{u_s}{s}  &=& 0.
+\eearray
+
+Now $\braket{s}{u_s} = \mbox{ same complex } \#  \eqdef \alpha$, or $\ket{u_s} = \alpha\ket{s}$ if $\braket{s}{s} = 1$. Multiplying $\braket{s}{u}$ by $\ket{s}$, we have
+$$\ket{s}\braket{s}{u} = \ket{s}\braket{s}{u_s} = \alpha \ket{s} = \ket{u_s} = P_s \ket{u}.$$
+As this is true for all $\ket{u}$, we see that $$P_s = \ket{s}\bra{s}.$$ 
+
+We can generalize this in the same manner. Consider the subset, ${\cal L}_s$, of the linearly independent kets, $\ket{n}$, with $n = 1, 2, 3, \hdots, N$ where $\braket{n}{m} = \delta_{nm}$. In this case, the projection operator becomes
+$$P_s = \sum_{n=1}^N\, \ket{n}\bra{n}.$$
+For a subset of kets with continuous indicese with $\braket{\nu}{\nu'} = \delta(\nu - \nu')$, the projection operator becomes (suppressing the ``$s$'' subscript)
+$$P = \int\, \ket{\nu}\, d\nu\, \bra{\nu}.$$
+For a subspace with degenerate and discrete eigenkets labeled by $\ket{n,r}$, we have
+$$P = \sum_{n,r}\, \ket{n,r}\bra{n,r}.$$ If our subspace was the whole of Hilbert space, $P$ becomes unity and we have
+$$\sum_{n,r}\, \ket{n,r}\bra{n,r} = 1.$$ This relation is called a ``closure relation'' or a ``reduction of unity''. The closer relation for continuous indices with degeneracies labeled by $r$ is 
+$$1 = \sum_r\,\int\, \ket{\nu,r}\, d\nu\, \bra{\nu,r}.$$
+
+For a discrete and continuous case, our closure relation is 
+$$1 = \sum_{n,r}\, \ket{n,r}\bra{n,r} + \sum_r\, \int\, \ket{\nu,r}\, d\nu\, \bra{\nu,r}.$$
+These projection operators are closure relations are very important and useful. In particular, we will make great use of the closure relations when we discuss the matrix representations as we go from the abstract Hilbert space
+into a given representation. The coordinate representation is the Schr\"odinger picture and the one most used in quantum mechanics. 
+
+We now turn to a quick review of matrices and then discuss matrix representations and Unitary transformations from one representation to another.
+
+\subsection{\underline{Matrices and the Matrix Representation}}
+\underline{Finite Matrices}
+
+It is often more convenient to express the solutions of quantum mechanical problems by using matrix notation instead of vectors in our abstract Hilbert space. In fact, we shall see that the Schr\"odinger picture is really nothing more
+than a matrix representation called the coordinate representation.
+
+For completeness, we write down some of the more important properties of finite matrices -- properties which you probably know.
+
+A $M$-by-$N$ matrix is a rectangular array of $M$ rows and $N$ columns. For example, 
+
+\begin{equation}A = 
+\begin{pmatrix}
+A_{11} & A_{12}  & \hdots & A_{1n}  \\
+A_{21} & A_{22}  & \hdots & A_{2n}  \\
+\hdotsfor[2]{4}\\
+A_{i1} & A_{i2}  & \hdots & A_{in}  \\
+\hdotsfor[2]{4}\\
+A_{m1} & A_{m2}  & \hdots & A_{mn}  \\
+\end{pmatrix}
+\end{equation}
+
+If $M = N$, we have a ``square'' matrix.\\
+If $N=1$ and $M\ne1$, we have a ``column'' matrix.\\
+If $N\ne1$ and $M=1$, we have a ``row'' matrix.\\
+If $M=N=1$, we have a 1-by-1 matrix called a ``scalar''.\\
+We shall see that the kets can be associated with a column matrix, the bras with a row matrix, and operators as square matrices. 
+
+In the properties listed below let $A_{nm}$ be the $n$-th row, $m$-th column element. 
+
+1. If $A_{nm} = B_{nm}$ for all $n$ and $m$, then $A = B$.\\
+2. $(\alpha A)_{nm} = \alpha A_{nm}$.\\
+3. $S = A+B = B+A$ where $S_{nm} = A_{nm} + B_{nm}$.\\
+4. $P = AB$ where $\displaystyle \sum_{k}\, A_{nk} B_{km}$ and clearly the number of columns of $A$ must equal the number of rows of $B$ for this to make sense. \\
+5. There exists a null matrix $O$, where $OA = AO = O$ and $O_{nm} = 0$.\\
+6. There exists a unit matrix $I$, where $I_{nm} = \delta_{nm}$ and $IA = AI = A$.\\
+7. $\tilde{A} =$ transpose of $A$ such that $(\tilde{A})_{nm} = A_{mn}$.\\
+8. $A^* =$ complex conjugate of $A$ where $(A^*)_{nm} = (A_{nm})^*$.\\
+9. $A^\dagger =$ Hermitican conjugate of $A$ where $(A^\dagger)_{nm} = (A_{mn})^* = A^*_{mn}$ (note reverse order of indices). \\
+Some  special properties for square matrices are:\\
+10. Trace of $\displaystyle A = \Tr A = \sum_{n=1}^N A_{nn}$ and the trace of a product of matrices is invariant to cyclic permutations., i.e., $\Tr(ABCD) = \Tr(BCDA)$.\\
+11. The determinant of a matrix $A = \det A$ is the determinant of the square array. Also, $\det(ABC) = (\det A)(\det B) (\det C)$.
+A determinant is ``singular'' if $\det A = 0$ and ``nonsingular'' if $\det A \ne 0$.\\
+12. If $AB=I$ or $BA = I$, $B$ is called the inverse of $A$ and written as $A^{-1}$. For $A^{-1}$ to exist, $A$ must be nonsingular and $(A ^{-1})_{nm} = \mbox{ Cofactor of } A_{mn}/(\det A)$.\\
+13. $A$ is called an ``orthogonal matrix'' if $\tilde{A} = A^{-1}$. Then $\tilde{A}A = A\tilde{A} = 1$.\\
+14. $A$ is called a ``unitary matrix'' if $A^\dagger = A^{-1}$. Then $A^\dagger A = A A^\dagger = 1$.
+
+From these definitions follow other properties -- some of which are:
+\bearray
+(AB)^*             &=& A^* B^* \\
+\tilde{AB}        &=& \tilde{B}\tilde{A}\\
+(AB)^\dagger &=& B^{\dagger} A^{\dagger}\\
+(AB)^{-1}        &=& B^{-1}A^{-1}\\
+(\tilde{A})^{-1} &=& \tilde{(A^{-1})}\\
+(A^*)^{-1}        &=& (A^{-1})^*\\
+(A^{-1})^\dagger &= &(A^\dagger)^{-1}.
+\eearray\label{FiniteMatrices}
+We now prove two statements. \\
+1. If $A$ is singular, one can find a $\ket{u} \ne 0$ such that $A\ket{u} = 0$ and conversely, if $A\ket{u} = 0$ for $\ket{u} = \ne 0$, then $A$ is singular.
+\begin{proof}
+We prove the converse first. Let $\ket{u}$ be a column matrix with elements $u_1, u_2, \hdots, u_N$. Let $A$ be an $N$-by-$N$ matrix and consider each column in the matrix as a vector. We can then write
+$A = (\av_1, \av_2, \hdots, \av_N)$ as a row matrix where $(\av_i)_n \eqdef A_{ni}$. Then $\displaystyle A\ket{u} = \sum_i\, \av_i u_i$ and we see that $A\ket{u}$ is a linear combination of the $N$ $\av_i$ vectors. If $A\ket{u} =0$ and not all $u_i=0$, then the $N$ $a_i$ vectors are linearly dependent and so at least one of them is a linear combination of the others. This is enough to make $\det A=0$ which proves the converse.
+
+The converse to the converse is that if $A$ is singular, the $\av_i$'s are linearly dependent and so one can find a $\ket{u}\ne 0$ such that $A\ket{u} = 0$.
+\qed\end{proof}
+
+2. If $A$ is non-singular and $A\ket{u} = 0$, then $\ket{u} = 0$. Conversely, if $A\ket{u} = 0$ implies $\ket{u} = 0$, then $A$ is non-singular.
+\begin{proof}
+We prove the converse first. If $A\ket{u} = 0$ implies that $\ket{u} = 0$, then the $\av_i$'s above a linearly independent and can be used as a basis. Now we consider the special basis
+$\ev_1. \ev_2, \ev_3, \hdots, \ev_N$ where $(\ev_i)_j = \delta_{ij}$. Next we expand the $\ev_i$'s in terms of the $\av_j$'s, i.e.
+$\displaystyle \ev_i = \sum_j\, B_{ji} \av_j$ or in component form $\displaystyle \delta_{ik} = \sum{j,k}\, A_{kj} B_{ji}$. The above tells us that $B$ is the inverse of $A$ and so $A$ must be non-singular. 
+
+Conversely, if $A$ is non-singular, then $B$ exists and in order to have $A\ket{u} = 0$, we need $\ket{u} = 0$. 
+\qed\end{proof}
+
+These two proofs tell us that if we have two square matrices $A$ and $B$ and a vector $\ket{u} \ne 0$, then in order to have $A\ket{u} = \alpha B\ket{u}$, it is necessary and sufficient that we have $\det(A-\alpha B) = 0$. All $\alpha$'s
+satisfying the above condition are solutions. 
+
+If $B = I$, then we want to solve the eigenvalue equation $A\ket{u} = \alpha \ket{u}$ and we see that we need $\det(A-\alpha I) = 0$. The equation $\det(A - \alpha I) = 0$ is called the ``secular equation'' and its roots -- the allowed values
+of $\alpha$ -- will be the eigenvalues of $A$. One usually runs into the secular equation when one wants to find the eigenvalues of $H\ket{\psi_n} = E_n\ket{\psi_n}$. 
+
+\subsection{\underline{Infinite Matrices}}
+Practically all of the properties of finite matrices carry over for infinite matrices. Infinite matrices are important for us as we will run into many of them in quantum mechanics. Our rows and columns will be labeled by a combination of
+finite or denumerably infinite number of discrete indices and an number of continuous indices which can take on all values in a given interval.
+
+A matrix is said to be a square matrix if the rows and columns are labeled the same. If they are labeled differently, the matrix is considered to be a rectangular matrix. 
+
+In order to form the matrix product $AB$, the columns of $A$ must be labeled the same as the rows of $B$. When we have continuous indices, the sums must be replaced by an integral. As an example, let us consider the 
+square matrices $A$ and $B$, which depend on the continuous index $q$ where $q_1 \le q \le q_2$. The product of $A$ and $B$, $P$ is given by 
+$$P(q,q') = \int_{q_1}^{q_2} \, A(q,q'') B(q'',q')\, dq''$$ where we assume that the integral is finite.
+
+For continuous indices, a diagonal matrix is defined as $$D(q,q') = f(q)\delta(q-q').$$ This definition of a diagonal matrix preserves our ``diagonal matrix properties'' for finite matrices. For example, diagonal matrices commute with each
+other and multiplying a vector by this diagonal matrix just multiplies the ``vector components'' by the corresponding diagonal matrix element, i.e.
+$$\int\, D(q,q')\ket{x(q'}\, dq' = f(q)\ket{x(q)}.$$
+For infinite matrices, the concept of a a determinant is no longer valid.
+
+For infinite matrices, we need both $AB = I$ and $BA = I$ for $B$ to be the inverse of $A$. In additional $A$ need not be a square matrix to possess an inverse. For example, $A$ could have rows labeled by discrete indices and 
+columns labeled by continuous indices. Then $A^{-1}$ would have rows labeled by continuous indices and columns labeled by discrete indices. The two unit matrices in 
+$$AA^{-1} = I \mbox{ and } A^{-1} A = I$$ would be labeled differently in this case.
+
+\subsection{\underline{The Connection Between Matrices, Operators, and Vectors}}
+Now we want to show how the operators and vectors which we have in quantum mechanics are connected to matrices. For simplicity, we will only consider discrete indices -- but everything we do can easily be carried over for the 
+case of continuous indices.
+
+Let us assume that we know the eigenkets, $\ket{n}$ of some observable $Q$. From our definitions of an observable on \cpageref{observable}, we know that these eigenkets form a complete set and span our Hilbert space. For simplicity, 
+we will assume that these eigenkets form an orthonormal basis. These eigenkets will be called the ``basis vectors in the $Q$-representation.''
+
+In this case, our closure relation is
+$$P_Q = \sum_n\, \ket{n} \bra{n} = I,$$ and any vector $\ket{u}$ can be written as $$\ket{u} = \sum_n\, \ket{n}\braket{n}{u}.$$ We will regard the numbers, $\ket{u_n} \braket{n}{u}$ as the elements of a column matrix.
+Then we would write 
+$$\ket{u} = 
+\begin{pmatrix}
+u_1\\ u_2\\ u_3\\ \vdots
+\end{pmatrix}$$
+It is important to note that given the eigekets, $\ket{n}$, of the $Q$-representation and the $u_i$'s then the vector $\ket{u}$ is uniquely defined. 
+
+Until now, all we have been doing is to talk about vectors in an abstract vector space. Now we have written down the components of these vectors. --And the components depend on the representation.
+
+Similarly for the $\bra{v}$, we have $$\bra{v} = \sum_n \braket{v}{n}\bra{n}$$ and we regard 
+$v_n^* = \braket{v}{n} = \braket{n}{v}^*$ as the elements of a row matrix $\bra{v} = (v_1^*, v_2^*, \hdots)$. 
+
+Since $u_n = \braket{n}{u}$ and $u^*_n = \braket{u}{n}$, we see that $\ket{u}^\dagger = \bra{u}$ or 
+$$\begin{pmatrix}
+u_1 \\ u_2 \\ \vdots
+\end{pmatrix}^]dagger = (u_1^*, u_2^*, \hdots).$$
+
+We can ``play the same game'' for the linear operator $A$. THen 
+$$A = \sum_{n,m} \, \ket{n} \xAy{n}{A}{m}\bra{m}$$ and we call $A_{nm} = \xAy{n}{A}{m}$ the matrix representation of the operator $A$ in the $Q$-representation.
+
+Likewise, for $A^\dagger$, we have
+$$A^\dagger = \sum_{n,m}\, \ket{n}\xAy{n}{A^\dagger}{m}\bra{m} \mbox{ and } A^\dagger_{nm} = \xAy{n}{A^\dagger}{m}.$$
+Since $\xAy{n}{A^\dagger}{m} = \xAy{m}{A}{n}^*$, we see that 
+$$A^\dagger_{nm} = (A_{mn})^* = A^*_{mn}.$$
+
+Note that this latter relationship is the same definition of the Hermitian conjugation in matrices. In fact, we are trying to show that there is a one-to-one correspondence betweetn all matrix operations and operations in our linear space. 
+We have see in the matrix representations that the ket vectors are column matrices, operators are square matrices, and bra vectors are row matrices and are the Hermitian conjugate of the column matrix of the corresponding ket vector.
+
+Some furhter examples of this correspondence are: 
+
+1. $\ds \braket{u}{v} = \sum_n\, \braket{u}{n}\braket{n}{v} = \sum_n\, u^*_n v_n$ which is just
+$$ (u_1^*, u_2^*,\hdots)\begin{pmatrix} v_1\\ v_2\\ \vdots \end{pmatrix}.$$
+
+2. $A$ on $\ket{u}$  $$\ket{x} = A\ket{u} = \sum_{n,m}\, \ket{n}|xAy{n}{A}{m}\braket{m}{u} = \sum_n\left( \sum_m\, A_{nm} u_m\right) \ket{n}$$ and so $\ds x_n = \sum_m\, A_{nm}u_m$.
+
+3. $A$ on $\bra{v}$
+$$\bra{x} = \bra{v}A = \sum_{n,m}\, \braket{v}{m}\xAy{m}{A}{n} \bra{n} = \sum_m\, \bra{n} \left(\sum_m\, v_m^* A_{mn}\right)$$ 
+and so $\ds x_n^* = \braket{x}{n} = \sum_m\, v_m^* A_{mn}$.
+
+4. $\ds\ket{x} = AB\ket{u} = \sum_{n,l,m}\, \ket{n} \xAy{n}{A}{l} \xAy{l}{B}{m}\braket{m}{u}$ and so $\ds x_n = \sum_{l,m} \, A_{nl} B_{lm} u_m$. 
+
+One can continue on in this manner. However, we can already see that all the operations in our linear vector space carry directly over into matrix operations once we pick a representation.
+
+But what is more important is that our formulation of quantum mechanics in terms of linear operators acting in our abstract  
+Hilbert space is completely independent of a representation. That is, we could have picked another observable, say $P$, and use the eigenkets of $P$ as a basis with which to express our ket vectors, bras, and linear operatos. 
+
+Even though we have used discrete indices in the above treatment, there is no problem in carrying everything over to continuous indices if our observable had eigenkets which were labeled in a continuous manner. The Schr\"odinger
+picture is the case where we use the coordinate representation. As we shall see later, the eigenkets in one dimension are $\ket{q}$ where $-\infty < q < \infty$. The for the state vector $\psi$, we have
+$$\psi = \int\, \ket{q}\braket{q}{\psi}\, dq \mbox{ as } 1 = \int\, \ket{q}\, dq\, \bra{q}$$ and we define $\psi(q) \equiv \braket{q}{\psi}$ which is a function of $q$  and is the wave function we use in the Schr\"odinger picture. So the 
+Schr\"odinger picture is just one of the \underline{many} representations we could use to describe and/or solve quantum mechanical problems. 
+
+\subsection{\underline{Unitary Transformations}}
+A transformation is a very useful and a fundamental operation which can be thought of in one of two ways.
+
+1. It can be considered as an operator which acts on a vector and changes this vector into a new vector. A simple example is an operator which rotates all vectors through a given angle around some given axis. 
+
+2. It can be considered as an operator which transforms from one basis to another basis, or one which transforms a vector expressed in terms of one basis to the same vector in terms of another basis. A simple example is the operator
+which transforms a vector expressed in a cartesian coordinate basis to one expressed in a spherical coordinate basis.
+
+Now we usually are dealing with an equation (or equations) which contain operators, bras, kets, etc. and we can ask what will this equation look like after the transformation takes place.
+
+In Case 1 above, we can always work with a given basis and given this
+basis, the transformation operator will have a matrix representation. However, in Case 2 above, the transformation operator will not have a matrix representation in a given representation because this transformation ``connects'' two 
+different bases. -- Or ``straddles'' two different bases. But we will see that these two cases will behave formally in the same manner. 
+
+1. \underline{Matrix Transformations}\\
+For simplicity, let us consider matrix transformation with a matrix $T$ which possesses an inverse and let $u_r$ be a row matrix, $u_e$ be a column matrix and $A$ be a square matrix. 
+
+Consider the transformation defined by 
+\[ \begin{array}{rlcrl}
+   A'  &= TAT^{-1}      &\mbox{ which implies that } & A      &= T^{-1}A'T\\
+   U_C' &= TU_C      &\null      "~~~~   "~~~~~"     & U_C &= T^{-1} U_C' \\
+   U_r' &= U_rT^{-1}  &\null      "~~~~   "~~~~~"     & U_r &= U_r' T 
+\end{array}\]
+
+This transformation will preserve the form of the following algebraic matrix equations as well as the trace and the determinant,
+\[ \begin{array}{rlcrl}
+\mbox{If } A  &= \alpha B + \beta CD      &\mbox{ then} &A' &= \alpha B' + \beta C' D' \\
+   U_r  &=  \alpha B V_r s_c A t_r &\null               & U_r'  &= \alpha B' V_r' s_c' A' t_r'\\
+  \mbox{and } \Tr A'  &= \Tr A                  &\mbox{ and }             & \det A'  &= \det A
+\end{array}\]
+ 
+ However, when our relations have Hermitian conjugates, we will have to put a further restriction on $T$ if we want to preserve the form of the algebraic equations. 
+ Suppose we have $A = B^\dagger C$. It is reasonable to require that we have $A' = B'^\dagger C'$. If this is the case, it requires that $B'^\dagger = T B^\dagger T^{-1}$!
+ But our original $B' = TBT^{-1}$ also requires that $(B^\dagger)' = T B^\dagger T^{-1}$ which tells us that $(B')^\dagger = (B^\dagger)'$. 
+ Since $(T^\dagger))^{-1} = (T^{-1})^\dagger$ (\cpageref{FiniteMatrices}), we can write 
+ $$B' = ((B')^\dagger)^\dagger = (TB^\dagger T^{-1})^\dagger  = (T^{-1})^\dagger B T^\dagger = (T^\dagger)^{-1} B T^\dagger.$$ 
+ Comparing this with $B' = TBT^ {-1}$, we have $TBT^{-1} = (T^\dagger)^{-1} B T^\dagger$ or
+ $T^\dagger T B = B T^\dagger T$ or $\left[^\dagger T, B\right] = 0$.
+ For an operator, $T^\dagger T$ in this case, to commute with all $B$, it is necessary (stated without proof), that $T^\dagger T = \alpha I$, i.e, $T^\dagger T$ is a multiple of the unit matrix.
+ 
+ By demanding that $(U_C')^\dagger =  (U_C^\dagger)'$, we can find $\alpha$. Now $U_C' = TU_C$ and so $(U_C')^\dagger - U_C^\dagger T^\dagger$. 
+ Now $U_C^\dagger$ behaves like a row matrix which requires that $(U_C^\dagger)' = U_C^\dagger T^{-1}$. Comparing these last two expressions tell us that we have $T^\dagger = T^{-1}$.
+ 
+ So $T^\dagger T = TT ^\dagger = I$ and $\alpha = 1$. We see that in order to have all algebraic equations preserved, we need to have an \underline{Unitary Tranformation}.
+
+Then 
+$$
+\left.\begin{matrix}
+\ket{u'}= R\ket{u}\\
+\bra{v'} = \bra{v}T^\dagger\\
+A' = TAT^\dagger
+\end{matrix}\right\}
+\mbox{ where }
+T T^\dagger = T^\dagger T = I.$$
+
+\underline{1. Matrix Transformations a little differently/.}
+
+As a side point, we can also approach our matrix transformations in a little different manner and arrive at the same conclusion. Consider the matrix transformation for column matrices
+$$\ket{u'} = T\ket{u}.$$
+When we make a measurement in the physical world we ``measure'' either $\braket{u}{v}$ and/or $\xAy{u}{A}{v}$. This is is reasonable to require that $$\braket{u'}{v'} = \braket{u}{v} \mbox{ and } \xAy{u'}{A'}{v'} = \xAy{u}{A}{v}$$
+since our measurements should not depend on the transformation $T$. 
+
+Now $\ket{u'}= T\ket{u}$ implies that $\bra{u'} = \bra{u}T^\dagger$. Then $\braket{u'}{v'} = \braket{u}{v}$ can be written as 
+$$\braket{u'}{v'} = \xAy{u}{T^\dagger T}{v}$$ and we see that we
+need $T^\dagger T = I$ and so $T$ is required to be an \underline{Unitary Transformation}.
+
+Next, we can ask for the relation between $A$ and $A'$ when $\xAy{u'}{A'}{v'} = \xAy{u}{A}{v}$. Then we have 
+$\xAy{u'}{A'}{v'} = \xAy{u}{T^\dagger A T}{v}$ and we see  that $T^\dagger A' T  = A$ or that $A' = TAT^\dagger$ which is the same as we had before. Furthermore we see that the form of all algebraic expressions as well as
+traces and determinants will be preserved. 
+
+\underline{2. Change of Representations}
+
+Now let us look at the 2nd case where we consider a transformation between two bases. 
+
+Let us consider two observables $Q$ and $P$. Let $Q$ have the eigenkets $\ket{n}$ and $P$ have the eigenkets $\ket{\overline{m}}$ where we will use discrete indices for simplicity. 
+
+We can expand each basis in terms of the other. That is 
+$$\ket{n} = \sum_{\overline{m}}\, \ket{\overline{m}}\braket{\overline{m}}{n} = \sum_{\overline{m}}\, \ket{\overline{m}} T_{\overline{m}n}$$ which defines $T$ and 
+$$\ket{\overline{m}} = \sum_{n} \, \ket{n}\braket{n}{\overline{m}} = \sum_{n}\, \ket{n}{\overline{m}} S_{n\overline{m}}$$ which defines $S$.
+
+Since $\braket{\overline{m}}{n} = \braket{n}{\overline{m}}^*$, we have 
+$$T_{\overline{m}n} = S^*_{n\overline{m}} \mbox{ or that } T = S^\dagger \mbox{ or } S = T^\dagger.$$
+Next we observe that 
+$$\braket{\overline{m}}{\overline{m}'} = \sum_n\, \braket{\overline{m}}{n} \braket{n}{\overline{m}'} = \delta_{\overline{m},\overline{m}'}$$ which tells us that 
+$$\sum_n\, T_{\overline{m}n} S_{n\overline{m}'} = \delta_{overline{m},\overline{m}'}$$ or that $TS = I$ or $TT^\dagger = S^\dagger S = I$.
+Thus we see that our transformation from one basis to another basis is also an \underline{Unitary Transformation}. Remember that our $S$'s and/or $T$'s are defined with respect to two given representations. 
+
+Now we look at an arbitrary vector $\ket{u}$.
+
+Let $\ket{u}_Q$ refer to the vector $\ket{u}$ expressed in the $Q$ representation.
+
+Let $\ket{u}_P$ refer to the vector $\ket{u}$ expressed in the $P$ representation.
+
+The $n$th component of $\ket{u}_Q$ can be written as 
+$$\left(\ket{u}_Q\right)_n = \braket{n}{u}  = \sum_{\overline{m}} \, \braket{n}{\overline{m}} \braket{\overline{m}}{u}  = \sum_{\overline{m}} \, T^\dagger_{n\overline{m}} \left(\ket{u}_P\right)_{\overline{m}}$$ or symbollically
+$$\ket{u}_Q = T^\dagger \ket{u}_P = S\ket{u}_P.$$
+
+
+Next we consider the linear operator $A$.
+\bearray
+\left(A_Q \right)_{nm} &=& \xAy{n}{A}{m} =\sum_{\overline{k},\overline{l}}\, \braket{n}{\overline{k}}\xAy{\overline{k}}{A}{\overline{l}}\braket{\overline{l}}{m} \\
+                                   &= & \sum_{\overline{k},\overline{l}} \, S_{n\overline{k}} \left(A_P \right)_{\overline{k}\overline{l}} S^*_{m\overline{l}} 
+                                                                      =  \sum_{\overline{k},\overline{l}}\, S_{n\overline{k}} \left(A_P \right)_{\overline{k}\overline{l}}S^\dagger_{\overline{l}m} 
+\eearray
+or symbollically
+$$A_Q = SA_P S^\dagger = T^\dagger A_P T \mbox{ or inversely}$$
+$$A_P = TA_Q T^\dagger.$$
+Thus we see that when we use a transformation which takes us from one basis representation to another basis representation, all the formal equations between bras, kets, linear operators, etc. are the same as those when we 
+consider a matrix transformation which referred to a given representation. 
+
+In the above treatment, we restricted ourselves to discrete indices for the eigenkets. But this need not be necessaritly so. One observable could have discrete indices depicting the eigenkets while the other observable could have 
+continuouys indices depicting its eigenkets (Messiah Ch VII pp 21 discusses this case) or both observables could have continuous indices. 
+
+Because $T$ and/or $S$ are defined with respect to two representations, it is not easy to write down a formal representation of them as operators. However, there is one special case which merits mentioning. 
+Suppose the $Q$-eigenkets and the $P$-eigenkets have a one-to-one correspondence. In this case we could ``specialize'' the relation
+\bearray
+\ket{u}_Q = S\ket{u}_P \mbox{ to } \\
+\ket{n} = S\ket{overline{n}}
+\eearray
+where the eigenkets $\ket{n}$ corresponds to the eigenkets $\ket{\overline{n}}$ in a one-to-one manner. Then we can write
+$$S = S\sum_{\overline{m}}\, \ket{\overline{m}}\bra{\overline{m}} = \sum_{\overline{m}}\, \ket{\overline{m}} \bra{\overline{m}}$$ where $\ds \sum_{\overline{m}}$ implies that $m$ is summed over at the same time. In this case, $S$
+``straddles'' or operates in both representations, 
+
+It is quite easy to show the scalar product is invariant to a change in the representation and that an observable $A$ has the same eigenvalue spectrum.
