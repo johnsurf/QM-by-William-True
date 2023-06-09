@@ -1,0 +1,188 @@
+\section{Wave Packets}
+(cf. Schiff, Messiah, Merzbacher, Gottfied)\\
+In quantum Mechanics, we describe particles by waves of by combinations of waves called wave packets. These wave packets should become more and more localized as one approaches the ``classical mechanical region of validity.''\\
+In elementary treatment of scattering, one uses plane waves to describe a steady stream of particles incident on a ``target'' and then scattering. In more formal treatment of scattering, uses of plane waves result in the appearance of 
+mathematical singularities. But if one uses wave packets, as they should, these difficulties disappear. We will see this later in on the year when we consider formal scattering theory.\\
+Using wave packets to describe particles, the inherent ``wave properties'' will not allow us to make ``too precise'' statements about position, momentum, etc. and one is forced to do some ``hand waving.''
+\subsection{A Simple Wave Packet}
+In order to gain some insight into all this, let us study some simple wave packets in one dimension in an isotropic non-absorptive medium. Let us consider a disturbance or a pulse which is localized and moving. 
+We would like to have this ``packet'' describe a moving particle. \\
+The plane wave, $e^{i(kx - \omega t)}$, will have a phase velocity $v_\phi = \omega/k$, where in general $\omega$ is a function of $k$;. Now we could always analyze thie above wave packet in terms of these plane waves -- which we
+attest to ``understand'' and ``know how'' to work with them. And it seems reasonably clear that the more ``k-components'' needed in a Fourier analysis approach, the more localized the wave packet will be and conversely.\\
+We can gain some insight into all this by considering a packet built ``equally'' from plane waves with $k$ between $k-\Delta k$ and $k + \Delta k$ where $\Delta k \ll k$. In this case, out wave packet is 
+$$\Psi(x,t) = \int_{k-\Delta k}^{k + \Delta k}\, e^{i(k'(x-x_0) - \omega't)}\, dk'$$ where $\omega'$ means that $\omega' \defeq \omega(k')$.\\
+Suppressing momentarily the $\omega't$ part, we look at 
+\bearray
+\psi(x) &=& {e^{ik(x-x_0)}\over i(x-x_0)} \left[ e^{i\Delta k(x-x_0)} - e^{-i\Delta k(x-x_0)} \right]\\
+&=& 2{\sin[\Delta k(x-x_0)]\over (x-x_0)} e^{ik(x-x_0)}
+\eearray
+The real part of $\psi(x)$ is shown at the right and looks something like a wave packet -- if it was moving.\\
+A more general approach would be to multiply out exponential by some sort of weighting function, $f(k')$, which is large near $k'=k$ and small elsewhere and then integrate of $k'$. 
+e.g. Figures go here -- where we did the 2nd example above. \\
+Now $$|\psi(x)|^2 = {4 \sin^2[ \Delta k(x-x_0)]\over (x-x_0)^2}$$  and we see that $\psi|^2$ is small when $\displaystyle (x-x_0)\gg {1\over \Delta k}$ where $\Delta k$ is a ``measure'' of the spread of the wave packet
+in $k$-space (momentum space).\\
+
+\subsection{The Relation $\Delta x \Delta k \approx 1$}
+We required (cf pp 2-4) that $\Delta k \ll k$. So whenever $(x-x_0) \gg {1\over \Delta k}$, then $(x-x_0) \gg {1\over k} = {\lambda\over2\pi}$ which tells us that $x$ is many wavelengths ``out from'' $x_0$. Or 
+stating it all inversely, $\psi|^2$ will be large only when $$\Delta x\Delta k \approx 1$$ where $\Delta x = x-x_0$.\\
+Now this is not an exact statment and we really can't make one when we are dealing with wave packets. All we can say is that $\psi|^2$ will be large when $\Delta x\Delta k\approx 1$. This implies that 
+if $\Delta k$, the spread in momentum space, is small, then the spread in coordinate space, $\Delta x$, will be large and conversely. This result is also consistent with our uncertainty principle which was
+$\Delta x\Delta p \ge \hbar/2$ or $\Delta x\Delta k \ge 1/2$.
+
+\subsection{General Wave Packets \& Group Velocity}
+Let us now concoct a traveling wave packet by using the weighting function $\displaystyle f(k') = A(k') e^{i\alpha'}$ where $A(k')$ is real and $\alpha' \defeq \alpha(k')$. We have
+$$\Psi(x,t) = \int_{-\infty}^{\infty}\, e^{i(k'x - \omega't)}\, dk' = \int_{-\infty}^\infty\, A(k') e^{i(k'x - \omega't + \alpha')}\, dk'$$ where $A(k')$ is expected to be large only around $k\approx k'$. Note in passing that this is just
+the Fourier transform of the packet, $\Phi(k',t) = \sqrt{2\pi}\, f(k') e^e{-i\omega't}$ in the momentum representation.
+
+We rewrite $\Psi(x,t)$ as 
+$$\Psi(x,t) = \int\, A(k') e^{i\phi'}\, dk'$$ where $\phi' \defeq k'x -\omega't + \alpha'$. If $\phi' = \phi(k')$ changes rapidly with $k'$, $|\Psi(x,t)|$ will not be large even though $A(k')$ may be large, i.e., $e^{i\phi'}$ oscillates so
+rapidly, there will be a great deal of cancelation and very little contribution to the integral. Conversely, $|\Psi(x,t)|$ will be large -- and this is where the wave packet will be in the region where $\phi'$ is stationalry with respect 
+to $k'$. That is, the ``center'' of our wave packet will be where
+$${d\phi(k')\over dk'}\big|_{k'=k} = {d\phi'\over dk'}\big|_{k'=l} = 0.$$
+
+Let us use the notation, $\displaystyle {d\phi'\over dk'}\big|_{k' = k} \defeq {d\phi\over dk}, {d\alpha'\over dk'}\big|_{k'=k} = {d\alpha\over dk},$ etc. Then we have
+$${d\phi\over dk} = x -{d\omega\over dk} t + {d\alpha\over dk} = 0.$$ Since $\displaystyle {d\alpha\over dk}$ is a constant, we see that our wave packet moves to the right with a velocity 
+$\displaystyle v_g \defeq {d\omega\over dk}$ which we call the ``group velocity''. 
+
+\subsection{A Wave Packet Striking a Potential Step}
+\underline{Example:} As a simple example, let us consider what happens when a wave packet is incident from the right on the potential step shown in the Figure.
+
+Out time independent wave equation is
+$$H\psi(x) = \left[{p^2\over 2m} + V(x)\right] \psi(x) = E\psi(x).$$
+Let $U(x) \defeq {2mV(x)\over \hbar^2}, \E \defeq {2mE\over \hbar^2}$, and using $\displaystyle p^2 = -\hbar^2 {d^2\over dx^2}$,
+our wave equation reduces to 
+$${d^2\psi\over dx^2} + (\E - U)\psi = 0.$$
+$\E$ can be greater than $U_2$ or in between $U_2$ and $U_1$. We treat these two cases separately.\\
+\underline{Case 1: $U_1 < U_2 < \E$} The plane wave solutions in the two regions can be written as (cf. for example, Messiah pp 81)
+$$\left.\begin{matrix}
+\psi_1 = e^{-ik_1x} + R e^{ik_1x} \\
+\psi_2 = S e^{-ik_2x} 
+\end{matrix}\right\}
+\mbox{ where }
+\left\{\begin{matrix}
+k_i = \sqrt{\E - U_i} \\
+R = {k_1-k_2\over k_1 + k_2}\\
+S = 1+R = {2k_1\over k_1 + k_2} 
+\end{matrix}\right. $$
+These solutions are the ones which would be found for a steady stream of particles incident on the potential step from the right.
+
+In order to study how a wave packet will behave, we will take a linear combination of the $\psi$'s centered around the energy $\E$ -- really around $k$, which is the more relevant parameter in this case. 
+We can construct wave packets by considering a real function $f(k_1' - k_1)$ which is peaked around $k_1' = k_1$. Then in region 1 we can construct the wave packet
+\bearray 
+\Psi_1(x,t) &=& \int_0^\infty\, f(k_1'-k_1) \psi_1 e^{-i{E't\over \hbar}}\, dk_1'\\
+&=& \int_0^\infty\, f(k_1' - k_1) e^{-(k_1'x + {E't\over \hbar})}\, dk_1' + \int_0^\infty\, f(k_1' - k_1) R' e^{i(k_1'x - {E't\over \hbar})}\, dk_1'
+\eearray
+and similarly in region 2,
+\[ \Psi_2(x,t) = \int_0^\infty\, f(k_1' - k_1) \psi_2(x) e^{-i{E't\over \hbar}}\, dk' = \int_0^\infty\, f(k_1' - k_1) S' e^{-i)k_2'x + {E't\over\hbar}}\,dk_1'\]
+where we have brought in the time dependence in order to have a traveling wave packet. 
+
+The integration from $0$ to $\infty$ implies that we have a contribution of all plane waves with $E>V_1$. If $f(k_1'-k_1)$ is sharply peaked, then only those plane waves around $k_1'=k_1$ will give an significant contribution. 
+In the 2nd expression, $\Psi_2$, we will have to be more restricted on the $f(k_1'-k_1)$ in that we want $E<V_2$. Otherwise we will be including plane wave solutions in our wave packet which do not satisfy the wave equation. So 
+we will assume that we are well above the barrier, i., $E$ well above $V_2$ and that $f(k_1'-k_1)$ is sufficiently ``localized'' around $k_1$ so that the plane wave solutions corresponding to $E<V-2$ to not contribute to the wave packet in 
+regioin 2. To treat the case with $E\ge V_2$ would be more complicated and I don't want to do it here.
+
+Now let us look at the behavior of out constructed wave packets. The 1st term of $\Psi_1$ is $\displaystyle \int_0^\infty\, f(k_1' - k_1) e^{-i(k_1'x + {E't\over\hbar})}\, dk_1'$ and represents a wave packet traveling to the left with a center at 
+$x=-v_1t$ and with a ``group'' velocity of $\displaystyle v_1 = {d\omega\over dk} = +{1\over\hbar}\left.{dE'\over dk_1'}\right|_{k_1' = k_1}$. (See pages 5 + 6 Section IV where we discussed the velocity of the center of a wave packet).
+
+We have $\displaystyle E-V_1 = {p_1^2\over2m} = {\hbar^2k^2\over2m}$ and so $\displaystyle v_1 = {\hbar k_1\over m} = {p\over m}$. So in this case, the center of the wave packet moves with the classical velocity. Since $x=-v_1t$, we see that in the remove past, the center of the wave packet was far to the right and moved with a constant velocity to the left reaching the origin at time $t=0$.
+
+Similarly, the 2nd term in $\Psi_1$ represents a wave packet \underline{moving to the right} with the same velocity $v_1$ with its center at $x=v_1t$. So this ``reflected'' packet starts out at the origine at time $t=0$ and moves with a constant 
+velocity to the right.
+
+We can ask what in the above precludes the possibility that this ``reflected'' packet was already moving to the right at a large distance in the remote past. i.e., long before out incident packet, the 1st term in $\Psi_1$, could reach 
+the potential step at $x=0$ and be reflected. In the 2nd term we have a phase in the exponent of $\displaystyle \phi' = k_1' - {E't\over\hbar}$. For large $x$ and $t\ll0$ (a large negative $t$ to the remote past), $\phi'$ is a positive quantity with 
+$\displaystyle e^{i(k_1'x - {E't\over\hbar})}$ oscillating rapidly as we integrate over $k_1'$. Consequently there will be essentially no contribution to the integral in this case. This $\Psi_1$(2nd term) will only be ``large'' when the phase of 
+$\phi'$ is statioinary i.e., $x$ and $t$ both positive with $x = v_1t$. Thus the reflected packet does not ``appear'' until the incident packet arrives and is reflected. 
+
+Similar arguments can be made for the incidence packet $\Psi_1$ (1st term), which has a phase $\displaystyle \phi' = k_1' + {E't\over\hbar}$. This packet will only exist for $x>0$ and $t<0$ with $x = -v_1t$. At $t=0$, when it reaches the potential step, it ``disappears'' never to be seen again.
+
+Using the same kind of arguments, $\Psi_2$ represents a wave packet which ``originates'' at the origin at time $t=0$ and travels to the left. As $\displaystyle  \phi' = k_2' x + {E't\over\hbar}$, the phase is stationary at 
+$$\left.{dk_2'\over dk_1'}\right|_{k_1' = k_1'} x + \left.{dE'\over dk_1'}\right|_{k'=k} {t\over\hbar} = {dk_2\over dk_1} x + v_1 t = 0.$$
+As $k_1^2 = k_2^2 + U_2 - U_1$, $\displaystyle {dk_2\over dk_1} = {k_1\over k_2} = {v_1\over v_2}$. 
+and we see that the center of our ``transmitted'' packet is at $x = -v_2t$ traveling with its classical velocity to the left.
+
+Note that the reflected packet is reduced by $R$ from the incident packet and the transmitted packet is reduced by $S$. The only difference between this approach and a classical picture is that a classical particle 
+would not have been reflected but would have continued on into region 2 with a decreased velocity of $v_2$. Light waves on the other hand would be ``reflected'' and ``transmitted'' when they struck an interface 
+between two dielectric mediums.
+
+\underline{Case 2: $U_1 < \E < U_2$} Now we look at the other case where the energy is below $V_2$. Things will go much the same here as in Case 1 but with some important differences. 
+
+The plane was solutions can be written as (see Messiah pp 82 for example)
+$$\left.\begin{matrix}
+\psi_1 &=& e^{-ik_1x} - e^{ik_1x + 2\phi} \\
+\psi_2 &=& A e^{i\phi}e^{k_2x}\\
+&\null &\mbox{ decaying exponential as } x \mbox{ is negative} 
+\end{matrix}\right\}
+\mbox{ where }
+\left\{\begin{matrix}
+k_1 &=& \sqrt{\E - U_1} \\
+k_2 &=& \sqrt{U_2 - \E} \\
+A  &\null&\mbox{ is a constant}\\
+\sin\phi &=& \sqrt{{\E-U_1\over U_2 - U_1}}  = {k_1\over \sqrt{k_1^2 + k_2^2}} 
+\end{matrix}\right. $$
+
+Using $f(k_1' - k_1)$, we construct the packets
+\bearray
+ \Psi_1(x,t) &=&  \int_0^\infty\, f(k_1' - k_1) e^{-(k_1'x + {E't\over \hbar})}\, dk_1' + \int_0^\infty\, f(k_1' - k_1) e^{i(k_1'x + 2\phi' - {E't\over \hbar})}\, dk_1' \\
+ &\null& \mbox{and}\\
+ \Psi_2(x,t) &=&  A e^{k_2x} \int_0^\infty\, f(k_1' - k_1) e^{-(k_1'x + {E't\over \hbar})}\, dk_1''\\
+ \eearray using a real $f(k_1' - k_1)$ centered around $k_1' = k_1$. 
+ 
+ By similar arguments to those given on 8-IV, $f(k_1'-k_1)$ should be zero for $k_1'$'s corresponding to $E> V_2$ and we will stay away from the top of the barrier where $E\le V_2$.
+ 
+ As in Case 1 above, the 1st term in $\Psi_1$ represents a wave packet traveling to the left with the classical velocity $v_1$, centered at $x = - v_1t$, reaching the origin at $t=0$, and ``disappearing''.
+ 
+ Similarly, the 2nd term in $\Psi_1$ represents a packet, non-existent for $t<0$, traveling to the right with the same velocity, $v_1$, which as its center at 
+ $$ x = v_1t - \left.2{d\phi'\over dk_1'}\right|_{k_1' = k_1}.$$
+ 
+We note that the center of the incident packet reaches the origin at $t=0$ while the center of the reflected packed doesn't leave the origin until a time $\displaystyle t = {2\over v_1}{d\phi\over dk_1}$ later. now how significant is this
+``delay'' time and can we gain some insight into its meaning? The answer is both Yes! and No!
+
+If we want to compute the motion of our packet with a classical particle, then it should retain a nice localized shape -- at least away from the origin where the potential step is. Near the origin we can expect
+some distortion as the ``front part'' of the packet arrives first and is reflected before the ``back part'' of the packet arrives. In order to have a nice localize packet, we don't want the $2\phi'$ term in the phase varying too 
+rapidly with $k_1'$ over the range $\Delta k$ where $f(k_1' - k_1)$ is large. That is, we want 
+$$\Delta k \left(2 {d\phi\over dk_1}\right) \ll 1.$$ or using $\Delta x \Delta k \approx 1$, we want $\displaystyle \Delta x \gg 2{d\phi\over dk_1} = v_1 \tau$.  This last relationship tells us that the delay time, $\tau$, is much
+less than the time it takes the packet to move its mean width $\Delta x$. Since we are considering a bundle of waves, it is not reasonable to ask details about what goes on during such a short time. 
+
+But we can gain some insight into what is going on by looking at $\Psi_1(x,t)|$. $|\Psi_2|$ will only be large when $\displaystyle \left[{d\over dk_1;}(\phi' - {E't\over \hbar})\right] \approx 0$. That is, when 
+$\displaystyle {d\phi\over dk_1} = {t\over\hbar}{dE\over dk_1}$ which is when $t=\tau/2$. In constrast to a classical particle which never gets into region 2. the packet has a good chance of existing in region 2 near the
+origin for a time of order $\tau/2$. How far it gets into region 2 depends on the size of $k_2$. So this is purely a quantum mechanical result where the particle penetrates into region 2, finds out that it ``shouldn't be there''
+and ``gets out''.
+
+Could we ever detect the particle in there? One can also ask similar question such as can a baseball go through a glass window without breaking it?
+
+\subsection{Spreading of the Wave Packets}
+Let us now see how wave packets in general will spread. Qualitatively we expect this to happen as a packet is made up of several momenta and one would expect the faster components to ``get ahead'' of the slower ones. 
+
+Now a particle in a potential which is independent of its momentum, viz. $$E = \hbar\omega = {p^2\over2m} + v(x),$$ has a group velocity of $\displaystyle v_g = {\partial \omega\over \partial k} = {\hbar k \over m} = {p\over m} = v_cl.$
+we see that the center of this packet moves with a constant velocity, the classical velocity, $v_cl$, but the packet will still spread as we shall see below.
+
+Dropping the prims in the integration, we consider a packet with a Gaussian shaped weighting function, $\displaystyle f(k-k_0) ={1\over\sqrt{2\pi}}e^{-{(k-k_0)^2\over 2 \Delta k^2}}$, which is centered around $k = k_0$ with a width $\Delta k$ defined by $\Delta k^2 = \left[ \expect{k^2} - \expect{k}^2\right]_{t=0}$. Furthermore, let's assume that the packet is centered at $x_0$ at time $t_0$.
+
+Then our packet is given by 
+$$\Psi(x,t) = {1\over\sqrt{2\pi} } \int_{-\infty}^\infty \, e^{-{( k-k_0)^2\over2\Delta k^2}}\, e^{i[k(x-x_0) - \omega t]}\, dk.$$
+Now we can't do the integration until we know how $\omega$ varys with $k$. If it was a free particle, $\displaystyle E = \hbar\omega = {p^2\over2m} = {\hbar^2k^2\over2m}$ or if the particle moved
+in a momentum independent potential, $\displaystyle E = \hbar\omega = {\hbar^2k^2\over2m} - V(x)$, then we would know how $\omega$ depended on $k$ and we can go ahead an integrate. 
+
+Even if we didn't know how $\omega$ depended on $k$ but if $\Delta k$ was small enough, we could hope to expand $\omega$ about $k = k_0$ and neglect the higher order terms as being
+small. That is, the higher order terms will be small for small $k-k_0$ and will be ``cut off'' by $f(k-k_0)$ for large $(k-k_0$. so 
+$$\omega(k) = \omega(k_0) + (k-k_0) \left.{\partial\omega\over\partial k}\right|_{k=k_0} + {1\over2}(k-k_0)^2\left.{\partial^2\omega\over\partial k^2}\right|_{k=k_0} + \hdots.$$
+Let use just keep the 1st three terms and define $\displaystyle K = (k-k_0), X = x-x_0, \omega_0 = \omega(k_0), v_g =\left.{\partial\omega\over\partial k^2}\right|_{k=k_0}$ and
+$\displaystyle \alpha = \left.{\partial^2\omega\over\partial k^2}\right|_{k=k_0}.$
+
+With all this, our wave packet become
+$$\Psi(x,t) = {1\over\sqrt{2\pi}}\int_{-\infty}^\infty\, e^{ {K^2\over2\Delta k^2}} e^{i\left[ Kx - v_gK t - {1\over2}\alpha K^2t\right]} e^{i[k_0X - \omega4]} \, dK.$$
+We can complete the square in the exponents of the 1st two terms obtaining an integral of the form
+$$\int_{-\infty}^{\infty}\, e^{-a^2y^2}\, dy = { \sqrt{\pi}\over a}.$$
+This procedure give us 
+$$\Psi(x,t) = \sqrt{ {\Delta k^2\over 1 + i\alpha\Delta k^2 t}} \, e^{-\left[ {(x-v_gt)^2\Delta k^2\over 2(1+ \Delta k^2 \alpha^2y^2}\right]} \, e^{i\left[ {\alpha\Delta k^4+(x - v_gt)^2\over 2(1+\alpha^2\Delta k^4 t^2} + k+0x=\omega_0 t\right]}$$
+from which $$ |\Psi(x,t)|^2 = \left| {\Delta k^2\over (1+ i\alpha\Delta k^2 t)}\right| \, e^{-\left[{\Delta k^2(x-v_gt)^2\over 1 + \alpha^2\Delta k^2 t^2}\right]}.$$
+If $\alpha = 0$, we see that we will have a wave packet of constant shape centered around $x = x_0 + v_g t$. But if $\alpha\ne 0$, we see that the amplitude of the packet will decrease in time and that the packet will also ``spread'' in time. 
+A measure of this spreading can be taken as the width of the packet at $1/e$ of its maximum value, i.e., $$\Delta x\approx {\sqrt{1 + \alpha^2\Delta k^t t^2\over \Delta k}}.$$
+
+Let $\displaystyle \left. \delta x\right|_{t=0} = \Delta x \approx {1\over \Delta k}$. Then we have 
+$$\delta x = \Delta x\sqrt{ 1 + {\alpha^2t^2\over \Delta x^4}}.$$
+We see for small times, where $\displaystyle {\alpha^2 t^2\over \Delta x^4} \ll 1$, that $\delta x \approx \Delta x$ and the packet hasn't spread much. For much longer times, where $\displaystyle {\alpha^2t^2\over \Delta x^4}\gg 1$, we have
+$\displaystyle \delta x = {\alpha t \over \Delta x}$ and the spreading increases linearly with $t$.
+
+For a free particle, $\displaystyle \left(E = {p^2\over2m}\right)$, or for a particle moving in a potential, $\displaystyle E = {p^2\over2m} + V(x)$, we have $\displaystyle \alpha = \left. {\partial \omega\over\partial k}\right|_{k=k_0} = {\hbar\over m}$. So all packets of interest will spread as they move along. For classical particles, it doesn't affect us because $\displaystyle {\hbar\over m}$ is very small. 
