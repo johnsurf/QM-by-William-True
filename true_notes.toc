@@ -35,3 +35,4 @@
 \contentsline {subsection}{\numberline {5.14}\underline {Infinite Matrices}}{53}{subsection.5.14}%
 \contentsline {subsection}{\numberline {5.15}\underline {The Connection Between Matrices, Operators, and Vectors}}{54}{subsection.5.15}%
 \contentsline {subsection}{\numberline {5.16}\underline {Unitary Transformations}}{56}{subsection.5.16}%
+\contentsline {section}{\numberline {6}\underline {Physical Framework of Quantum Mechanics}}{60}{section.6}%
