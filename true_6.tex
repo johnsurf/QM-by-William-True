@@ -35,3 +35,81 @@ The 3rd postulate is:
 \end{postulate}
 In choosing this complete set of compatible variable, one is usually ``guided'' by the dynamical variables of the corresponding classical system. Does one know when he has them all? Generally not for a reasonably complicated 
 system. Sometimes a variable in a quantum mechanical system does not have a classical analogue. -- For example the intrinsic spin of a particle.
+
+Disagreement with experimental results is one way one can tell that our set is incomplete. Just how one discovers and/or decides on  what the ``missing'' variables are is basically a matter of intuition and/or insight and/or
+educated guesswork, etc. 
+
+Remember that the uncertainty principle tells us that non-compatible variables cannot be precisely determined at the same time: 
+
+THe 4th postulate is:
+\begin{postulate}4. If the system is in a state described by $\ket{u}$, the mean value of a physical quantity corresponding to the operator $A$ is given by
+$$\expect{A} = {\xAy{u}{A}{u}\over \braket{u}{u} }.$$
+\end{postulate}
+This postulate tells us that we cannot tell the difference between two state vectors which are multiples of each other. In addition, it tells us that all states are undetermined up to an arbitray phase. 
+
+The 5th and final postulate is: 
+\begin{postulate}5. Let $\ket{\Psi(t)}$ describe the state of the system at time $t$ and let $H$ be the Hamiltonian operator of the system. The system will evolve in time according to the equation
+$$H\ket{Psi(t)} = i\hbar{d\over dt} \ket{Psi(t)}.$$
+\end{postulate}
+Because this equation above is of first order in time, the linear superposition of states is preserved in the course of time. Messiah shows in Chapter 8, paragraph 8 that this equation follows quite naturally from the 
+conservation of linear superposition of states if the system is conservative -- i.e. $H$ is not an explicity function of the time. However, we postulate that this equation is still valid even though $H$ may be time dependent. 
+
+Let us now make some additional remarks concerning this complete ste of compatible observables which we need. 
+
+1. If the system has a classical analogue, we can take for the ``fundamental observables''
+the $3N$ coordinates $q_i$ and the $3N$ corresponding conjugate momenta, $p_i$, along with the commutation relations:
+$$[q_i,q_j] = 0, \quad [p_i,p_j] = 0, \mbox{ and } [q_i,p_j] = i\hbar\delta_{ij}.$$
+All other observables, even $H$, can be written in terms of the $p$'s and $q$'s providing one properly symmetrizes ``ambiguos'' operators 
+$$\mbox{e.g. } p_i q_i \Rightarrow {p_iq_i + q_ip_i\over 2}.$$
+
+2. If the system does not have a classical analogue, one usually has to introduce additional variables to those above and to specify the commutation relations among themselves and with the other observables which have a 
+classical analogue. As I have pointed out above, finding these additional variables is not always easy and one does not know if he has them all. For example, the ground state of the hydrogen atom may be degenerate and 
+we don't know it. 
+
+Let us suppose that we have somehow found this complete set of compatible variables, $A, B, C, \hdots$. Then in principle, we can find eigenstates $\ket{a,b,c,\hdots}$ which are simultaneous 
+eigenkets of these compatible variables and which form a basis for our Hilbert Space. 
+
+Now our Hilbert Spaces can vary greatly depending on the system we are describing. As an example, consider a system containing a single particle with spin of $\hbar/2$ which can exist in only one of two states, one state
+with ``spin up'' and the other state with ``spin down''. In this case, our Hilbert Spaces is a 2-dimensional space with basis vectors $\ket{+\hbar/2}$ and $\ket{-\hbar/2}$.
+
+On the other hand, consider a particle moving in a 1-dimensional spaces. Here the basis could be made of up the eigenkets, $\ket{q}$, of the position operator (or of the eigenkets, $\ket{p}$, of the momentum operator). For this 
+simple system, out Hilbert Space is an infinite-dimensional space. 
+
+We have seen that when our eigenkets can be labeled by discrete indices 
+$$\braket{n_i}{n_j} = \delta_{ij}$$ and that when they are labeled y continuous indices, 
+$$\braket{q}{q'} = \delta(q-q').$$
+Now it may seem odd to have a scalar product come out as a delta-function.
+
+When we make the transition from our abstract Hilbert space to the coordinate representation (the Schr\"odinger Picture), we shall see that these $\delta$-functions will always appear under the integral signs and thus
+will ``give us no trouble''.
+
+Before we can make this transition to the coordinate representation, let us show that 
+$$\xAy{q'}{p}{q''} = {\hbar\over i} \delta'(q-q'') \mbox{ where } \delta'(x) = {d\over dx}\delta(x).$$
+In the coordinate representation, $\ket{q'}$ is an eigenket of the operator $q$ with an eigenvalue of $q'$, i.e., $q\ket{q'} = q'\ket{q'}$. 
+
+We now consider the Unitary Operator $\ds S(\epsilon) = \exp^{-{iq\epsilon\over\hbar}}$. Using $[q,p] = i\hbar$, it is quite easy to show that 
+$$[q,S(\epsilon)] = \epsilon S(\epsilon).$$ 
+So $qS(\epsilon) = S(\epsilon) q + \epsilon S(\epsilon) = S(\epsilon)(q + \epsilon)$. Then we see that 
+$$q[S(\epsilon)\ket{q'}] = S(\epsilon)(q+\epsilon)\ket{q'} = S(\epsilon)(q' + \epsilon)\ket{q'} = (q' + \epsilon)[S(\epsilon\ket{q'}].$$
+So $S(\epsilon)\ket{q'} = \ket{q'+ \epsilon}$ and this $\ds \xAy{q'}{S)\epsilon}{q''} = \braket{q'}{q''+\epsilon} = \delta(q'-q''-\epsilon)$. 
+When $\epsilon$ is an infinitetesimal quantity, $\ds S(\epsilon) \approx 1 - {i p\epsilon\over \hbar}$ and then 
+$$ \xAy{q'}{S(\epsilon)}{q''} \approx \xAy{q'}{1 - {i p\epsilon\over \hbar}}{q''} = \braket{q'}{q''} =  {i \epsilon\over \hbar}\xAy{q'}{p}{q''}$$ 
+or that 
+$$\xAy{q'}{p}{q''} \approx {\hbar\over i} \left[ {\delta(q'-q'') - \delta(q'-q''-\epsilon)\over \epsilon}\right]$$ and in the limit as $\epsilon\goes 0$, we have 
+$$\xAy{q'}{p}{q''} = \lim_{\epsilon\goes 0} {\hbar\over i} \left[ {\delta(q'-q'') - \delta(q'-q''-\epsilon)\over \epsilon}\right] = {\hbar\over i} \delta'(q'-q'').$$
+In a similar manner, one can show
+$$\xAy{p'}{q}{p''} = i\hbar \delta'(p'-p'').$$
+ 
+\subsection{\underline{The Schr\"odinger Picture} or \\ \underline{Wave Mechanics in the Coordinate Representation}}
+
+
+
+
+
+
+
+
+
+
+
+

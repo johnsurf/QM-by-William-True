@@ -28,7 +28,9 @@
 
 %\usepackage{amsmath,amssymb,latexsym} 
 %\usepackage{amsthm}`
-\usepackage{amsmath,amssymb,latexsym,hyperref} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{latexsym,hyperref} 
 \usepackage{easybmat}
 \usepackage{multirow,bigdelim}
 \usepackage{cleveref}
@@ -175,15 +177,20 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{defi}[Definition]
 
 \newenvironment{proof}[1][Proof]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
 \newenvironment{definition}[1][Definition]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
 \newenvironment{example}[1][Example]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
 \newenvironment{postulate}[1][Postulate]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 
