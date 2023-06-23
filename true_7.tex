@@ -1,0 +1,51 @@
+\section{\underline{One Dimensional Harmonic Oscillator}}
+
+1. \underline{Review}
+
+First let us review the standard treatment of the linear harmonic oscillator in the coordinate representation which you can find in practically all text books of Quantum Mechanics, e.g, Pauling \& Wislon or Schiff pp. 67 ff. I will assume that you 
+have already done this in a more elementary course in Quantum Mechanics and so I'll only review the more important aspects here. 
+
+The harmonic oscillator or something closely related to it is forever appearing the physics of all types of phenomena -- mechanics, E \& M, solid state, etc. -- and is often used as the starting point to solving more complicated sytems. 
+
+Our Hamiltonian is
+$$H = {p^2\over 2m} + \half k x^2 = {p^2\over 2m}  + \half  m \omega^2 x^2  \mbox{   where  } \omega^2\equiv {k \over m}.$$
+Since $H$H is time independent, we can write $\ds \Psi(x,t) = \psi(x)e^{-{iEt\over\hbar}}$ and our wave equation 
+$$H\Psi(x,t) = i\hbar{\partial \over \partial t}\Psi(x,t)$$ reduces to 
+$$H\psi(x) = E \psi(x) \mbox{   or  } \left( {\hbar^2\over 2m}{d^2\over dx^2} + E - \half m \omega^2 x^2 \right)\psi(x) = 0.$$
+At this point, it is convenient to change variables and we define
+$$E = \lambda\left({\hbar\omega\over 2}\right) \mbox{    and    } x = \xi\sqrt{ {\hbar\over m \omega}}.$$
+Our differential equations becomes
+$${d^2 \psi(\xi)\over d\xi^2} + (\lambda - \xi^2)\psi(\xi) = 0.$$
+For large $\xi$ we can neglect $\lambda$ and we see that our solution goes like $\ds e^{-{\xi^2\over 2}}$. So we look for a solution of the form
+$$\psi(\xi) = \phi(\xi)\exp^{-{\xi^2\over 2}}$$ which gives us a differential equation of 
+$${d^2\phi\over d\xi^2} - 2\xi {d\phi\over d\xi} + (\lambda - 1)\phi = 0.$$
+Now a standard approach is to try a series solution of the form
+$$\psi(\xi) = \xi^s(b_o + b_1 \xi + b_2\xi^2 \hdots)\mbox{   where } b_0 \ne 0.$$
+Substituting this solution into the differential equation we find by equating each coefficient of each power of $\xi$ to zero that $s = 0\mbox{  or } 1$ from the 1st equation and so $s=0 \mbox{ and/or } b_1 =0$ from the 2nd
+equation. The succeeding equations five use recursion relations so that we have
+\begin{eqnarray*}
+\phi(\xi) &=& a_0 + a_2 \xi^2 + a_4 \xi^4 + \hdots \mbox{   for } s = 0  \mbox{ and}\\ 
+\phi(\xi) &=& a_1\xi + a_3 \xi^3 + a_5 \xi^5 + \hdots \mbox{   for } s = 1  \mbox{ with}\\
+a_{k+2} &=& {2k -\lambda + 1\over (k+1)(k+2)} a_k.
+\end{eqnarray*}
+
+One can quite easily show that both solutions $\ds \psi(\xi) = \exp^{-{lxi^2\over2}}\phi(xi)$ $\mbox{ for } s=0 \mbox{ or } 1$ diverge as $x\goes \pm \infty$.But this is not acceptable as $\psi(x)$ must remain finite.
+$\psi(x)$ can only remain finite if $\phi(\xi)$ is a finite series which will occur if $\lambda$ is restricted to only take on the values $2n + 1$ where $n=0,1,2,\hdots$. This restricts the possible values of $E$ and we find
+the quantized energy eigenvalues of $$E_n = (n + \half)\hbar\omega.$$
+By picking the two arbitrary constants $a_0$ and $a_1$ ``correctly'', the $phi(\xi)$'s become the Hermite polynomials:
+\begin{eqnarray*}
+H_0(\xi) &=& 1\\
+H_1(\xi) &=& 2\xi\\
+H_2(\xi) &=& 4\xi^2 - 2i\\
+H_3(\xi) &=& 8\xi^3 - 12\xi2i\\
+\hdots &\null& \hdots\\
+H_n(\xi) &=& (-1)^n \exp^{{\xi^2\over 2}}{d^n e^{-\xi^2}\over d\xi^n}.
+\end{eqnarray*}
+$H_n(\xi)$ satisfies the differential equation of $\phi(\xi)$ with $\lambda = 2n+1$, viz. 
+$$H_n'' - 2\xi H'_n + 2n H_n = 0.$$
+One can also show that 
+\begin{eqnarray*}
+H'_n &=& 2n H_{n-1}\\
+0 &=& H_{n+1} - 2\xi H_n + 2n H_{n-1}\\
+H_{n+1} &=& 2\xi H_n - H'_n
+\end{eqnarray*}
