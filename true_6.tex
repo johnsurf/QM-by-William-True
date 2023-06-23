@@ -96,16 +96,86 @@ When $\epsilon$ is an infinitetesimal quantity, $\ds S(\epsilon) \approx 1 - {i 
 $$ \xAy{q'}{S(\epsilon)}{q''} \approx \xAy{q'}{1 - {i p\epsilon\over \hbar}}{q''} = \braket{q'}{q''} =  {i \epsilon\over \hbar}\xAy{q'}{p}{q''}$$ 
 or that 
 $$\xAy{q'}{p}{q''} \approx {\hbar\over i} \left[ {\delta(q'-q'') - \delta(q'-q''-\epsilon)\over \epsilon}\right]$$ and in the limit as $\epsilon\goes 0$, we have 
-$$\xAy{q'}{p}{q''} = \lim_{\epsilon\goes 0} {\hbar\over i} \left[ {\delta(q'-q'') - \delta(q'-q''-\epsilon)\over \epsilon}\right] = {\hbar\over i} \delta'(q'-q'').$$
+$$\xAy{q'}{p}{q''} = \lim_{\epsilon\goes 0} {\hbar\over i} \left[ {\delta(q'-q'') - \delta(q'-q''-\epsilon)\over \epsilon}\right] = {\hbar\over i} \delta'(q'-q'').$$ \label{10-VI}
 In a similar manner, one can show
 $$\xAy{p'}{q}{p''} = i\hbar \delta'(p'-p'').$$
  
 \subsection{\underline{The Schr\"odinger Picture} or \\ \underline{Wave Mechanics in the Coordinate Representation}}
 
+What we will now show is that the Schr\"odinger Picture is nothing more than our quantum mechanics in our abstract Hilbert space in the coordinate representation. 
+To do this, will consider a system which has a classical analogue with the 3 fundamental observables being the $3N q_i$'s and the $3N p_i$'s where 
+$$[q_i, q_j] = 0, \quad [p_i, p_j] = 0, \mbox{     and } [q_i, p_j] = i\hbar \delta_{ij}.$$
+The coordinate representation consists of picking as a basis the eigenkets of the $3N q_i$ operators, i.e,
+$$q_i'\ket{q'_1. q'_2, q'_3, \hdots} = q'_i \ket{q'_1. q'_2, q'_3, \hdots}.$$
 
+Let us use the following notation:
+\begin{eqnarray*}
+\ket{q'} &=& \ket{q'_1, q'_2, q'_3, \hdots}\\
+dq'      &=& dq'_1\,dq'_2\,dq'_3\,\hdots\\
+\delta(q'-q'') &=& \delta(q'_1 = q''_1) \delta(q'_2 = q''_2)\delta(q'_3 = q''_3)
+\end{eqnarray*}
+Then our closure relation is given by
+$$P = \int\, \ket{q'}\, dq'\, \bra{q'} = I.$$
+If $\ket{\psi}$ is a state vector in our Hilbert space describing a given state of the system, we can write using $P$
+$$\ket{\psi} = \int\, \ket{q'} \, dq' \braket{q'}{\psi}.$$
+We have seen in the matrix representation that $\braket{q'}{\psi}$ are elements of a column matrix for $\ket{\psi}$. In this case, the elements of this column matrix 
+vary with a continuous index $q'$. Since $\braket{q'}{\psi}$ is a scalar which varies continuously with $q'$ and ``anticipating what is to come'', we define $\psi(q') \equiv \braket{q'}{\psi}$ -- 
+i.e., $\psi(q')$ is a function of $q'$. Remember that our condensed notation real means
+$$\braket{q'}{\psi} = \bra{q'_1 q'_2 q'_3\hdots}{\psi} = \psi(q') = \psi(q'_1, q'_2, q'_3, \hdots).$$
 
+Now let us look at the scalar product $\braket{\psi_1}{\psi_2}$.
+\begin{eqnarray*}
+\braket{\psi_1}{\psi_2} &=& \left[ \int\, \braket{\psi_1}{q'} \bra{q'}\, dq'  \right]  \left[  \int\,  \ket{q''}\braket{q''}{\psi_2} \, dq''   \right] \\
+                                    &=& \int\, \int\, \braket{\psi_1}{q'} \braket{q'}{q''} \braket{q''}{\psi_2} \,dq'\, dq'' \\
+                                    &=& \int\, \int\, \braket{\psi_1}{q'} \delta(q' -q'') \braket{q''}{\psi_2} \,dq'\, dq''\\
+                                    &=& \int\, \braket{\psi_1}{q'}\braket{q'}{\psi_1} \,dq' = \int\, \psi^*_1(q') \psi^*_2(q') \,dq'
+\end{eqnarray*}
 
+Thus we see that in the coordinate representation, the scalar product $\braket{\psi_1}{\psi_2}$  is the same scalar product that we would use in the Schr\"odinger Picture. 
 
+Next we look at some operator relationships involving the $q_i$'s. The simplest is with $q_i$ operating on $\ket{\psi}$. Consider $\ket{\chi} \equiv q_i \ket{\psi}$. 
+$$\ket{\chi} = q_i\ket{psi} = \int\, \ket{q'}\, dq'\, \xAy{q'}{q_i}{\psi} = \int\, \ket{q'}\, dq'\, q' \braket{q'}{\psi} $$ where we let the operator $q_i$ operator to the left which we can 
+do as it is a Hermitian operator. The components of $\ket{\chi}$ are
+\begin{eqnarray*}
+\chi(q'') = \braket{q''}{\chi} &=&\int\, \braket{q''}{q'}\, dq'\, \braket{q'}{\psi} = \int\, \delta(q''-q')\, dq'\, q'_i\braket{q'}{\psi} \\
+&=& q''_i \psi(q'').
+\end{eqnarray*}
+Similarly, for any Hermitian operator which is an arbitrary function of the $q_i$'s, we have
+for $V(q)$ that $\xAy{q'}{V(q)}{\psi} = V(q')\braket{q'}{\psi} = V(q')\psi(q')$ and this is just what we have or ``use'' in the Schr\"odinger Picture. 
+
+Now let us see what happens when one of the $p_i$'s is our operator. Let $\ket{\chi} \equiv p_i\ket{\psi}$. THen 
+$$\braket{q'}{\chi} = \xAy{q'}{p_i}{\psi} = \int\, \xAy{q'}{p_i}{q''}\braket{q''}{\psi}\, dq''.$$
+We saw on page \cpageref{10-VI} that 
+$$\xAy{q'_i}{p_i}{q_i''} = {\hbar\over i} \delta'(q_i'-q_I'')  = \lim_{\epsilon\goes 0} {\hbar\over i} \left[ {\delta(q'-q'') - \delta(q'-q''-\epsilon)\over \epsilon}\right].$$ 
+Because of our condensed notation, we have here 
+$$\xAy{q'}{p_i}{q''} = {\hbar\over i} \delta'(q_1'-q_1'')\delta'(q_2'-q_2'')\hdots\delta'(q_{i-1}'-q_{i-1}'')\delta'(q_i'-q_i'') \delta'(q_{i+1}'-q_{i+1}'') \hdots.$$ 
+and we can easily integrate over all the $dq'' = dq''_1dq''_2\hdots$ except the $q''_i$ one. With $\braket{q''}{\psi} \equiv \psi(q'')$, we have
+\begin{eqnarray*}
+\braket{q'}{\chi} &=& \lim_{\epsilon\goes 0} {\hbar\over i} \left[{\int\, \psi(q'')\delta(q'_i-q''_i)\, dq''_i - \psi(q'')\delta(q'_i-q'_i -\epsilon)\,dq''_i\over \epsilon}\right]\\
+                         &=& \lim_{\epsilon\goes 0} {\hbar\over i} \left[{\int\, \psi(q'_1,q'_2,q'_3,\hdots,q'_i\hdots) - \psi(q'_1,q'_2,q'_3,\hdots,q'_i-\epsilon\hdots) \over \epsilon}\right] ={\hbar\over i} {\partial\over\partial q'_i}\psi(q')
+\end{eqnarray*}
+So we see that 
+$$\braket{q'}{\chi} = \xAy{q'}{p_i}{\psi} = {\hbar\over i} {\partial\over\partial q'_i}\psi(q').$$
+and this is just how the operator $p_i$ is ``supposed to behave'' in the Schr\"odinger Picture. 
+
+Clearly we can generalize these results so that for any operator $A(p,q)$ operating on $\ket{\psi}$ will be represented in the Schr\"odinger Picture by $\ds A\left( {\hbar\over i} {\partial\over\partial q}, q\right)$ operating 
+on $\psi(q)$. 
+
+Furthermore, the equation 
+$$H\ket{\psi(t)} = i\hbar{d\over dt}\ket{\psi(t)}$$ clearly can be ``replaced'' by 
+$$H \psi(t) = i\hbar{\partial \over \partial t} \psi(t)$$ where $\ds {d\over dt} \goes {\partial \over \partial t}$ because the eigenvalues of the operator $q$ appear explicitly in the component $\psi(q,t)$. 
+
+So we are now back to the Schr\"odinger Picture. But we should stress that this is just quantum mechanics in a given representation -- the coordinate representation. This is just one of the many valid
+representations which one could work in. Another common representation is the momentum representation. Here the operator $p_i$ is replaced by its eigenvalue $p_i$ and the 
+operator $q_i$ is replaced by $\ds -{\hbar\over i}{\partial \over \partial p_i}$ where it operators on $\braket{p'}{\psi} \equiv \phi(p')$. 
+
+In principle, one need not even go into a representation to find out all there is to know about a quantum mechanical system as I will show shortly for the simple case of the linear harmonic oscillator.
+
+One might say that we are now in the same position as a student studying E \& M who has been given Maxwell's Equations -- all there is left to do is to apply them to various systems with 
+various boundary conditions. So for the rest of the year expect for relativistic quantum mechancs and the Dirac equation, we will look at various systems and learn techniques on how to ``solve'' them and
+when to use different approximation. 
+
+Usually we will work in the Schr\"odiinger Picture but we need not to do so. 
 
 
 
