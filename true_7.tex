@@ -49,3 +49,57 @@ H'_n &=& 2n H_{n-1}\\
 0 &=& H_{n+1} - 2\xi H_n + 2n H_{n-1}\\
 H_{n+1} &=& 2\xi H_n - H'_n
 \end{eqnarray*}
+In fact, one can take this last equation along with $H_0(\xi) = 1$ and ``generate'' all the other $H_n$'s. 
+
+One can also use a generating function to obtain the $H_n$'s. The generating function $g(\xi,h)$ is given by
+$$g(\xi,h) = e^{2\xi h - h^2} = \sum_{n=0}^\infty\, {H_n(\xi)h^n\over n!}.$$
+The $H_n$'s are obtained by expanding $\ds e^{2\xi h - h^2}$ and equating coefficients of like powers of $h$ on both sides. These generating functions are vey useful in evaluating integrals involving the $H_n$'s. 
+
+One usually normalizes $\psi(x)$ to unity by
+$$\ket{n} \equiv \psi_n(\xi) = {1\over\sqrt{2^n n!\sqrt{\pi}}}e^{-{\xi^2\over 2}} H_n(\xi)$$ and then 
+$$\int\, \psi^*_n(x) \psi_m(x)\, dx = \sqrt{{\hbar\over m\omega}} \int\, \psi^*_n(\xi) \psi_m(\xi)\, d\xi = \delta_{nm}\mbox{  and}$$
+$$H\psi_n(\xi) = E_n\psi_n(\xi).$$
+The matrix elements $\xAy{n}{H}{m}$ form a diagonal matrix in the coordinate representation
+\[ H = \begin{pmatrix}
+\half\hbar\omega & 0  & 0 & 0& 0& \hdots  \\
+0  & {3\over2} \hbar\omega & 0&  0& 0& \hdots  \\
+0 & 0   & {3\over2}\hbar\omega& 0& 0& \hdots \\
+0 & 0   & 0 & {7\over2}\hbar\omega & 0& \hdots \\
+\hdotsfor[2]{6}\\
+\end{pmatrix} \]
+and one can show that 
+\[ \xi  = \begin{pmatrix}
+0 & \sqrt{1\over2} & 0  & 0 & 0& 0& \hdots  \\
+\sqrt{1\over2} & 0  & \sqrt{2\over2} & 0&  0& 0& \hdots  \\
+0& \sqrt{2\over2}  & 0   & \sqrt{3\over2}& 0& 0& \hdots \\
+0& 0 & \sqrt{3\over2}   & 0 & \sqrt{4\over2} & 0& \hdots \\
+\hdotsfor[2]{7}\\
+\end{pmatrix} \]
+
+\subsection{\underline{2. An Alternatice Approach}}
+After this quick review of the harmonic oscillator, I now want to show you what I promised earlier. That is, given the fundamental observables of the system and their commutation relations, I can 
+solve this system without ever going into a representation. In fact, one should always be able to do this in principle but it is generally not easy to do so in practive. 
+
+In this case, our fundamental observables are $p$ and $q$ (I will now use $q$ instead of $x$) and we have
+$$\left[ p,p\right] = \left[q,q\right] = 0\mbox{   and  } \left[q,p\right] = i\hbar.$$
+All our observables and/or operators are functions of $p$ and $q$. In particular
+$$H = {p^2\over2m} + \half m\omega^2 q^2 = .$$
+Instead of using $p$ and $q$, it is more conventient to introduce two other operators $R^\dagger$ and $R$ where 
+\begin{eqnarray*}
+R^\dagger &\equiv& {1\over\sqrt{2m\omega\hbar}}(m\omega q - ip)\mbox{~~~~~        and} \\
+R               &\equiv& {1\over\sqrt{2m\omega\hbar}}(m\omega q + ip)
+\end{eqnarray*}
+or inversely
+\begin{eqnarray*}
+q &=& \sqrt{\hbar\over2m\omega} (R^\dagger + R)\mbox{~~~~~         and } \\
+p &=& \sqrt{m\omega\hbar\over2} (R^\dagger  - R)
+\end{eqnarray*}
+
+
+
+
+
+
+
+
+
