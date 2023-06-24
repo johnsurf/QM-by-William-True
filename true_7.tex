@@ -95,7 +95,37 @@ q &=& \sqrt{\hbar\over2m\omega} (R^\dagger + R)\mbox{~~~~~         and } \\
 p &=& \sqrt{m\omega\hbar\over2} (R^\dagger  - R)
 \end{eqnarray*}
 
+Using $[q,p] = i\hbar$, we find that 
+$$[R,R^\dagger] = 1, \quad [R^\dagger, R^\dagger] = 0, \mbox{~~~~~and } [R,R] = 0.$$
+For $H$, we find 
+$$H = (R^\dagger R + \half)\hbar\omega = (R^\dagger R + RR^\dagger){\hbar\omega\over2}.$$
+So our eigenvalue equaton
+$$H\ket{\Psi} = E\ket{\Psi}$$ reduces to solving an eigenvalue equation for
+$R^\dagger R$. That is, if we can solve 
+$$R^\dagger R \ket{n} = \lambda_n \ket{n}$$ then due to the form of $H$, we can certainly find $E_n$ in 
+$$H\ket{n} = E_n \ket{n}.$$ 
 
+First we show that $\lambda_n$ is non-negative. For this, consider $\ket{\chi} \equiv R\ket{n}$. Then 
+$$\braket{\chi}{\chi} = \xAy{m}{R ^\dagger R}{n}  = \lambda_n\braket{n}{n}$$ and since $\braket{\chi}{\chi}$ and $\braket{n}{n}$ are positive definite, we need
+$$\lambda_n \ge 0.$$
+
+Next we look at
+$$\ket{\chi} \equiv R^\dagger \ket{n}$$ and operate on it with $R^\dagger R$. Then
+\begin{eqnarray*}
+R^\dagger R\ket{\chi} &=& R^\dagger R R^\dagger\ket{n} = R^\dagger(1+ R^dagger R)\ket{n} = R^\dagger(1+\lambda_n)]ket{n}\\
+                                    &=& (\lambda_n + 1)(R^\dagger\ket{n}) = (\lambda_n + 1) \ket{\chi}.
+\end{eqnarray*}
+
+So we see that $\ket{\chi} = R^\dagger \ket{n}$ is an eigenket of $R^\dagger R$ with an eigenvalue $(\lambda_n + 1)$. Likewise $R^\dagger R^\dagger \ket{n}$ is an eigenket with 
+eigenvalue $(\lambda_n+2)$. Thus, given $\ket{n}$, we can ``generate'' all the higher eigenkets of $R^\dagger R$.
+
+In a like manner, we can show that $R\ket{n}$ is also an eigenfunction of $R^\dagger R$ with an eigenvalue of $\lambda_n-1$...and so forth for $RR\ket{n}$, $RRR\ket{n}, \hdots$. 
+While we could increase $\lambda_n$ indefinitely by using $R^\dagger$'s, we cannot reduce it indefinitely by using $R$'s as we must satisfy $\lambda_n \ge 0$ and so we cannot have
+negative eigenvalues. If we operate on each successively smaller eigenket with $R$, we will eventually reach the eigenket with the ``lowest possible'' eigenvalue. 
+Let's call this eigenket $\ket{\lambda_0}$. Then upon operating with $R$ again, we must have
+$$R\ket{\lambda_0} = 0$$ or otherwise we will generate an eigenket with a lower eigenvalue which will be a contradiction. Now $\lambda_0$ is somewhere between zero and one. We have
+$$R^\dagger R\ket{\lambda_0} = \lambda_0\ket{\lambda_0} \mbox{~~~~~ and } R\ket{\lambda_0} = 0.$$
+But $R^\dagger R\ket{\lambda_0} = R^\dagger (R\ket{\lambda_0}) = R^\dagger (0) = 0$ which tells us that $\lambda_0 = 0$ uniquely.
 
 
 
