@@ -74,7 +74,7 @@ and one can show that
 0& \sqrt{2\over2}  & 0   & \sqrt{3\over2}& 0& 0& \hdots \\
 0& 0 & \sqrt{3\over2}   & 0 & \sqrt{4\over2} & 0& \hdots \\
 \hdotsfor[2]{7}\\
-\end{pmatrix} \]
+\end{pmatrix} \] \label{4-VII}
 
 \subsection{\underline{2. An Alternatice Approach}}
 After this quick review of the harmonic oscillator, I now want to show you what I promised earlier. That is, given the fundamental observables of the system and their commutation relations, I can 
@@ -127,9 +127,71 @@ $$R\ket{\lambda_0} = 0$$ or otherwise we will generate an eigenket with a lower 
 $$R^\dagger R\ket{\lambda_0} = \lambda_0\ket{\lambda_0} \mbox{~~~~~ and } R\ket{\lambda_0} = 0.$$
 But $R^\dagger R\ket{\lambda_0} = R^\dagger (R\ket{\lambda_0}) = R^\dagger (0) = 0$ which tells us that $\lambda_0 = 0$ uniquely.
 
+Instead of labeling our eigenkets by $\ket{\lambda_0}, \ket{\lambda_1}, \ket{\lambda_2}, \hdots,$ let us use $\ket{0}, \ket{1}, \ket{2}, \hdots, \ket{n}, \hdots$. For these eigenkets, we have
+$$R^\dagger R\ket{n} = n \ket{n}$$ with $n = 0,1,2,\hdots$ and $n$ has no upper limit. 
 
+Clearly since $H= (R^\dagger R + \half)\hbar\omega$, we have
+$$H\ket{n} = (n+\half) \hbar\omega = E_n\ket{n}.$$
+At this point, we have found the eigenspectrum of the Hamiltonian $H$ which has eigenvalues of $\half\hbar\omega, {3\over2}\hbar\omega, {5\over2}\hbar\omega,\hdots$ and we did it without
+going into an explicit representation -- That is, we are still working on our abstract Hilbert space. It is also clear that $H$ is diagonal in terms of these eigenkets. 
 
+To complete the picture, all we have to do now is demonstrate how one obtains or calculates matrix elements of $p$ and $q$ or or arbitrary functions of $p$ and $q$.
 
+First we make $R^\dagger \ket{n} \propto \ket{n+1}$ a normalized eigenket. Let $\ket{\chi}\equiv NR^\dagger\ket{n}$ and we want $\braket{\chi}{\chi} = 1$ along with 
+$\braket{n}{n} = 1$. So we have
+$$\braket{\chi}{\chi} = |N|^2\xAy{n}{RR^\dagger}{n} = |N|^2 \xAy{n}{1 + R^\dagger R}{n} = |N|^2(n+1)\braket{n}{n} = 1.$$
+So we pick (up to an arbitrary phase) $\ds N = {1\over\sqrt{n+1}}$. This
+$$\begin{matrix}
+\mbox{Thus}     & \ket{n+1} &=& {1\over\sqrt{n+1}}R^\dagger \ket{n}\\ \\ 
+\mbox{Likewise} &\ket{n-1} &=& {1\over\sqrt{n}}R\ket{n} 
+\end{matrix}~~~~
+\left\{\begin{matrix}
+\mbox{~``Rule'' -- Use square  }\\ 
+\mbox{~root of largest}\\
+\mbox{~eigenvalue appearing} 
+\end{matrix}\right. $$
 
+Now we are ready to look at the matrix elements of $\ds \xi = q\sqrt{{m\omega\over\hbar}}$ -- that is, the matrix elements of $q$. 
+As $\ds \xi = {1\over\sqrt{2}}(R^\dagger R)$, we see that 
+$$\xAy{n}{\xi}{m} = {1\over\sqrt{2}}\xAy{n}{R^\dagger R}{m} = \sqrt{m+1\over2}\braket{n}{m+1} + \sqrt{m\over2}\braket{n}{m-1}$$ or 
+$$\xAy{n}{\xi}{m} = \sqrt{m+1\over2}\delta_{n,m+1} + \sqrt{m\over2}\delta_{n, m-1}.$$ \underline{Really easy!!} Compare with $\xi$-matrix on page \cpageref{4-VII}. 
+For the homework, we will evaluate $\xAy{n}{\xi}{m}$ using generating functions and you will appreciate how easy this method is.
 
+Clearly we can continue and obtain the matrix elements of $q^2, p$, or any combinations of $p$'s and $q$'s using this approach.
 
+Thus we have solved the harmonic oscillator without going into an explicit representation. If one wishes, he can start at this point and ``go into'' the coordinate representation. For details
+see Schiff pages 184 and 185. 
+
+\subsection{\underline{3. A Different Point of View}}
+We now look at this new approach of using the $R^\dagger$'s and $R$'s in a different manner. Suppose we consider some elementary excitations which we call ``particles'' or ``quanta'' and 
+which have an energy of $\hbar\omega$. Then we could say that the state $\ket{n+1}$ had one more of these ``particles'' in it than the state $\ket{n}$. Similarly the state $\ket{n-1}$ has one 
+``particle'' less. Taking this point of view, $R^\dagger$ would when acting on a state create an additional one of these particles and $R$ would annihilate or destroy one of these particles. 
+That is $R^\dagger$ and $R$ are creation and destruction operators for these particles respectively. In this interpretation $R^\dagger R$ is the counting operator which ``counts'' the number of 
+paricles in a given state. 
+
+These creation and destruction operators obey the commutation relation 
+$$[R^\dagger. R^\dagger] = 0, \quad [R,R] = 0,\mbox{   and } [R,R^\dagger] = 1.$$
+Particles which do this are called bosons and there wave functions are symmetric under interchange of any two particles. Furthermore, there is no restriction on how many one can
+put into the same state with an energy $\hbar\omega$. 
+
+To see this symmetry under interchange of any two particles, consider the state 
+$$\ket{n} = {1\over\sqrt{n!}}R^\dagger R^\dagger \hdots R^\dagger\ket{0} = {1\over\sqrt{n!}}(R^\dagger)^n\ket{0}.$$
+Perhaps is is clearer to put a subscript labelling each particle on the $R^\dagger$'s. Then 
+$$\ket{n} = \ket{1 2 3 \hdots n} = {1\over\sqrt{n!}}R_n^\dagger R_{n-1}^\dagger\hdots R_3^\dagger R_2^\dagger R_1^\dagger \ket{0}.$$
+Now we see that interchanging any two particles will give the same wave function back since the $R^\dagger$'s commute. 
+
+An obvious generalization of the above approach is to have many linear oscillators all of different frequencies labeld by $\omega_k$ and with respective creation and annihilarion operators $R_k^\dagger$ and $R_k$.
+Our commutation relations are 
+$$[R_k, R_l] = 0, [R_k^\dagger, R_l^\dagger] = 0 \mbox{  ~~~ and  } [R_k, R_l^\dagger] = \delta_{kl}.$$
+
+Lager on in the year we will be studying radiation from atoms. There we will see that the electromagnetic field can be represented by an infinite set of harmonic oscillators of all frequencies. We will then
+``quantize'' these oscillators and the bosons resulting from this quantization will be the quanta of the electromagnetic field -- Photons. 
+
+If our creation and annhilation operators had obeyed anticommutation relations instead of commutation relations, we would have a system of fermions instead of bosons. Then one can show that
+the wave function is antisymmetric on interchange of any two particles and, at most, only one particle can occupy a given state at a time.
+
+When one describes a system by using creation and annihiltion operators for the particles of the system, one says that he is using the ``occupation number representation'' or the ``formulation of second quantization''.
+
+A glimpse of ``bigger and better'' things? If we can quantize the electromagnetic field, why can't we quantize the field describing the wave function $\psi(\vec{r})$? People have tried this and they 
+originally hoped that the quanta of these fields would somehow be connected to elementary particles. But when people tried to quantize the field $\psi(\vec{r})$, they ran into all kinds of 
+difficulties -- mostly of a mathematical nature, These problems have not been resolved and their treatment is beyond the scope of this course. 
