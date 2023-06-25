@@ -22,3 +22,20 @@ L_z &=& -i\hbar {\partial \over\partial\phi},
 \end{eqnarray*}
 and 
 $$L^2 = -\hbar^2\left[ {1\over\sin\theta} {\partial\over\theta} \sin\theta {\partial\over\partial\theta} + {1\over\sin^2\theta} {\partial^2\over\partial\phi^2} \right].$$
+
+With this expression for $L^2$, one can easily show that in spherical coordinates, 
+\begin{eqnarray*}
+H = {p^2\over2m} + V(r) &=& -{\hbar^2\over2m}{1\over r}{\partial^2\over \partial r^2} r + {L^2\over2mr^2} + V(r) \\
+                                       &=& -{\hbar^2\over2m}{1\over r}{\partial\over\partial r} r^2{\partial\over\partial r} + {L^2\over2mr^2} + V(r)
+\end{eqnarray*}
+So we see that all the $\theta$ and $\phi$ dependence of our Hamiltonian operator (or of $\nabla^2$) is contained in the operator $L^2$. 
+
+The standard approach to solving 
+$$H\psi(\vec{r}) = E\psi(\vec{r})$$ is to assume separable solutions, i.e, 
+$$\psi(\vec{r}) = R(r)\Theta(\theta)\Phi(\phi) = R(r)f(\theta, \phi).$$
+I will assume that you have already done this in an elementary course in quantum mechanics. What you did and/or found was that one could 
+solve for $f(\theta,\phi)$ which was a solution to the differential equation
+$$L^2 f(\theta,\phi) = c f(\theta,\phi).$$
+The solutions to this differential equation are the spherical harmonics $Y_{lm}(\theta,\phi)$ which consists of products of associated Legendre 
+polynomials and $\ds e^{\pm i m \phi}$'s. The solutions, $Y_{lm}$ have the properties of                                        
+    
