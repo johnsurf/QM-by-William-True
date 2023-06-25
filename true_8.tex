@@ -1,0 +1,24 @@
+\section{\underline{Central Potentials}}
+Let us know look at the special case where we have spinless particles moving in the presence of a central potential. These central potentials will only depend on the magnitude of $\vec{r}$ (i.e., they are spherically symmetric) and will be denoted by $V(r)$. Introduction of intrinsic spin is straight-forward by is an additional complication which does not give any additional physical insight into the problem -- So we will delay its introduction until later. Furthermore we will only look
+at the bound states at this time. 
+
+For a single particle moving in a central potential, the time independent wave equation is
+$$H\psi(\vec{r}) = \left( {p^2\over2m}+V(r)\right) \psi(\vec{r}) = E\psi(\vec{r}) \mbox{~~~ or  }$$
+$$\left( -{\hbar^2\over2m}\nabla^2 + V(r) - E \right) \psi(\vec{r}) = 0.$$
+If we stay in the Cartesian coordinate system, one cannot go much further until $V(r)$ is specified. But because of the spherical symmetry of $V(r)$, it is much more desirale to approach this problem in spherical coordinates. To do this, we
+Introduce the orbital angular momentum operator $\ds \vec{L} = \vec{r} \times \vec{p}$. In component form, we have $\ds L_x = y p_z - zp_y$ (cyclic). By cyclic, we mean that this formula holds for $x\goes y \goes z \goes x$. Also we have
+$[x,p_x] = i\hbar$ (cyclic). With these relations, it is easy to show that 
+$$[L_x, L_y] = i\hbar L_z\mbox{~~~(cyclic)}.$$
+Symbolically, we can write the three equations implied above as 
+$$\vec{L}\times \vec{L} = i\hbar \vec{L}.$$
+Using the above commutation relations for the $L_i$'s, one can easily show with 
+$$L^2 = L_x^2 + L_y^2 + L_z^2$$ that 
+$$[L_x, L^2] = [L_y,L^2] = [L_z,L^2] = 0.$$
+In spherical coordinates, one has 
+\begin{eqnarray*}
+L_x &=& ~i\hbar \left[ \sin\phi {\partial \over \partial \theta} + \cot\theta\cos\phi{\partial \over\partial\phi}\right],\\
+L_y &=& -i\hbar \left[ \cos\phi {\partial \over \partial \theta} - \cot\theta\sin\phi{\partial \over\partial\phi}\right],\\
+L_z &=& -i\hbar {\partial \over\partial\phi},
+\end{eqnarray*}
+and 
+$$L^2 = -\hbar^2\left[ {1\over\sin\theta} {\partial\over\theta} \sin\theta {\partial\over\partial\theta} + {1\over\sin^2\theta} {\partial^2\over\partial\phi^2} \right].$$
