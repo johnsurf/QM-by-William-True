@@ -37,5 +37,15 @@ I will assume that you have already done this in an elementary course in quantum
 solve for $f(\theta,\phi)$ which was a solution to the differential equation
 $$L^2 f(\theta,\phi) = c f(\theta,\phi).$$
 The solutions to this differential equation are the spherical harmonics $Y_{lm}(\theta,\phi)$ which consists of products of associated Legendre 
-polynomials and $\ds e^{\pm i m \phi}$'s. The solutions, $Y_{lm}$ have the properties of                                        
-    
+polynomials and $\ds e^{\pm i m \phi}$'s. The solutions, $Y_{lm}$ have the properties of            
+\begin{eqnarray*}
+L^2 \Ylm &=& l(l+1)\hbar^2\,\Ylm\mbox{  and}\\
+L_z\Ylm  &=& m\hbar\, \Ylm 
+\end{eqnarray*}                            
+So the $Y_{lm}$'s are simultaneous eigenfunctions of $L^2$ and $L_z$. -- This is okay as $L^2$ and $L_z$ commute. We could have easily looked for 
+simultaneous eigenfunctions of $L^2$ and $L_x$ or of $L^2$ and $L_y$. -- But we couldn't look for simultaneous eigenfunctions of $L_y$ and $L_z$ as they don't commute, etc. for $L_x$ and $L_z$ or $L_x$ and $L_y$. 
+The eigenfunctions of $L^2$ and $L_x$ or of $L^2$ and $_y$ can always be expanded as $\ds \sum_m\, a_m Y_{lm}$ and these eigenfunctions will still be eigenfunctions of $L^2$. However, it is simpler and conventional
+to use the eigenfunctions of $L^2$ and $L_z$, viz., the $Y_{lm}$'s. 
+
+In quantum mechanics, we know that all eigenfunctions are undefined up to an arbitrary phase, Recent quantum mechanical texts usually adopt what is known as the ``Condon and Shortley'' phases for the $Y_{lm}$'s and we will 
+do this also. A word of caution however, all texts and/or articles do not necessarily do so -- see Pauling \& Wilson, 1st edition of Schiff. The phases when we adopt fo the $Y_{lm}$'s are
