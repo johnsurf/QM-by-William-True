@@ -49,3 +49,16 @@ to use the eigenfunctions of $L^2$ and $L_z$, viz., the $Y_{lm}$'s.
 
 In quantum mechanics, we know that all eigenfunctions are undefined up to an arbitrary phase, Recent quantum mechanical texts usually adopt what is known as the ``Condon and Shortley'' phases for the $Y_{lm}$'s and we will 
 do this also. A word of caution however, all texts and/or articles do not necessarily do so -- see Pauling \& Wilson, 1st edition of Schiff. The phases when we adopt fo the $Y_{lm}$'s are
+\begin{eqnarray*}
+Y^*_{l,m}(\theta,\phi) &=& (-1)^m\, Y_{l,-m}(\theta,\phi) \mbox{ ~~~~ with} \\
+\Ylm &=& (-1)^m \sqrt{(2l+1)(l-|m)! \over 4\pi(l+|m|)!}  \, P_l^{|m|}(\cos\theta)e^{im\phi}.
+\end{eqnarray*}
+The $Y^*_{lm}$'s and $\Ylm$'s are orthonormal such that 
+\[ \int\, Y^*_{lm}(\theta,\phi) Y_{l'm'}(\theta,\phi)\, \sin\theta\, d\theta d\phi  \ = \int \, Y^*_{l'm'}(\Omega)Y_{l'm'}(\Omega)\, d\Omega = \delta_{ll'} \delta_{mm'} \]
+where $d\Omega \equiv \sin\theta \, d\theta d\phi $ = differential element of solid angle. (See Schiff pp. 76-83 for more details).
+
+With this digression dealing with the spherical harmonics, $\Ylm$, which by the way form a complete set in $\theta, \phi$ space, let us now return to our central potential problem with 
+\[ H = {p^2\over2m} = -{\hbar^2\over2m} {1\over r} {\partial^2 \over \partial r^2} + {L^2\over2mr^2} + V(r). \]
+Instead of solving $\ds H \psi(\vec{r}) = E\psi(\vec{r})$ using separable solutions, we note that the $\Ylm$'s form a complete set and so we expand $\psi(\vec{r})$ in terms of them, viz.,
+\[ \psi(\vec{r}) = \sum_{l',m'} \, R_{l'm'} Y_{l'm'}(\theta, \phi). \]
+Since $L^2 Y_{l'm'} = l'(l'+1)\hbar^2 Y_{\l'm'}$, our differential 
