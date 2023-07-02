@@ -72,3 +72,29 @@ For a central potential, $V(r)$, the ``magnetic quantum number'', $m$, does not 
 In the more general case where $V(\vec{r})$ is not spherically symmetric, $R_{lm}(r)$ will depend on $m$ and we will have to retain it in our solution.
 
 If our particles have intrinsic spin, $\vec(s)$, the only change will be to replace $\Ylm$ above by $\Ylm \chi_{sm_s}$ where $X_{sm_s}$ are eigenfunctions of the spin operator. -- We will do this in more detail later. 
+
+In order to proceed further, we need to now the form of $V(r)$. We will now look at three rather common cases -- The square well, the hydrogen atom, and the three dimensional harmonic oscillator. I will assume that you 
+have already done these three cases before. I will only summarize them and let you fill in the details.
+
+\subsection{\underline{Square Well (Bound State}}
+For a square well, we have 
+\begin{eqnarray*}
+V(r) &=& - V_0\mbox{~~~ for ~} 0\le r \le a \\
+V(r) &=& 0 \mbox{~~~~ for ~} r > a
+\end{eqnarray*}
+We define 
+\begin{eqnarray*}
+K &=&  \sqrt{ {2m\over\hbar^2} )V_0 - |E| } \mbox{ and } \rho = Kr \mbox{ for } r\le a \\
+k &=& \sqrt{{2m|E|\over\hbar^2}}\mbox{  and  } \rho = ikr \mbox{ for } r>a
+\end{eqnarray*}
+For $r\le a$ and $\rho = Ka$, our differential equation becomes 
+\[ {d^2R_l(\rho)\over d\rho^2} + {2\over\rho} {dR_l(\rho)\over d\rho} + \left[ 1- {l(l+1)\over\rho^2}   \right]\, R_l(\rho) = 0. \]
+The solutions to this differential equation are the spherical Bessel functions $j_l(\rho)$ and $R_l(\rho)$ where 
+\begin{eqnarray*}
+k_l(\rho) &=& \sqrt{\pi\over2\rho} J_{l+\half} (\rho) \mbox{ and is regular at the origin and }\\
+R_l(\rho) &=& (-1)^{l+1} \sqrt{\pi\over2\rho} J_{-(l+\half)}(\rho) \mbox{ and is irregular at the origin}.
+\end{eqnarray*}
+
+
+
+
