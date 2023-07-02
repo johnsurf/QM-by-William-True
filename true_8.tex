@@ -62,3 +62,13 @@ With this digression dealing with the spherical harmonics, $\Ylm$, which by the 
 Instead of solving $\ds H \psi(\vec{r}) = E\psi(\vec{r})$ using separable solutions, we note that the $\Ylm$'s form a complete set and so we expand $\psi(\vec{r})$ in terms of them, viz.,
 \[ \psi(\vec{r}) = \sum_{l',m'} \, R_{l'm'} Y_{l'm'}(\theta, \phi). \]
 Since $L^2 Y_{l'm'} = l'(l'+1)\hbar^2 Y_{\l'm'}$, our differential 
+equation becomes
+\[ \sum_{l'm'}\, \left[ {1\over r} {\partial^2\over \partial r^2} r - {l'(l'+1)\over r^2} + {2m\over\hbar^2}(E - V(r))\right] R_{l'm'}Y_{l'm'} = 0 \]
+Multiplying by $Y^*_{lm}(\theta,\phi)$ and integrating over $\theta$ and $\phi$, the orthogonality of the $\Ylm$'s give us
+\[ \left[ {1\over r} {\partial^2\over \partial r^2} r  -{l(l+1)\over r^2} + {2m\over\hbar^2}(E - V(r))\right] R_{lm}(r) = 0 \] which is the differential equation which we must solve for $R_{lm}(r)$, the radial solutions. 
+
+For a central potential, $V(r)$, the ``magnetic quantum number'', $m$, does not enter -- the $m$ in $\ds {2m\over\hbar^2}$ is the mass -- and so we can drop the subscript $m$ on $R_{lm}(r)$ and write it simple as $R_l(r)$.
+
+In the more general case where $V(\vec{r})$ is not spherically symmetric, $R_{lm}(r)$ will depend on $m$ and we will have to retain it in our solution.
+
+If our particles have intrinsic spin, $\vec(s)$, the only change will be to replace $\Ylm$ above by $\Ylm \chi_{sm_s}$ where $X_{sm_s}$ are eigenfunctions of the spin operator. -- We will do this in more detail later. 
