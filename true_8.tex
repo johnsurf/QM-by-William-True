@@ -116,5 +116,36 @@ which have asymptotic behaviors of
 \lim_{\rho\goes\infty} h^{(2)}_l(\rho) &\goes& {e^{-i[\rho-(l+1){\pi\over2} ]} \over \rho}.
 \end{eqnarray*}
 
+For our case of a square well, $\rho = -ikr$ and we see that the Hankel functions will describe increasing and decreasing exponentials in the asymptotic region where $rho \goes \infty$. Clearly, the increasing exponential will not be 
+allowed for the bound states. 
+
+Furthermore, our solutions, and their derivatives must be continuous across the ``boundary'' at $r = a$. Not every value of $E$ will satisfy this ``matching requirement''. As a result, only certain discrete values of $E$ will be 
+allowed for bound states. Practically all quantum mechanics texts work out these solutions and I refer you to them for details. 
+
+For an infinitely deep square well, the energy levels look somewhat like those shown at the right
+\begin{figure}[h]
+\centering
+%\includegraphics[scale=0.5]{graph_a}
+\caption{Infinite Square Well Energy Eigenvalues}
+\label{fig:InfiniteSquareWell}
+\end{figure}
+Instead of labeling of the levels by $l = 0,1,2,3,\hdots$, one uses $s, p, d, f, g, h, i, \hdots$ respectively. The lowest $s$ levels is the $1s$ level, the next is the $2s$ level, etc.
+
+This is one of the two most common labelling schemes. Another labeling scheme will be used for the Hydrogen atom which we will discuss next. 
+
+\subsection{\underline{Hydrogen Atom (without spin)}}
+Now we have a two-body problem but we will show that it reduces to a one-body problem. Our Hamiltonian is 
+\[ H = {p_1^2\over2m_1} + {p_2^2\over2m_2} + V(|\vec{r_1} - \vec{r_2})|) \equiv E_{total} \] where one particle is an electron, the other is a proton, and
+$\ds V(|\vec{r_1} - \vec{r_2})|)$ is the Coulomb potential between them. We now transform to the relative and center of mass coordinate using 
+\[ \vec{r} = \vec{r_1} - \vec{r_2}, \quad \vec{R} = {m_1 \vec{r_1} + m_2\vec{r_2}\over m_1 + m_2}, \quad M = m_1 + m_2, \mbox{  and} \]
+\[ m = {m_1m_2\over m_1 + m_2} ~~= \mbox{  reduced mass}.\]
+This transformation gives 
+\[ H = {P^2\over2M} + {p^2\over2m} + V(r), \mbox{~~where~~} \vec{P} = M\dot{\vec{R}}, \mbox{ ~ and ~} \vec{p} = m{\dot\vec{r}}. \]
+We see that the Hamiltonian separates into two parts and so we can seek a separable solution 
+$$\psi(\vec{r_1},\vec{r_r}) = \psi_{CM}(\vec{R}) \psi(\vec{r}).$$ 
+The differential equation for $\psi_{CM}(\vec{R})$ is
+$${P^2\over2M} \psi_{CM}(\vec{R}) = E_{CM} \psi_{CM}(\vec{R})$$ where $\ds E_{total} \equiv E_{CM} + E$.
+
+
 
 
