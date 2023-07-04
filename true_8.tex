@@ -89,12 +89,32 @@ k &=& \sqrt{{2m|E|\over\hbar^2}}\mbox{  and  } \rho = ikr \mbox{ for } r>a
 \end{eqnarray*}
 For $r\le a$ and $\rho = Ka$, our differential equation becomes 
 \[ {d^2R_l(\rho)\over d\rho^2} + {2\over\rho} {dR_l(\rho)\over d\rho} + \left[ 1- {l(l+1)\over\rho^2}   \right]\, R_l(\rho) = 0. \]
-The solutions to this differential equation are the spherical Bessel functions $j_l(\rho)$ and $R_l(\rho)$ where 
+The solutions to this differential equation are the spherical Bessel functions $j_l(\rho)$ and $n_l(\rho)$ where 
 \begin{eqnarray*}
 k_l(\rho) &=& \sqrt{\pi\over2\rho} J_{l+\half} (\rho) \mbox{ and is regular at the origin and }\\
-R_l(\rho) &=& (-1)^{l+1} \sqrt{\pi\over2\rho} J_{-(l+\half)}(\rho) \mbox{ and is irregular at the origin}.
+n_l(\rho) &=& (-1)^{l+1} \sqrt{\pi\over2\rho} J_{-(l+\half)}(\rho) \mbox{ and is irregular at the origin}.
 \end{eqnarray*}
 
+Since $n_l(\rho)$ is irregular at the origin, it must be excluded in the solution $R_l(\rho)$ for $r\le a$. Then $R_l(\rho) \propto j_l(\rho)$ for $r \le a$. 
+
+The asymptotic properties of $j_l$ and $n_l$ which we will use quite often are
+\begin{eqnarray*}
+\lim_{\rho\goes 0} j_l(\rho) &\goes& {\rho^l\over (2l+1)!!}, ~~~~~~ \lim_{\rho\goes\infty} j_l(\rho) \goes {\cos[ \rho-(l+1){\pi\over2}]\over \rho}, \\
+\lim_{\rho\goes 0} n_l(\rho) &\goes& {(2l-1)!!\over\rho^{l+1}}, ~~~~~~ \lim_{\rho\goes\infty} n_l(\rho) \goes {\sin[ \rho-(l+1){\pi\over2}]\over \rho}.
+\end{eqnarray*}
+where $(2l+1)!! \equiv (2l+1)(2l-1)(2l-3)\hdots5\cdot3\cdot1$.
+
+In the ``exterior'' region where $r\ge a$, we have the same differential equation for $R_l(\rho)$ with $\rho = i k r$. Since the origin is now excluded we can expect that $R_l(\rho)$ will be in general a linear combination of $j_l$ and $n_l$. 
+Normally it is more convenient to use instead the spherical Hankel functions $h^{(1)}_l(\rho)$ and $h^{(2)}(\rho)$ where 
+\begin{eqnarray*}
+h^{(1)}_l(\rho) &\equiv& j_l(\rho) + i  n_l(\rho) \mbox{  ~~ and }\\
+h^{(2)}_l(\rho) &\equiv& j_l(\rho) - i  n_l(\rho),\\
+\end{eqnarray*}
+which have asymptotic behaviors of 
+\begin{eqnarray*}
+\lim_{\rho\goes\infty} h^{(1)}_l(\rho) &\goes& {e^{i[\rho-(l+1) {\pi\over2} ]} \over \rho} \mbox{  ~~ and }\\
+\lim_{\rho\goes\infty} h^{(2)}_l(\rho) &\goes& {e^{-i[\rho-(l+1){\pi\over2} ]} \over \rho}.
+\end{eqnarray*}
 
 
 
