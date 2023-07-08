@@ -1,0 +1,128 @@
+%\newmathalphabet{\oldcal}
+%\addtoversion{times}{\oldcal}{cmsy}{m}{n}
+\newcommand{\unit}[1]{\mbox{\it #1}}
+\newcommand{\subs}[1]{\mbox{\scriptsize\it #1}}
+\def\Q2{$Q^2$}
+\def\Wftn{$\Psi(\vec{r},t)$}
+\def\IntPsiSq{|\Psi|^2 d\vec{r}}
+\def\sgp{$\sigma_{\gamma p}\:$}
+\mathchardef\Lcur="324C
+\def\crfive{\cr\noalign{\vskip 5pt}}
+\def\crten{\cr\noalign{\vskip 10pt}}
+\def\cofac{\hbox{cofactor}}
+\def\gij{g_{ij}}
+\def\gijinv{g^{ij}}
+\def\gstar{\overline{g}_{\alpha\beta}}
+\def\Kronij{\delta^j_i}
+\def\Ylm{Y_{lm}(\theta,\phi)}
+
+\def\Z{\mathbb{Z}}
+\def\F{\mathbb{F}}
+\def\R{\mathbb{R}}
+\def\L{\mathbb{L}}
+\def\C{\mathbb{C}}
+
+\def\a{\mathfrak{a}}
+\def\b{\mathfrak{b}}
+\def\c{\mathfrak{c}}
+\def\c{\mathfrak{c}}
+\def\r{\mathfrak{r}}
+\def\o{\mathfrak{0}}
+
+\def\av{\underline{a}}
+\def\ev{\underline{e}}
+
+\def\ds{\displaystyle}
+
+\def\E{\mathcal{E}}
+%\def{\Tr}{\cal{Tr}}
+
+\def\half{{1\over2}}
+\def\gab{g_{\alpha\beta}}
+\def\gabinv{g^{\alpha\beta}}
+\def\gmunu{g_{\mu\nu}}
+\def\gmunuinv{g^{\mu\nu}}
+\def\gmu{\gamma^\mu}
+\def\gmudag{\gamma^{\mu\dag}}
+\def\gnu{\gamma^\nu}
+\def\gmuc{\gamma_\mu}
+\def\gnuc{\gamma_\nu}
+\def\gzero{\gamma^0}
+\def\gone{\gamma^1}
+\def\gtwo{\gamma^2}
+\def\gthree{\gamma^3}
+\def\gfive{\gamma_5}
+\def\gfive{\gamma_5}
+\def\gzeroc{\gamma_0}
+\def\gonec{\gamma_1}
+\def\gtwoc{\gamma_2}
+\def\gthreec{\gamma_3}
+\def\qsq{{Q^2\over4E_1^2}}
+\def\qr2{{Q^2\over2}}
+\def\q2{{Q^2}}
+\def\hy{\hat{y}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+
+\def\bearray{\begin{eqnarray*}}
+\def\eearray{\end{eqnarray*}}
+\def\Var{\hbox{Var}}
+
+\def\mslim{\qopname\relax m{l.i.m}}
+
+\newcommand{\defeq}{\mathrel{\mathop:}=}
+\newcommand{\eqdef}{\mathrel{\mathop=}:}
+
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\xAy}[3]{\langle #1| #2| #3 \rangle}
+\newcommand{\braket}[2]{\langle #1|#2\rangle}
+\newcommand{\expect}[1]{\langle #1\rangle}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\goes}{\rightarrow}
+\newcommand{\from}{\leftarrow}
+\newcommand{\define}{\overset{\Delta}{=} }
+\newcommand{\ninfty}{n\rightarrow\infty}
+\newcommand{\Rwp}{$\overset{\hbox{R}_{wp1}}{\sim}$}
+\newcommand{\Rms}{$\overset{\hbox{R}_{ms}}{\sim}$}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{defi}[Definition]
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newenvironment{postulate}[1][Postulate]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.65em width0.4em depth0.20em\fi}
+      %\vrule height0.75em width0.5em depth0.25em\fi}
+      
+\newcommand\xqed[1]{%
+  \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+  \quad\hbox{#1}}
+\newcommand\demo{\xqed{$\triangle$}}  
+ 
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\textwidth}{17cm}
+%\setlength{\topmargin}{-3cm}
+%\setlength{\textheight}{25cm}
+%\setlength{\unitlength}{1mm}
+%\hsize=6.0 true in
+%\vsize=8.40 true in
+%\pagestyle{plain}
